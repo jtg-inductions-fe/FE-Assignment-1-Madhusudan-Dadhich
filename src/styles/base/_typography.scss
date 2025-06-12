@@ -1,0 +1,31 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as variables;
+
+@include mixins.font-face(
+    'circularstd',
+    'CircularStd-Bold',
+    variables.$circularstd-file-path,
+    700,
+    normal
+);
+@include mixins.font-face(
+    'circularstd',
+    'CircularStd-Black',
+    variables.$circularstd-file-path,
+    900,
+    normal
+);
+@include mixins.font-face(
+    'inter',
+    'Inter-Regular',
+    variables.$inter-file-path,
+    400,
+    normal
+);
+@include mixins.font-face(
+    'inter',
+    'Inter-Medium',
+    variables.$inter-file-path,
+    450,
+    normal
+);
