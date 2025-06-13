@@ -1,3 +1,10 @@
+/// Mixin to generate font face for a font family
+///
+/// @param {String} $family - font family name
+/// @param {String} $file - font file name
+/// @param {String} $path - relative path to the font
+/// @param {Number} $weight [normal] - font weight for font family
+/// @param {Number} $weight [normal] - styling for font family
 @mixin font-face($family, $file, $path, $weight: normal, $style: normal) {
     @font-face {
         font-family: $family;
@@ -11,18 +18,34 @@
     }
 }
 
+/// Mixin to handle media query for defined max width
+///
+/// @content [It contains the rules to manage responsiveness for screen max width]
+///
+/// @param {String} $max-width - max width to constraint media screen
 @mixin media-down($max-width) {
-    @media (max-width: #{$max-width}) {
+    @media screen and (max-width: #{$max-width}) {
         @content;
     }
 }
 
+/// Mixin to handle media query for defined min width
+///
+/// @content [It contains the rules to manage responsiveness for screen min width]
+///
+/// @param {String} $min-width - min width to constraint media screen
 @mixin media-up($min-width) {
-    @media (min-width: #{$min-width}) {
+    @media screen and (min-width: #{$min-width}) {
         @content;
     }
 }
 
+/// Mixin to generate font styles
+///
+/// @param {String} $font-family - font family name
+/// @param {String} $font-weight - font weight
+/// @param {String} $font-size - font size
+/// @param {Number} $line-height - line height of font
 @mixin font-style($font-family, $font-weight, $font-size, $line-height) {
     font-family: $font-family;
     font-weight: #{$font-weight};
