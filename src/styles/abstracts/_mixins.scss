@@ -4,7 +4,7 @@
 /// @param {String} $file - font file name
 /// @param {String} $path - relative path to the font
 /// @param {Number} $weight [normal] - font weight for font family
-/// @param {Number} $weight [normal] - styling for font family
+/// @param {Number} $style [normal] - styling for font family
 @mixin font-face($family, $file, $path, $weight: normal, $style: normal) {
     @font-face {
         font-family: $family;
