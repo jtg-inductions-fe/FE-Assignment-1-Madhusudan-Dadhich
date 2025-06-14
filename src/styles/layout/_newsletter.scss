@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+.newsletter {
+    position: relative;
+
+    &__container {
+        position: relative;
+        padding-inline: px-to-rem(32);
+    }
+
+    &__sub-title {
+        margin-block-end: px-to-rem(32);
+    }
+
+    &__title {
+        margin-block-end: px-to-rem(64);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+    }
+
+    &__decorative,
+    &__background-decorative {
+        display: none;
+    }
+
+    @include media-up($medium-screen-size) {
+        &__container {
+            border: none;
+            border-radius: px-to-rem(32);
+            background-color: $light-yellow;
+            margin-block-start: px-to-rem(16);
+            padding: px-to-rem(128) px-to-rem(64);
+        }
+
+        &__form {
+            flex-direction: row;
+        }
+
+        &__decorative {
+            display: block;
+            position: absolute;
+            top: px-to-rem(51) * -1;
+            left: px-to-rem(37) * -1;
+        }
+
+        &__background-decorative {
+            display: block;
+            position: absolute;
+            top: px-to-rem(328) * -1;
+            right: 0;
+        }
+    }
+
+    @include media-up($large-screen-size) {
+        position: initial; // [Because of overflow issue with relative position of section] Refer to _base.scss for more.
+        margin-block-start: px-to-rem(64);
+        margin-block-end: px-to-rem(
+            566
+        ); // This is temporary code need to be cleaned up before merging
+
+        &__sub-title,
+        &__title {
+            text-align: center;
+        }
+
+        &__title {
+            font-size: px-to-rem($newsletter-card-title-font-size);
+        }
+
+        &__decorative {
+            opacity: 0.1;
+        }
+
+        &__background-decorative {
+            top: unset;
+            bottom: px-to-rem(
+                320
+            ); // Relative to body and bottom offset from body
+        }
+    }
+}

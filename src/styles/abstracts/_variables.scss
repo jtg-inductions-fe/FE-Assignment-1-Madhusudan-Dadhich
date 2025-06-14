@@ -63,13 +63,21 @@ $md-btn-vertical-padding: 24;
 // pixel values without unit
 // [Example: if pixel value is 16px then value will be 16.]
 // Font sizes
-$testimonial-card-title-font-size: 28px;
-$testimonial-card-body-font-size: 23px;
-$newsletter-card-title-font-size: 55px;
-$newsletter-card-subtitle-font-size: 18px;
+$newsletter-card-title-font-size: 55;
+$newsletter-card-subtitle-font-size: 18;
+
+$input-font-size: (
+    'small': 14,
+    'medium': 23,
+    'large': 23,
+);
 
 // Button font sizes
-$lg-btn-font-size: 23px;
+$lg-btn-font-size: (
+    'small': 16,
+    'medium': 23,
+    'large': 23,
+);
 $md-btn-font-size: 14px;
 
 // line heights

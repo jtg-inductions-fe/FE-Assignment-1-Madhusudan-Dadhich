@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.input {
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    justify-content: start;
+    align-items: center;
+    border: none;
+    border-radius: px-to-rem(16);
+    padding: px-to-rem(24) px-to-rem(32);
+
+    &__text {
+        border: none;
+        background-color: $transparent;
+        width: 100%;
+        padding: px-to-rem(4) px-to-rem(16) 0;
+        outline: none;
+        color: $black-75;
+        @include font-style(
+            $circularstd-bold,
+            px-to-rem(map-get($map: $input-font-size, $key: 'small')),
+            $line-height-120
+        );
+
+        &--error {
+            outline: 1px solid $error;
+        }
+    }
+
+    &__icon {
+        color: $black-75;
+        font-size: px-to-rem(18);
+        padding: px-to-rem(3) px-to-rem(2);
+    }
+
+    @include media-up($medium-screen-size) {
+        width: 100%;
+
+        &__text {
+            font-size: px-to-rem(
+                map-get($map: $input-font-size, $key: 'medium')
+            );
+        }
+
+        &__icon {
+            font-size: px-to-rem(24);
+        }
+    }
+}
