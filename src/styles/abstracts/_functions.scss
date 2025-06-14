@@ -1,0 +1,5 @@
+@use './variables' as variables;
+
+@function px-to-rem($value) {
+    @return (calc($value / variables.$default-rem-value) * 1rem);
+}

@@ -1,6 +1,7 @@
 @forward './colors';
 @forward './mixins';
 @forward './variables';
+@forward './functions';
 
 // importing these files with @use to utilize mixins and variables for font faces
 @use './mixins';

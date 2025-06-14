@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+$horizontal-padding: map-get(
+    $map: $button-padding,
+    $key: 'horizontal',
+);
+$vertical-padding: map-get(
+    $map: $button-padding,
+    $key: 'vertical',
+);
+
+// .button {
+//     @include font-style(
+//         $circularstd-bold,
+//         $md-btn-font-size,
+//         $line-height-120
+//     );
+//     border: 0;
+//     cursor: pointer;
+
+//     &__text {
+//         padding: $vertical-padding $horizontal-padding;
+//         background-color: $transparent;
+//         color: $tb-text;
+//     }
+
+//     &__fill {
+//         padding: $vertical-padding $horizontal-padding;
+//         border-radius: $btn-border-radius;
+//         background-color: $fb-bg;
+//         color: $fb-text;
+//     }
+// }
+
+%primary-button {
+    @include font-style($circularstd-bold, $md-btn-font-size, $line-height-120);
+    padding: px-to-rem(24) 0;
+    border: 0;
+    border-radius: $btn-border-radius;
+    background-color: $fb-bg;
+    color: $fb-text;
+
+    @include media-up(map-get($map: $screen-size, $key: 'medium')) {
+        padding: px-to-rem(16) px-to-rem(32);
+    }
+
+    &:hover,
+    &:focus-visible {
+        background-color: $fb-bg-active;
+    }
+}
+
+%button-hover-shadow {
+    &:hover,
+    &:focus-visible {
+        box-shadow:
+            0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+            0px 5px 11px 0px rgba(0, 0, 0, 0.1),
+            0px 20px 20px 0px rgba(0, 0, 0, 0.09),
+            0px 45px 27px 0px rgba(0, 0, 0, 0.05),
+            0px 81px 32px 0px rgba(0, 0, 0, 0.01),
+            0px 126px 35px 0px rgba(0, 0, 0, 0);
+    }
+}

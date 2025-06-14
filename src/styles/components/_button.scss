@@ -1,16 +1,16 @@
 @use '../abstracts' as *;
 
-$horizontal-padding: map-get(
+$padding-horizontal: map-get(
     $map: $button-padding,
     $key: 'horizontal',
 );
-$vertical-padding: map-get(
+$padding-vertical: map-get(
     $map: $button-padding,
     $key: 'vertical',
 );
 
 .button {
-    @include font-style($circularstd-bold, $md-btn-font-size);
+    @include font-style($circularstd-bold, $md-btn-font-size, $line-height-120);
     border: 0;
     border-radius: $btn-border-radius;
     cursor: pointer;
@@ -23,7 +23,7 @@ $vertical-padding: map-get(
     }
 
     &__text {
-        padding: $vertical-padding $horizontal-padding;
+        padding: $padding-vertical $padding-horizontal;
         background-color: $transparent;
         color: $tb-text;
 
@@ -35,7 +35,7 @@ $vertical-padding: map-get(
     }
 
     &__fill {
-        padding: $vertical-padding $horizontal-padding;
+        padding: $padding-vertical $padding-horizontal;
         background-color: $fb-bg;
 
         &:hover,

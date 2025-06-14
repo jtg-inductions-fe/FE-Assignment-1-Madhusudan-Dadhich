@@ -105,7 +105,11 @@ $large-screen-size: map-get(
     }
 
     &__link {
-        @include font-style($circularstd-bold, $md-btn-font-size);
+        @include font-style(
+            $circularstd-bold,
+            $md-btn-font-size,
+            $line-height-120
+        );
         color: $link-text-inactive;
         text-decoration: none;
 
@@ -125,7 +129,7 @@ $large-screen-size: map-get(
         visibility: hidden;
         opacity: 0;
         top: calc(
-            24% + 220px
+            25% + 200px
         ); // adding additional fixed height of the nav links
         right: -2%;
         min-width: 250px;

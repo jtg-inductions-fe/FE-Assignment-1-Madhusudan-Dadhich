@@ -46,13 +46,19 @@ $screen-max-width: (
 
 // Buttons
 $btn-border-radius: 100px;
+$btn-border-radius-50: 50px;
 $button-padding: (
     'horizontal': 32px,
     'vertical': 16px,
 );
 
 // Font sizes
-$title-font-size: 69px;
+$title-font-size: 69;
+$title-font-size-sm: 40;
+$title-font-size-md: 56;
+$description-font-size-sm: 16;
+$description-font-size-md: 18;
+$description-font-size-lg: 18;
 $section-title-font-size: 44px;
 $section-subtitle-font-size: 23px;
 $section-body-font-size: 18px;
@@ -88,3 +94,6 @@ $container-margin-inline-lg: 130px;
 
 // transition
 $transition-slow: cubic-bezier(0, 0.7, 0.3, 1);
+
+// Default values
+$default-rem-value: 16;

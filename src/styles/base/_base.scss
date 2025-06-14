@@ -18,12 +18,13 @@
 }
 
 :focus-visible {
-    outline-color: $focus-outline;
+    outline: 1px solid $focus-outline;
 }
 
 .sticky {
     position: sticky;
     width: 100%;
+    z-index: 69; // higher z-index as the images and icons are passing from right top of the navbar [couldn't find any other solution]
 
     &__top {
         top: 0;

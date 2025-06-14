@@ -61,7 +61,8 @@
 ///
 /// @param {Map} $font-config - Map of font configurations
 /// @param {String} $font-size - Font size
-@mixin font-style($font-config, $font-size) {
+/// @param {Number} $line-height - Line Height
+@mixin font-style($font-config, $font-size, $line-height) {
     $font-family: map-get(
         $map: $font-config,
         $key: 'font-family',
@@ -70,13 +71,20 @@
         $map: $font-config,
         $key: 'font-weight',
     );
-    $line-height: map-get(
-        $map: $font-config,
-        $key: 'line-height',
-    );
 
     font-family: $font-family;
     font-weight: #{$font-weight};
     font-size: #{$font-size};
     line-height: #{$line-height};
+}
+
+@mixin prefix-properties($prefixes, $property, $value) {
+    @each $prefix in $prefixes {
+        #{$prefix}-#{$property}: $value;
+    }
+    $property: $value;
+}
+
+%grayscale-50 {
+    @include prefix-properties(('-webkit', '-moz'), filter, grayscale(50%));
 }
