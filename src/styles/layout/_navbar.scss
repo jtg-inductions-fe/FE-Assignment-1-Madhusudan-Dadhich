@@ -1,0 +1,198 @@
+@use '../abstracts' as *;
+
+$medium-screen-size: map-get(
+    $map: $screen-size,
+    $key: 'medium',
+);
+$large-screen-size: map-get(
+    $map: $screen-size,
+    $key: 'large',
+);
+
+// Temporary code to simulate sticky header [Need to be removed later]
+body {
+    height: 200vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+
+    &.active {
+        animation: slide-in 0.5s ease-in forwards;
+        background-color: $header-bg;
+    }
+
+    .container {
+        margin-block-start: 0;
+        height: 112px; // fixed height of header
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-up($medium-screen-size) {
+            flex-direction: row-reverse;
+        }
+
+        @include media-up($large-screen-size) {
+            flex-direction: row;
+            margin-block-start: 34px;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        left: 0;
+
+        @include media-up($medium-screen-size) {
+            position: absolute;
+            left: calc(50% - 20px);
+        }
+
+        @include media-up($large-screen-size) {
+            position: relative;
+            left: 0;
+        }
+    }
+}
+
+// Animation Keyframe - Slide In
+@keyframes slide-in {
+    0% {
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 90%;
+    right: $container-margin-inline-sm;
+    min-width: 250px;
+    padding: 30px 40px 15px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 41px 89px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    transform: scale(0.4);
+    transform-origin: top right;
+    transition: cubic-bezier(0, 0.7, 0.3, 1) 0.2s;
+    z-index: -1;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        z-index: 4;
+    }
+
+    @include media-up($medium-screen-size) {
+        visibility: hidden;
+        right: unset;
+        left: $container-margin-inline-md;
+        padding: 30px 40px 15px;
+        border-radius: 10px;
+        transform-origin: top left;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @include media-up($large-screen-size) {
+        all: initial;
+        position: relative;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include media-up($large-screen-size) {
+            flex-direction: row;
+            gap: 64px;
+        }
+    }
+
+    &__link {
+        @include font-style($circularstd-bold, $md-btn-font-size);
+        color: $link-text-inactive;
+        text-decoration: none;
+
+        &.active,
+        &:hover,
+        &:focus-visible {
+            color: $link-text-active;
+        }
+    }
+}
+
+.auth {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: calc(90% + 232px); // adding additional fixed height of the nav links
+    right: $container-margin-inline-sm;
+    min-width: 250px;
+    padding: 15px 40px 30px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 41px 89px rgba(0, 0, 0, 0.2);
+    background-color: $white;
+    transform: scale(0.4);
+    transform-origin: top right;
+    transition: cubic-bezier(0, 0.7, 0.3, 1) 0.2s;
+    z-index: -1;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        z-index: 4;
+    }
+
+    // reset css properties to initial so that it does not inherit absolute positioning and other properties
+    @include media-up($medium-screen-size) {
+        all: initial;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        @include media-up($medium-screen-size) {
+            flex-direction: row;
+            gap: 0;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
+
+.hamburger {
+    display: block;
+
+    // hide hamburger for large screen size
+    @include media-up($large-screen-size) {
+        display: none;
+    }
+}

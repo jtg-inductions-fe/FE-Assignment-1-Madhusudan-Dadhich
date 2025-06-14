@@ -1,25 +1,33 @@
-@use '../abstracts/variables' as variables;
-@use '../abstracts/colors' as colors;
-@use '../abstracts/mixins' as mixins;
+@use '../abstracts' as *;
 
 .button {
-    @include mixins.font-style(
-        variables.$circularstd-bold,
-        variables.$md-btn-font-size
-    );
+    @include font-style($circularstd-bold, $md-btn-font-size);
     border: 0;
+    border-radius: $btn-border-radius;
     cursor: pointer;
 
     &__text {
-        padding: variables.$tb-vertical-padding variables.$tb-horizontal-padding;
-        background-color: colors.$transparent;
-        color: colors.$tb-text-color;
+        padding: $tb-vertical-padding $tb-horizontal-padding;
+        background-color: $transparent;
+        color: $tb-text;
+
+        &:hover,
+        &:focus-visible {
+            color: $tb-text-active;
+        }
     }
 
     &__fill {
-        padding: variables.$fb-vertical-padding variables.$fb-horizontal-padding;
-        border-radius: variables.$fb-border-radius;
-        background-color: colors.$fb-bg-color;
-        color: colors.$fb-text-color;
+        padding: $fb-vertical-padding $fb-horizontal-padding;
+        background-color: $fb-bg;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $fb-bg-active;
+        }
+
+        &--primary {
+            color: $fb-text;
+        }
     }
 }

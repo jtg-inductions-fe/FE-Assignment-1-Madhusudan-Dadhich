@@ -55,7 +55,9 @@ $tb-vertical-padding: 16px;
 // Fill Text Button
 $fb-horizontal-padding: 32px;
 $fb-vertical-padding: 16px;
-$fb-border-radius: 100px;
+
+// Buttons
+$btn-border-radius: 100px;
 
 // Font sizes
 $title-font-size: 69px;
@@ -76,3 +78,12 @@ $newsletter-card-subtitle-font-size: 18px;
 // Button font sizes
 $lg-btn-font-size: 23px;
 $md-btn-font-size: 14px;
+
+// line heights
+$circularstd-line-height: 120%;
+$inter-line-height: 160%;
+
+// Base container margin
+$container-margin-inline-sm: 16px;
+$container-margin-inline-md: 64px;
+$container-margin-inline-lg: 130px;

@@ -1,9 +1,17 @@
-// Basic color
+// Base color
 $transparent: rgba(0, 0, 0, 0);
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$header-bg: rgb(0, 0, 0, 0.1);
+$link-text-active: rgb(34, 40, 49);
+$link-text-inactive: rgba(25, 24, 37, 0.5);
+$focus-outline: rgb(68, 59, 143);
 
 // Text Button
-$tb-text-color: rgb(0, 0, 0);
+$tb-text: rgb(34, 40, 49);
+$tb-text-active: rgb(0, 0, 0);
 
 // Fill Text Button
-$fb-bg-color: rgb(95, 82, 199);
-$fb-text-color: rgb(255, 255, 255);
+$fb-bg: rgb(95, 82, 199);
+$fb-bg-active: rgb(82, 70, 172);
+$fb-text: rgb(255, 255, 255);

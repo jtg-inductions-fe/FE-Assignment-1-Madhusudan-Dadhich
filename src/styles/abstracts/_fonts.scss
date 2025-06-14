@@ -1,10 +1,10 @@
-@use '../abstracts/mixins' as mixins;
-@use '../abstracts/variables' as variables;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
-@include mixins.font-face($circularstd-bold);
+@include font-face($circularstd-bold);
 
-@include mixins.font-face($circularstd-black);
+@include font-face($circularstd-black);
 
-@include mixins.font-face($inter-regular);
+@include font-face($inter-regular);
 
-@include mixins.font-face($inter-medium);
+@include font-face($inter-medium);
