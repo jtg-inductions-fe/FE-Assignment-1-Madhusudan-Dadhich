@@ -1,4 +1,7 @@
 @use 'sass:map';
+@use './variables' as *;
+@use './colors' as *;
+@use './functions' as *;
 
 /// Mixin to generate font face for a font family
 ///
@@ -79,7 +82,100 @@
     font-size: #{$font-size};
     line-height: #{$line-height};
 }
+/// Mixin to add card title font styles
+///
+/// @param {Number} $font-size - font size to apply (unitless)
+/// @param {Number} $font-weight - font weight to apply (unitless)
+@mixin card-title-font-style($font-size, $font-weight) {
+    @include font-style(
+        $circularstd-bold,
+        px-to-rem($font-size),
+        $line-height-120
+    );
+    color: $black;
+}
 
+/// Mixin to add card subtitle font styles
+///
+/// @param {Number} $font-size - font size to apply (unitless)
+/// @param {Number} $font-weight - font weight to apply (unitless)
+@mixin card-subtitle-font-style($font-size, $font-weight) {
+    @include font-style(
+        $inter-regular,
+        px-to-rem($font-size),
+        $line-height-160
+    );
+    color: $link-text-inactive;
+}
+
+// Placeholder for providing styling for sub title of section
+%section-sub-title {
+    @include font-style(
+        $circularstd-bold,
+        px-to-rem($section-subtitle-font-size-sm),
+        $line-height-120
+    );
+    letter-spacing: letter-spacing-to-rem($section-subtitle-font-size-sm, 0.2);
+    color: $bg-pink;
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        @include font-style(
+            $circularstd-bold,
+            px-to-rem($section-subtitle-font-size-md),
+            $line-height-120
+        );
+        letter-spacing: letter-spacing-to-rem(
+            $section-subtitle-font-size-md,
+            0.2
+        );
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        @include font-style(
+            $circularstd-bold,
+            px-to-rem($section-subtitle-font-size),
+            $line-height-120
+        );
+        letter-spacing: letter-spacing-to-rem($section-subtitle-font-size, 0.2);
+        text-align: start;
+    }
+}
+
+// Placeholder for providing styling for title of section
+%section-title {
+    @include font-style(
+        $circularstd-bold,
+        px-to-rem($section-title-font-size-sm),
+        $line-height-120
+    );
+    color: $black;
+    text-align: center;
+    text-wrap: wrap;
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        @include font-style(
+            $circularstd-bold,
+            px-to-rem($section-title-font-size-md),
+            $line-height-120
+        );
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        @include font-style(
+            $circularstd-bold,
+            px-to-rem($section-title-font-size),
+            $line-height-120
+        );
+        text-align: start;
+        text-wrap: balance;
+    }
+}
+
+/// Mixin to add prefix properties like -moz, -webkit
+///
+/// @param {List} $prefixes - List of prefixes which need to be added as prefix to provided property
+/// @param {String} $filter - Property to prefix
+/// @param {Any} $value - Value for property
 @mixin prefix-properties($prefixes, $property, $value) {
     @each $prefix in $prefixes {
         #{$prefix}-#{$property}: $value;

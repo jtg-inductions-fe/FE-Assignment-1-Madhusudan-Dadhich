@@ -1,0 +1,160 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+@use '../components' as *;
+
+$medium-screen-size: map.get(
+    $map: $screen-size,
+    $key: 'medium',
+);
+$large-screen-size: map.get(
+    $map: $screen-size,
+    $key: 'large',
+);
+
+.services {
+    position: relative;
+    padding-block: px-to-rem(6) px-to-rem(64);
+    margin-bottom: 100px;
+
+    @include media-up($large-screen-size) {
+        padding-block: px-to-rem(61) 0;
+    }
+
+    & .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: px-to-rem(32);
+
+        @include media-up($medium-screen-size) {
+            gap: px-to-rem(64);
+        }
+
+        @include media-up($large-screen-size) {
+            gap: 0;
+            flex-direction: row;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: px-to-rem(16);
+
+        @include media-up($large-screen-size) {
+            align-items: start;
+        }
+    }
+
+    &__sub-title {
+        @extend %section-sub-title;
+    }
+
+    &__title {
+        @extend %section-title;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(16);
+
+        @include media-up($medium-screen-size) {
+            flex-direction: row;
+        }
+
+        @include media-up($large-screen-size) {
+            gap: px-to-rem(21);
+        }
+    }
+
+    &__item {
+        @extend %card-wrapper;
+
+        @include media-up($large-screen-size) {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    &__wrapper {
+        width: px-to-rem(64);
+        height: px-to-rem(64);
+    }
+
+    &__description {
+        &-title {
+            @include card-title-font-style(
+                $services-card-title-font-size-sm,
+                map.get($map: $circularstd-bold, $key: 'font-weight')
+            );
+            margin-block-end: px-to-rem(32);
+
+            @include media-up($medium-screen-size) {
+                @include card-title-font-style(
+                    $services-card-title-font-size-md,
+                    map.get($map: $circularstd-bold, $key: 'font-weight')
+                );
+            }
+
+            @include media-up($large-screen-size) {
+                @include card-title-font-style(
+                    $services-card-title-font-size,
+                    map.get($map: $circularstd-bold, $key: 'font-weight')
+                );
+            }
+        }
+
+        &-text {
+            @include card-subtitle-font-style(
+                $services-card-body-font-size-sm,
+                map.get($map: $inter-regular, $key: 'font-weight')
+            );
+            @extend %grayscale-50;
+
+            @include media-up($medium-screen-size) {
+                @include card-subtitle-font-style(
+                    $services-card-body-font-size-md,
+                    map.get($map: $inter-regular, $key: 'font-weight')
+                );
+            }
+
+            @include media-up($large-screen-size) {
+                @include card-subtitle-font-style(
+                    $services-card-body-font-size,
+                    map.get($map: $inter-regular, $key: 'font-weight')
+                );
+            }
+        }
+    }
+
+    &__blur {
+        display: none;
+
+        @include media-up($medium-screen-size) {
+            display: block;
+            position: absolute;
+            top: px-to-rem(287) * -1;
+            right: px-to-rem(392) * -1;
+            shape-outside: ellipse(px-to-rem(203) px-to-rem(203));
+            background-color: $bg-yellow;
+            width: px-to-rem(406);
+            height: px-to-rem(406);
+            opacity: 50%;
+            filter: blur(px-to-rem(150));
+            z-index: -1;
+        }
+
+        @include media-up($large-screen-size) {
+            top: px-to-rem(38.37) * -1;
+            right: px-to-rem(334.15) * -1;
+            shape-outside: ellipse(px-to-rem(226) px-to-rem(222));
+            width: px-to-rem(503.65);
+            height: px-to-rem(494.93);
+            filter: blur(px-to-rem(300));
+        }
+    }
+}

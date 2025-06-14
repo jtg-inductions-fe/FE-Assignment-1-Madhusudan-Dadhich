@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+%icon-button {
+    width: px-to-rem(32.85);
+    height: px-to-rem(32.85);
+    padding: px-to-rem(8.21);
+    border: 0;
+    border-radius: 100%;
+
+    @include media-up($medium-screen-size) {
+        width: px-to-rem(64);
+        height: px-to-rem(64);
+        padding: px-to-rem(16);
+    }
+}
+
+%icon-text-button {
+    padding: px-to-rem(9.87) px-to-rem(16.36);
+    border: 0;
+    border-radius: $btn-border-radius-50;
+    background-color: $white;
+    color: $tb-text;
+
+    @include media-up($medium-screen-size) {
+        border-radius: $btn-border-radius;
+        padding: px-to-rem(16) px-to-rem(32);
+    }
+}
