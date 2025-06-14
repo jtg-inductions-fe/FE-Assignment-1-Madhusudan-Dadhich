@@ -1,3 +1,5 @@
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/css'; // Carousel library import
 import '../styles/main.scss';
 
 // Utilities
@@ -46,3 +48,6 @@ window.addEventListener('click', (e) => {
 const header = document.getElementById('header-navbar');
 
 window.addEventListener('scroll', activeNav);
+
+// Splide Carousel
+new Splide('.splide').mount();

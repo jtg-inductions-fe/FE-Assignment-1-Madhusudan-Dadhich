@@ -1,0 +1,76 @@
+@use '../abstracts' as *;
+
+.splide {
+    @include media-up($medium-screen-size) {
+        position: initial;
+    }
+
+    &__pagination {
+        position: relative;
+        margin-block-end: px-to-rem(28);
+        gap: px-to-rem(24);
+    }
+
+    &__pagination__page {
+        width: px-to-rem(24);
+        height: px-to-rem(24);
+        background-color: $black-5;
+
+        &.is-active {
+            background-color: $bg-pink;
+            transform: none;
+            opacity: 1;
+        }
+    }
+
+    &__arrows {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        @include media-up($medium-screen-size) {
+            position: absolute;
+            top: 40%;
+        }
+    }
+
+    &__arrow {
+        padding: px-to-rem(26);
+        opacity: 1;
+        border: 1px solid $card-border;
+        top: unset;
+        position: relative;
+        transform: none;
+        width: px-to-rem(64);
+        height: px-to-rem(64);
+        box-shadow:
+            0px 0px 0px 0px $black-8,
+            0px 7px 16px 0px $black-7,
+            0px 29px 29px 0px $black-6,
+            0px 65px 39px 0px $black-4,
+            0px 116px 46px 0px $black-1;
+
+        @include media-up($medium-screen-size) {
+            padding: px-to-rem(44);
+            width: px-to-rem(100);
+            height: px-to-rem(100);
+        }
+
+        &--prev {
+            background-color: $white;
+            color: $black;
+            left: unset;
+        }
+
+        &--next {
+            background-color: $primary;
+            color: $white;
+            right: unset;
+        }
+
+        &:disabled {
+            box-shadow: none;
+        }
+    }
+}

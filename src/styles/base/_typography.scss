@@ -150,6 +150,19 @@ $decorative-btn: (
                 map.get($map: $body-card-features, $key: 'small')
             );
         }
+
+        &--testimonials {
+            text-align: center;
+            @include card-title-font-style(
+                $section-body-font-size,
+                $circularstd-medium-font-weight
+            );
+            line-height: $inter-line-height;
+
+            @include media-up($medium-screen-size) {
+                font-size: px-to-rem($testimonial-card-body-font-size);
+            }
+        }
     }
 }
 

@@ -2,6 +2,12 @@
 @use '../abstracts' as *;
 
 .key-features {
+    margin-block-end: px-to-rem(71);
+
+    @include media-up($medium-screen-size) {
+        margin-block-end: 0;
+    }
+
     &__container {
         padding-inline: px-to-rem(24);
     }
