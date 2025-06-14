@@ -110,8 +110,9 @@
     #{$property}: $value;
 }
 
+// Placeholder for providing fixed grayscale of 50%
 %grayscale-50 {
-    @include prefix-properties(('-webkit', '-moz'), filter, grayscale(50%));
+    @include prefix-properties(('-webkit', '-moz'), 'filter', grayscale(50%));
 }
 
 // Utility variables

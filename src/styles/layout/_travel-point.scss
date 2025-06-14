@@ -1,0 +1,109 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.travel-point {
+    margin-block-end: px-to-rem(93);
+
+    & .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(37.51);
+
+        @include media-up($medium-screen-size) {
+            gap: px-to-rem(64);
+        }
+
+        @include media-up($large-screen-size) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 0;
+            margin-block: px-to-rem(88);
+        }
+    }
+
+    &__image {
+        @include media-up($medium-screen-size) {
+            margin: px-to-rem(64) (px-to-rem(7) * -1) 0 px-to-rem(32);
+        }
+
+        @include media-up($large-screen-size) {
+            margin: 0;
+            flex: 0 0 auto;
+        }
+    }
+
+    &__content {
+        @include media-up($medium-screen-size) {
+            margin: 0 px-to-rem(32) px-to-rem(64);
+        }
+
+        @include media-up($large-screen-size) {
+            margin: 0;
+            flex: 0 0 auto;
+            max-width: px-to-rem(450);
+        }
+    }
+
+    &__description {
+        margin-block-end: px-to-rem(32);
+
+        @include media-up($medium-screen-size) {
+            margin-block-end: px-to-rem(64);
+        }
+
+        &-subtitle {
+            margin-block-end: px-to-rem(16);
+        }
+
+        &-title {
+            margin-block-end: px-to-rem(32);
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: px-to-rem(16);
+
+        @include media-up($medium-screen-size) {
+            grid-template-columns: repeat(2, minmax(px-to-rem(400), 1fr));
+            gap: px-to-rem(32);
+        }
+
+        @include media-up($large-screen-size) {
+            grid-template-columns: repeat(2, minmax(px-to-rem(210), 1fr));
+        }
+    }
+
+    &__item {
+        @extend %card-wrapper;
+        gap: px-to-rem(16);
+
+        @include media-up($medium-screen-size) {
+            padding: px-to-rem(32);
+        }
+
+        &-title {
+            color: $bg-orange;
+        }
+
+        &-description {
+            color: $black;
+            text-wrap: nowrap;
+        }
+    }
+
+    &__decorative {
+        display: none;
+
+        @include media-up($large-screen-size) {
+            display: block;
+            position: absolute;
+            top: px-to-rem(250);
+            right: px-to-rem(120) * -1;
+        }
+    }
+}

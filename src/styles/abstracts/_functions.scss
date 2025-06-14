@@ -13,3 +13,21 @@
 @function px-to-rem($value) {
     @return (calc($value / variables.$default-rem-value) * 1rem);
 }
+
+/// Converts letter spacing to rem value
+///
+/// @param {Number} $font-size - font size with respect to which letter spacing to be calculated
+/// @param {Number} $spacing - letter spacing value in decimal
+///
+/// @return {Number} Return value will have Rem unit
+///
+/// @example
+///     // if letter spacing in percentage is 20%
+///     $value: 0.20
+///     $font-size: 14
+///     letter-spacing-to-rem($font-size, $value)
+///     // if rem value is 16
+///     // (14 * 0.20) = 2.8px => 0.175rem
+@function letter-spacing-to-rem($font-size, $spacing) {
+    @return px-to-rem(calc($font-size * $spacing));
+}

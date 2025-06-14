@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // font config
 $circularstd-bold: (
     'font-family': 'circularstd',
@@ -60,8 +62,33 @@ $md-btn-vertical-padding: 24;
 // pixel values without unit
 // [Example: if pixel value is 16px then value will be 16.]
 // Font sizes
-$travel-card-title-font-size: 28px;
-$travel-card-body-font-size: 18px;
+$title-font-size: 69;
+$title-font-size-sm: 40;
+$title-font-size-md: 56;
+$description-font-size-sm: 16;
+$description-font-size-md: 18;
+$description-font-size-lg: 18;
+$section-title-font-size: 44;
+$section-title-font-size-sm: 32;
+$section-title-font-size-md: 40;
+$section-subtitle-font-size: 23;
+$section-subtitle-font-size-sm: 16;
+$section-subtitle-font-size-md: 23;
+$section-body-font-size: 18;
+$section-body-font-size-sm: 16;
+$section-body-font-size-md: 18;
+$services-card-title-font-size: 28;
+$services-card-title-font-size-sm: 24;
+$services-card-title-font-size-md: 28;
+$services-card-body-font-size: 18;
+$services-card-body-font-size-sm: 18;
+$services-card-body-font-size-md: 18;
+$travel-card-title-font-size: 35;
+$travel-card-title-font-size-sm: 35;
+$travel-card-title-font-size-md: 35;
+$travel-card-body-font-size: 18;
+$travel-card-body-font-size-sm: 18;
+$travel-card-body-font-size-md: 18;
 $features-card-title-font-size: 23px;
 $features-card-body-font-size: 18px;
 $testimonial-card-title-font-size: 28px;
@@ -80,6 +107,28 @@ $line-height-160: 160%;
 // Card
 $card-border-radius: 32;
 $card-min-height-lg: 443;
+$medium-screen-size: map.get(
+    $map: $screen-size,
+    $key: 'medium',
+);
+$large-screen-size: map.get(
+    $map: $screen-size,
+    $key: 'medium',
+);
+
+/**
+ * Base container margin
+ * prefix usage
+ *     -sm is intended for small screen sizes
+ *     -md is inteded for medium screen sizes
+ *     -lg is inteded for large screen sizes
+ */
+$container-margin-inline-sm: 16px;
+$container-margin-inline-md: 64px;
+$container-margin-inline-lg: 130px;
+
+// Card
+$card-border-radius: 32;
 
 // transition
 $transition-slow: cubic-bezier(0, 0.7, 0.3, 1);
