@@ -30,6 +30,27 @@ const checkEmail = (e) => {
 };
 
 /**
+ * Function to handle toggling of Accordion
+ */
+const toggleAccordion = (e) => {
+    if (e.target != null) {
+        if (
+            e.target.parentElement.classList.contains('open') &&
+            e.target.nextElementSibling != null &&
+            e.target.nextElementSibling.classList.contains('open')
+        ) {
+            e.target.nextElementSibling.classList.remove('open');
+            e.target.parentElement.classList.remove('open');
+        } else {
+            if (e.target.nextElementSibling != null) {
+                e.target.nextElementSibling.classList.add('open');
+                e.target.parentElement.classList.add('open');
+            }
+        }
+    }
+};
+
+/**
  * Function to add styling to sticky header
  */
 const activeNav = () => {
@@ -73,3 +94,10 @@ subscribeBtn.addEventListener('click', checkEmail);
 
 // Splide Carousel
 new Splide('.splide').mount();
+
+// Footer Accordion
+const footerAccordions = document.getElementsByClassName('footer__nav-title');
+
+for (let accordion of footerAccordions) {
+    accordion.addEventListener('click', toggleAccordion);
+}
