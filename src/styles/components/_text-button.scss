@@ -2,29 +2,23 @@
 @use '../abstracts/colors' as colors;
 @use '../abstracts/mixins' as mixins;
 
-.text-button {
+.button {
     @include mixins.font-style(
-        variables.$circularstd-font-family,
-        variables.$circularstd-bold-font-weight,
-        variables.$md-btn-font-size,
-        variables.$circularstd-line-height
+        variables.$circularstd-bold,
+        variables.$md-btn-font-size
     );
-    padding: #{variables.$tb-vertical-padding} #{variables.$tb-horizontal-padding};
     border: 0;
-    background-color: #{colors.$transparent};
-    color: #{colors.$tb-text-color};
-}
 
-.fill-text-button {
-    @include mixins.font-style(
-        variables.$circularstd-font-family,
-        variables.$circularstd-bold-font-weight,
-        variables.$md-btn-font-size,
-        variables.$circularstd-line-height
-    );
-    padding: #{variables.$fb-vertical-padding} #{variables.$fb-horizontal-padding};
-    border: 0;
-    border-radius: #{variables.$fb-border-radius};
-    background-color: #{colors.$fb-bg-color};
-    color: #{colors.$fb-text-color};
+    &__text {
+        padding: #{variables.$tb-vertical-padding} #{variables.$tb-horizontal-padding};
+        background-color: #{colors.$transparent};
+        color: #{colors.$tb-text-color};
+    }
+
+    &__fill {
+        padding: #{variables.$fb-vertical-padding} #{variables.$fb-horizontal-padding};
+        border-radius: #{variables.$fb-border-radius};
+        background-color: #{colors.$fb-bg-color};
+        color: #{colors.$fb-text-color};
+    }
 }

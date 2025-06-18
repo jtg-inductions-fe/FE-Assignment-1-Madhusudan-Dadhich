@@ -1,11 +1,28 @@
 /// Mixin to generate font face for a font family
 ///
-/// @param {String} $family - font family name
-/// @param {String} $file - font file name
-/// @param {String} $path - relative path to the font
-/// @param {Number} $weight [normal] - font weight for font family
-/// @param {Number} $style [normal] - styling for font family
-@mixin font-face($family, $file, $path, $weight: normal, $style: normal) {
+/// @param {Map} $font-config - Map of font configuration
+@mixin font-face($font-config) {
+    $family: map-get(
+        $map: $font-config,
+        $key: 'font-family',
+    );
+    $path: map-get(
+        $map: $font-config,
+        $key: 'path',
+    );
+    $file: map-get(
+        $map: $font-config,
+        $key: 'file',
+    );
+    $weight: map-get(
+        $map: $font-config,
+        $key: 'font-weight',
+    );
+    $style: map-get(
+        $map: $font-config,
+        $key: 'font-style',
+    );
+
     @font-face {
         font-family: $family;
         src: url($path + $file + '.eot');
@@ -42,11 +59,22 @@
 
 /// Mixin to generate font styles
 ///
-/// @param {String} $font-family - font family name
-/// @param {String} $font-weight - font weight
-/// @param {String} $font-size - font size
-/// @param {Number} $line-height - line height of font
-@mixin font-style($font-family, $font-weight, $font-size, $line-height) {
+/// @param {Map} $font-config - Map of font configurations
+/// @param {String} $font-size - Font size
+@mixin font-style($font-config, $font-size) {
+    $font-family: map-get(
+        $map: $font-config,
+        $key: 'font-family',
+    );
+    $font-weight: map-get(
+        $map: $font-config,
+        $key: 'font-weight',
+    );
+    $line-height: map-get(
+        $map: $font-config,
+        $key: 'line-height',
+    );
+
     font-family: $font-family;
     font-weight: #{$font-weight};
     font-size: #{$font-size};

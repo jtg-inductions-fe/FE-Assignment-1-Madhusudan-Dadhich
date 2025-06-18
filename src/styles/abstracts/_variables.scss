@@ -1,21 +1,52 @@
-// font file paths
-$circularstd-font-family: 'circularstd' !default;
-$inter-font-family: 'inter' !default;
-$circularstd-file-path: '../../../public/assets/fonts/circularStd/';
-$inter-file-path: '../../../public/assets/fonts/inter/';
-$circularstd-bold-font-weight: 700;
-$circularstd-black-font-weight: 900;
-$inter-regular-font-weight: 400;
-$inter-medium-font-weight: 450;
+// font config
+$circularstd-bold: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/circularStd/',
+    'font-weight': 700,
+    'file': 'CircularStd-Bold',
+    'font-style': normal,
+    'line-height': 120%,
+);
+
+$circularstd-black: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/circularStd/',
+    'font-weight': 900,
+    'file': 'CircularStd-Black',
+    'font-style': normal,
+    'line-height': 120%,
+);
+
+$inter-regular: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/inter/',
+    'font-weight': 400,
+    'file': 'Inter-Regular',
+    'font-style': normal,
+    'line-height': 160%,
+);
+
+$inter-medium: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/inter/',
+    'font-weight': 450,
+    'file': 'Inter-Medium',
+    'font-style': normal,
+    'line-height': 160%,
+);
 
 // Screen Sizes
-$small-screen-size: 430px;
-$medium-screen-size: 1024px;
-$large-screen-size: 1440px;
+$screen-size: (
+    'small': 430px,
+    'medium': 1024px,
+    'large': 1440px,
+);
 
-$small-screen-min-width: 396.24px;
-$medium-screen-min-width: 896px;
-$large-screen-min-width: 1205.28px;
+$screen-max-width: (
+    'small': 396.24px,
+    'medium': 896px,
+    'large': 1205.28px,
+);
 
 // Text Button
 $tb-horizontal-padding: 32px;
@@ -45,7 +76,3 @@ $newsletter-card-subtitle-font-size: 18px;
 // Button font sizes
 $lg-btn-font-size: 23px;
 $md-btn-font-size: 14px;
-
-// line heights
-$circularstd-line-height: 120%;
-$inter-line-height: 160%;

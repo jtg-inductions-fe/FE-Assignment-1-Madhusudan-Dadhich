@@ -5,17 +5,15 @@
     background-color: hsl(60, 100%, 70%);
     height: 100vh;
     margin-inline: auto;
-    max-width: $small-screen-min-width;
+    max-width: map-get($map: $screen-max-width, $key: 'small');
 
-    @include mixins.media-up($small-screen-size) {
+    @include mixins.media-up(map-get($map: $screen-size, $key: 'medium')) {
         background-color: hsl(240, 100%, 70%);
-        margin-inline: 64px;
-        max-width: $medium-screen-min-width;
+        max-width: map-get($map: $screen-max-width, $key: 'medium');
     }
 
-    @include mixins.media-up($medium-screen-size) {
+    @include mixins.media-up(map-get($map: $screen-size, $key: 'large')) {
         background-color: hsl(120, 100%, 70%);
-        margin-inline: 120px;
-        max-width: $large-screen-min-width;
+        max-width: map-get($map: $screen-max-width, $key: 'large');
     }
 }
