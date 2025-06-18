@@ -8,17 +8,18 @@
         variables.$md-btn-font-size
     );
     border: 0;
+    cursor: pointer;
 
     &__text {
-        padding: #{variables.$tb-vertical-padding} #{variables.$tb-horizontal-padding};
-        background-color: #{colors.$transparent};
-        color: #{colors.$tb-text-color};
+        padding: variables.$tb-vertical-padding variables.$tb-horizontal-padding;
+        background-color: colors.$transparent;
+        color: colors.$tb-text-color;
     }
 
     &__fill {
-        padding: #{variables.$fb-vertical-padding} #{variables.$fb-horizontal-padding};
-        border-radius: #{variables.$fb-border-radius};
-        background-color: #{colors.$fb-bg-color};
-        color: #{colors.$fb-text-color};
+        padding: variables.$fb-vertical-padding variables.$fb-horizontal-padding;
+        border-radius: variables.$fb-border-radius;
+        background-color: colors.$fb-bg-color;
+        color: colors.$fb-text-color;
     }
 }
