@@ -1,0 +1,147 @@
+@use './icomoon-variables' as *;
+
+@font-face {
+    font-family: '#{$icomoon-font-family}';
+    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?urcgzt');
+    src:
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?urcgzt#iefix')
+            format('embedded-opentype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?urcgzt')
+            format('truetype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?urcgzt')
+            format('woff'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?urcgzt##{$icomoon-font-family}')
+            format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '#{$icomoon-font-family}' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ic_hamburger {
+    &:before {
+        content: $icon-ic_hamburger;
+        color: #5d50c6;
+    }
+}
+.icon-ic_location {
+    &:before {
+        content: $icon-ic_location;
+        color: #fff;
+    }
+}
+.icon-ic_location_yellow {
+    &:before {
+        content: $icon-ic_location_yellow;
+        color: #facd49;
+    }
+}
+.icon-ic_add_user {
+    &:before {
+        content: $icon-ic_add_user;
+        color: #fff;
+    }
+}
+.icon-ic_work {
+    &:before {
+        content: $icon-ic_work;
+        color: #f85e9f;
+    }
+}
+.icon-ic_play_circle {
+    &:before {
+        content: $icon-ic_play_circle;
+        color: #5d50c6;
+    }
+}
+.icon-ic_calendar {
+    &:before {
+        content: $icon-ic_calendar;
+        color: #fff;
+    }
+}
+.icon-ic_ticket {
+    &:before {
+        content: $icon-ic_ticket;
+        color: #fff;
+    }
+}
+.icon-ic_star {
+    &:before {
+        content: $icon-ic_star;
+        color: #facd49;
+    }
+}
+.icon-ic_arrow_right {
+    &:before {
+        content: $icon-ic_arrow_right;
+        color: #fff;
+    }
+}
+.icon-ic_arrow_left {
+    &:before {
+        content: $icon-ic_arrow_left;
+    }
+}
+.icon-ic_email {
+    &:before {
+        content: $icon-ic_email;
+    }
+}
+.icon-ic_facebook {
+    &:before {
+        content: $icon-ic_facebook;
+        color: #5d50c6;
+    }
+}
+.icon-ic_twitter .path1 {
+    &:before {
+        content: $icon-ic_twitter-path1;
+        color: rgb(93, 80, 198);
+    }
+}
+.icon-ic_twitter .path2 {
+    &:before {
+        content: $icon-ic_twitter-path2;
+        margin-left: -1em;
+        color: rgb(241, 242, 242);
+    }
+}
+.icon-ic_instagram .path1 {
+    &:before {
+        content: $icon-ic_instagram-path1;
+        color: rgb(93, 80, 198);
+    }
+}
+.icon-ic_instagram .path2 {
+    &:before {
+        content: $icon-ic_instagram-path2;
+        margin-left: -1em;
+        color: rgb(255, 255, 255);
+    }
+}
+.icon-ic_send_message {
+    &:before {
+        content: $icon-ic_send_message;
+        color: #fff;
+    }
+}
+.icon-ic_arrow_down_circle {
+    &:before {
+        content: $icon-ic_arrow_down_circle;
+    }
+}
