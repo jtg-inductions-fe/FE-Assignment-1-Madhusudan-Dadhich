@@ -1,0 +1,78 @@
+// font config
+$circularstd-bold: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/circularStd/',
+    'font-weight': 700,
+    'file': 'CircularStd-Bold',
+    'font-style': normal,
+    'line-height': 120%,
+);
+
+$circularstd-black: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/circularStd/',
+    'font-weight': 900,
+    'file': 'CircularStd-Black',
+    'font-style': normal,
+    'line-height': 120%,
+);
+
+$inter-regular: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/inter/',
+    'font-weight': 400,
+    'file': 'Inter-Regular',
+    'font-style': normal,
+    'line-height': 160%,
+);
+
+$inter-medium: (
+    'font-family': 'circularstd',
+    'path': '/assets/fonts/inter/',
+    'font-weight': 450,
+    'file': 'Inter-Medium',
+    'font-style': normal,
+    'line-height': 160%,
+);
+
+// Screen Sizes
+$screen-size: (
+    'small': 430px,
+    'medium': 1024px,
+    'large': 1440px,
+);
+
+$screen-max-width: (
+    'small': 396.24px,
+    'medium': 896px,
+    'large': 1205.28px,
+);
+
+// Text Button
+$tb-horizontal-padding: 32px;
+$tb-vertical-padding: 16px;
+
+// Fill Text Button
+$fb-horizontal-padding: 32px;
+$fb-vertical-padding: 16px;
+$fb-border-radius: 100px;
+
+// Font sizes
+$title-font-size: 69px;
+$section-title-font-size: 44px;
+$section-subtitle-font-size: 23px;
+$section-body-font-size: 18px;
+$services-card-title-font-size: 28px;
+$services-card-body-font-size: 18px;
+$travel-card-title-font-size: 28px;
+$travel-card-body-font-size: 18px;
+$features-card-title-font-size: 23px;
+$features-card-body-font-size: 18px;
+$testimonial-card-title-font-size: 28px;
+$testimonial-card-body-font-size: 23px;
+$newsletter-card-title-font-size: 55px;
+$newsletter-card-subtitle-font-size: 18px;
+
+// Button font sizes
+$lg-btn-font-size: 23px;
+$md-btn-font-size: 14px;

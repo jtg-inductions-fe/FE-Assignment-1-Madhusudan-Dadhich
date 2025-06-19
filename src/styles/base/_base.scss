@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as *;
+
+.container {
+    background-color: hsl(60, 100%, 70%);
+    height: 100vh;
+    margin-inline: auto;
+    max-width: map-get($map: $screen-max-width, $key: 'small');
+
+    @include mixins.media-up(map-get($map: $screen-size, $key: 'medium')) {
+        background-color: hsl(240, 100%, 70%);
+        max-width: map-get($map: $screen-max-width, $key: 'medium');
+    }
+
+    @include mixins.media-up(map-get($map: $screen-size, $key: 'large')) {
+        background-color: hsl(120, 100%, 70%);
+        max-width: map-get($map: $screen-max-width, $key: 'large');
+    }
+}
