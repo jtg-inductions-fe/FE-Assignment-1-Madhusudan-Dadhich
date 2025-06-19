@@ -5,6 +5,7 @@
     border: 0;
     border-radius: $btn-border-radius;
     cursor: pointer;
+    text-decoration: none;
 
     &__text {
         padding: $tb-vertical-padding $tb-horizontal-padding;

@@ -6,60 +6,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <header class="header" data-header>
-            <div class="container">
-                <a href="#" class="header__logo">
-                    <img
-                        src="/assets/resources/vectors/ic_logo.svg"
-                        alt="Travlog Logo"
-                    />
-                </a>
-                <nav class="navbar" data-navbar>
-                    <ul class="navbar__list" role="list">
-                        <li class="navbar__item">
+        <header class="sticky sticky__top">
+            <nav id="header-navbar" class="navbar">
+                <div class="container navbar__container">
+                    <a href="#" class="navbar__logo">
+                        <img
+                            src="/assets/resources/vectors/ic_logo.svg"
+                            alt="Travlog Logo"
+                        />
+                    </a>
+                    <ul id="header-navlinks" class="navbar__links" role="list">
+                        <li class="navbar__link">
                             <a href="#hero" class="navbar__link active">Home</a>
                         </li>
-                        <li class="navbar__item">
+                        <li class="navbar__link">
                             <a href="#services" class="navbar__link"
                                 >Discover</a
                             >
                         </li>
-                        <li class="navbar__item">
+                        <li class="navbar__link">
                             <a href="#key-features" class="navbar__link"
                                 >Special Deals</a
                             >
                         </li>
-                        <li class="navbar__item">
+                        <li class="navbar__link">
                             <a href="#newsletter" class="navbar__link"
                                 >Contact</a
                             >
                         </li>
                     </ul>
-                </nav>
-                <div class="auth" data-auth>
-                    <ul class="auth__list" role="list">
-                        <li class="auth__item">
-                            <a href="#" class="auth__link button button__text"
+                    <ul id="header-authlinks" class="navbar__auth" role="list">
+                        <li>
+                            <a
+                                href="#"
+                                class="navbar__login-button button button__text"
                                 >Log In</a
                             >
                         </li>
-                        <li class="auth__item">
+                        <li>
                             <a
                                 href="#"
-                                class="auth__link button button__fill button__fill--primary"
+                                class="navbar__signup-button button button__fill button__fill--primary"
                                 >Sign Up</a
                             >
                         </li>
                     </ul>
+                    <div
+                        id="header-nav-toggler"
+                        class="navbar__hamburger"
+                        aria-label="toggler navbar"
+                    >
+                        <i class="icon icon-ic_hamburger"></i>
+                    </div>
                 </div>
-                <div
-                    class="hamburger"
-                    aria-label="toggler navbar"
-                    data-navbar-toggler
-                >
-                    <i class="icon icon-ic_hamburger"></i>
-                </div>
-            </div>
+            </nav>
         </header>
         <script type="module" src="./src/script/index.js"></script>
     </body>

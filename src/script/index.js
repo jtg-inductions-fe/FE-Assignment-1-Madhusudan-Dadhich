@@ -11,19 +11,19 @@ const toggleHamburger = () => {
 };
 
 // Navbar Hamburger Toggle
-const navbar = document.querySelector('[data-navbar]');
-const authWrapper = document.querySelector('[data-auth]');
-const navbarToggler = document.querySelector('[data-navbar-toggler]');
+const navbar = document.getElementById('header-navlinks');
+const authWrapper = document.getElementById('header-authlinks');
+const navbarToggler = document.getElementById('header-nav-toggler');
 
 navbarToggler.addEventListener('click', toggleHamburger);
 
 // Sticky Header
-const header = document.querySelector('[data-header]');
+const header = document.getElementById('header-navbar');
 
 window.addEventListener('scroll', () => {
-    header.classList[window.scrollY > 50 ? 'add' : 'remove']('active');
+    header.classList[window.scrollY > 0 ? 'add' : 'remove']('active');
     if (
-        navbar.classList.contains('active') ||
+        navbar.classList.contains('active') &&
         authWrapper.classList.contains('active')
     ) {
         toggleHamburger();
