@@ -9,10 +9,6 @@ $large-screen-size: map-get(
     $key: 'large',
 );
 
-body {
-    height: 200vh;
-}
-
 .navbar {
     height: auto;
     z-index: 3;
