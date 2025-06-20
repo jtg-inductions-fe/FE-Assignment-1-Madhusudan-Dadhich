@@ -1,4 +1,16 @@
 @forward './colors';
 @forward './mixins';
 @forward './variables';
-@forward './fonts';
+
+// importing these files with @use to utilize mixins and variables for font faces
+@use './mixins';
+@use './variables';
+
+// Setup for font faces [Using above forwarded files]
+@include mixins.font-face(variables.$circularstd-bold);
+
+@include mixins.font-face(variables.$circularstd-black);
+
+@include mixins.font-face(variables.$inter-regular);
+
+@include mixins.font-face(variables.$inter-medium);

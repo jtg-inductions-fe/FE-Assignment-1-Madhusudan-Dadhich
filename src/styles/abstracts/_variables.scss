@@ -83,7 +83,13 @@ $md-btn-font-size: 14px;
 $circularstd-line-height: 120%;
 $inter-line-height: 160%;
 
-// Base container margin
+/**
+ * Base container margin
+ * prefix usage
+ *     -sm is intended for small screen sizes
+ *     -md is inteded for medium screen sizes
+ *     -lg is inteded for large screen sizes
+ */
 $container-margin-inline-sm: 16px;
 $container-margin-inline-md: 64px;
 $container-margin-inline-lg: 130px;

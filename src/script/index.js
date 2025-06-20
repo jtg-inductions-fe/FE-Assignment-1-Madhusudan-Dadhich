@@ -10,17 +10,10 @@ const toggleHamburger = () => {
     authWrapper.classList.toggle('active');
 };
 
-// Navbar Hamburger Toggle
-const navbar = document.getElementById('header-navlinks');
-const authWrapper = document.getElementById('header-authlinks');
-const navbarToggler = document.getElementById('header-nav-toggler');
-
-navbarToggler.addEventListener('click', toggleHamburger);
-
-// Sticky Header
-const header = document.getElementById('header-navbar');
-
-window.addEventListener('scroll', () => {
+/**
+ * Function to add styling to sticky header
+ */
+const activeNav = () => {
     header.classList[window.scrollY > 0 ? 'add' : 'remove']('active');
     if (
         navbar.classList.contains('active') &&
@@ -28,4 +21,28 @@ window.addEventListener('scroll', () => {
     ) {
         toggleHamburger();
     }
+};
+
+// Navbar Hamburger Toggle
+const navbar = document.getElementById('header-navlinks');
+const authWrapper = document.getElementById('header-authlinks');
+const navbarToggler = document.getElementById('header-nav-toggler');
+
+// handle nav menu states
+window.addEventListener('click', (e) => {
+    if (e.target == navbarToggler.children[0]) {
+        toggleHamburger();
+    } else {
+        if (
+            navbar.classList.contains('active') &&
+            authWrapper.classList.contains('active')
+        ) {
+            toggleHamburger();
+        }
+    }
 });
+
+// Sticky Header
+const header = document.getElementById('header-navbar');
+
+window.addEventListener('scroll', activeNav);
