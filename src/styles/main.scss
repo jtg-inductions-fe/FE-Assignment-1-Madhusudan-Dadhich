@@ -1,4 +1,4 @@
-@use './base/reset';
-@use './base/typography';
-@use './base/base';
-@use './components/text-button';
+@use './base';
+@use './vendors';
+@use './components';
+@use './layout';
