@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.container {
+    margin-inline: auto;
+    max-width: map-get($map: $screen-max-width, $key: 'small');
+
+    @include media-up(map-get($map: $screen-size, $key: 'medium')) {
+        max-width: map-get($map: $screen-max-width, $key: 'medium');
+    }
+
+    @include media-up(map-get($map: $screen-size, $key: 'large')) {
+        max-width: map-get($map: $screen-max-width, $key: 'large');
+    }
+}
+
+.icon {
+    font-size: 2.5rem;
+}
+
+:focus-visible {
+    outline-color: $focus-outline;
+}
+
+.sticky {
+    position: sticky;
+    width: 100%;
+
+    &__top {
+        top: 0;
+    }
+}
