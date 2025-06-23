@@ -14,7 +14,7 @@ const toggleHamburger = () => {
  * Function to add styling to sticky header
  */
 const activeNav = () => {
-    header.classList[window.scrollY > 0 ? 'add' : 'remove']('active');
+    header.classList[window.scrollY > 40 ? 'add' : 'remove']('active');
     if (
         navbar.classList.contains('active') &&
         authWrapper.classList.contains('active')
