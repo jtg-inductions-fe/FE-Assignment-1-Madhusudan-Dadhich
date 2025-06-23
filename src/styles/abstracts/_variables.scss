@@ -5,7 +5,6 @@ $circularstd-bold: (
     'font-weight': 700,
     'file': 'CircularStd-Bold',
     'font-style': normal,
-    'line-height': 120%,
 );
 
 $circularstd-black: (
@@ -14,7 +13,6 @@ $circularstd-black: (
     'font-weight': 900,
     'file': 'CircularStd-Black',
     'font-style': normal,
-    'line-height': 120%,
 );
 
 $inter-regular: (
@@ -23,7 +21,6 @@ $inter-regular: (
     'font-weight': 400,
     'file': 'Inter-Regular',
     'font-style': normal,
-    'line-height': 160%,
 );
 
 $inter-medium: (
@@ -32,7 +29,6 @@ $inter-medium: (
     'font-weight': 450,
     'file': 'Inter-Medium',
     'font-style': normal,
-    'line-height': 160%,
 );
 
 // Screen Sizes
@@ -48,14 +44,12 @@ $screen-max-width: (
     'large': 1205.28px,
 );
 
-// Text Button
-$tb-horizontal-padding: 32px;
-$tb-vertical-padding: 16px;
-
-// Fill Text Button
-$fb-horizontal-padding: 32px;
-$fb-vertical-padding: 16px;
-$fb-border-radius: 100px;
+// Buttons
+$btn-border-radius: 100px;
+$button-padding: (
+    'horizontal': 32px,
+    'vertical': 16px,
+);
 
 // Font sizes
 $title-font-size: 69px;
@@ -76,3 +70,21 @@ $newsletter-card-subtitle-font-size: 18px;
 // Button font sizes
 $lg-btn-font-size: 23px;
 $md-btn-font-size: 14px;
+
+// line heights
+$line-height-120: 120%;
+$line-height-160: 160%;
+
+/**
+ * Base container margin
+ * prefix usage
+ *     -sm is intended for small screen sizes
+ *     -md is inteded for medium screen sizes
+ *     -lg is inteded for large screen sizes
+ */
+$container-margin-inline-sm: 16px;
+$container-margin-inline-md: 64px;
+$container-margin-inline-lg: 130px;
+
+// transition
+$transition-slow: cubic-bezier(0, 0.7, 0.3, 1);
