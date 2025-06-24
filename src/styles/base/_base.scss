@@ -1,15 +1,16 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .container {
     margin-inline: auto;
-    max-width: map-get($map: $screen-max-width, $key: 'small');
+    max-width: map.get($map: $screen-max-width, $key: 'small');
 
-    @include media-up(map-get($map: $screen-size, $key: 'medium')) {
-        max-width: map-get($map: $screen-max-width, $key: 'medium');
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        max-width: map.get($map: $screen-max-width, $key: 'medium');
     }
 
-    @include media-up(map-get($map: $screen-size, $key: 'large')) {
-        max-width: map-get($map: $screen-max-width, $key: 'large');
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        max-width: map.get($map: $screen-max-width, $key: 'large');
     }
 }
 
@@ -18,13 +19,16 @@
 }
 
 :focus-visible {
-    outline: 1px solid $focus-outline;
+    outline: 2px solid $focus-outline;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .sticky {
     position: sticky;
     width: 100%;
-    z-index: 69; // higher z-index as the images and icons are passing from right top of the navbar [couldn't find any other solution]
 
     &__top {
         top: 0;

@@ -1,24 +1,26 @@
+@use 'sass:map';
+
 /// Mixin to generate font face for a font family
 ///
 /// @param {Map} $font-config - Map of font configuration
 @mixin font-face($font-config) {
-    $family: map-get(
+    $family: map.get(
         $map: $font-config,
         $key: 'font-family',
     );
-    $path: map-get(
+    $path: map.get(
         $map: $font-config,
         $key: 'path',
     );
-    $file: map-get(
+    $file: map.get(
         $map: $font-config,
         $key: 'file',
     );
-    $weight: map-get(
+    $weight: map.get(
         $map: $font-config,
         $key: 'font-weight',
     );
-    $style: map-get(
+    $style: map.get(
         $map: $font-config,
         $key: 'font-style',
     );
@@ -63,11 +65,11 @@
 /// @param {String} $font-size - Font size
 /// @param {Number} $line-height - Line Height
 @mixin font-style($font-config, $font-size, $line-height) {
-    $font-family: map-get(
+    $font-family: map.get(
         $map: $font-config,
         $key: 'font-family',
     );
-    $font-weight: map-get(
+    $font-weight: map.get(
         $map: $font-config,
         $key: 'font-weight',
     );
@@ -82,9 +84,284 @@
     @each $prefix in $prefixes {
         #{$prefix}-#{$property}: $value;
     }
-    $property: $value;
+    #{$property}: $value;
 }
 
 %grayscale-50 {
     @include prefix-properties(('-webkit', '-moz'), filter, grayscale(50%));
+}
+
+// Utility variables
+$breakpoints: (
+    md: 1024px,
+    lg: 1440px,
+); // breakpoints where we would need the utitlies to change
+$flex-alignments: (
+    'center',
+    'space-between',
+    'space-around',
+    'space-between',
+    'flex-start',
+    'flex-end'
+);
+$display-props: (
+    'block',
+    'inline',
+    'flex',
+    'grid',
+    'inline-block',
+    'inline-flex',
+    'inline-grid',
+    'none'
+);
+$flex-directions: ('row', 'column', 'row-reverse', 'column-reverse');
+$flex-spacing: (0, 1, 2, 3, 4); // spacings are provided inrem
+$other-spacing: (
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    auto
+); // spacings are provided inrem
+$align-directions: ('center', 'start', 'end', 'justify');
+$flex-wraps: ('wrap', 'nowrap', 'wrap-reverse');
+
+/**
+ * Display Utilities
+ */
+
+@each $disp in $display-props {
+    .d-#{$disp} {
+        display: #{$disp};
+    }
+}
+
+/**
+ * Flex Utilities
+ */
+
+// Flex Alignments
+@each $align in $flex-alignments {
+    .justify-#{$align} {
+        justify-content: #{$align};
+    }
+
+    .items-#{$align} {
+        align-items: #{$align};
+    }
+
+    .justify-items-#{$align} {
+        justify-items: #{$align};
+    }
+
+    .content-#{$align} {
+        align-content: #{$align};
+    }
+}
+
+// Flex Directions
+@each $direction in $flex-directions {
+    .flex-#{$direction} {
+        flex-direction: #{$direction};
+    }
+}
+
+// Flex Spacing
+@each $spacing in $flex-spacing {
+    .gap-#{$spacing} {
+        gap: #{$spacing}rem;
+    }
+}
+
+// Flex Wrap
+@each $wrap in $flex-wraps {
+    .flex-#{$wrap} {
+        flex-wrap: #{$wrap};
+    }
+}
+
+/**
+ * Margin and Padding Utilities
+ */
+@each $spacing in $other-spacing {
+    .m-#{$spacing} {
+        margin: #{$spacing}rem;
+    }
+
+    .mx-#{$spacing} {
+        margin-inline: (#{$spacing}rem);
+    }
+
+    .my-#{$spacing} {
+        margin-block: (#{$spacing}rem);
+    }
+
+    .ml-#{$spacing} {
+        margin-inline-start: (#{$spacing}rem);
+    }
+
+    .mr-#{$spacing} {
+        margin-inline-end: (#{$spacing}rem);
+    }
+
+    .mt-#{$spacing} {
+        margin-block-start: (#{$spacing}rem);
+    }
+
+    .mb-#{$spacing} {
+        margin-block-end: (#{$spacing}rem);
+    }
+
+    .p-#{$spacing} {
+        padding: (#{$spacing}rem);
+    }
+
+    .px-#{$spacing} {
+        padding-inline: (#{$spacing}rem);
+    }
+
+    .py-#{$spacing} {
+        padding-block: (#{$spacing}rem);
+    }
+
+    .pl-#{$spacing} {
+        padding-inline-start: (#{$spacing}rem);
+    }
+
+    .pr-#{$spacing} {
+        padding-inline-end: (#{$spacing}rem);
+    }
+
+    .pt-#{$spacing} {
+        padding-block-start: (#{$spacing}rem);
+    }
+
+    .pb-#{$spacing} {
+        padding-block-end: (#{$spacing}rem);
+    }
+}
+
+// Text Alignment
+@each $align in $align-directions {
+    .text-#{$align} {
+        text-align: #{$align};
+    }
+}
+
+// Utilities for all breakpoints
+@each $break, $size in $breakpoints {
+    @include media-up($size) {
+        // Display Utilities
+        @each $disp in $display-props {
+            .#{$break}\:d-#{$disp} {
+                display: #{$disp};
+            }
+        }
+
+        // Flex Alignments
+        @each $align in $flex-alignments {
+            .#{$break}\:justify-#{$align} {
+                justify-content: #{$align};
+            }
+
+            .#{$break}\:items-#{$align} {
+                align-items: #{$align};
+            }
+
+            .#{$break}\:justify-items-#{$align} {
+                justify-items: #{$align};
+            }
+
+            .#{$break}\:content-#{$align} {
+                align-content: #{$align};
+            }
+        }
+
+        // Flex Directions
+        @each $direction in $flex-directions {
+            .#{$break}\:flex-#{$direction} {
+                flex-direction: #{$direction};
+            }
+        }
+
+        // Flex Spacing
+        @each $spacing in $flex-spacing {
+            .#{$break}\:gap-#{$spacing} {
+                gap: (#{$spacing}rem);
+            }
+        }
+
+        // Margin and Padding Utilities
+        @each $spacing in $other-spacing {
+            .#{$break}\:m-#{$spacing} {
+                margin: (#{$spacing}rem);
+            }
+
+            .#{$break}\:mx-#{$spacing} {
+                margin-inline: (#{$spacing}rem);
+            }
+
+            .#{$break}\:my-#{$spacing} {
+                margin-block: (#{$spacing}rem);
+            }
+
+            .#{$break}\:ml-#{$spacing} {
+                margin-inline-start: (#{$spacing}rem);
+            }
+
+            .#{$break}\:mr-#{$spacing} {
+                margin-inline-end: (#{$spacing}rem);
+            }
+
+            .#{$break}\:mt-#{$spacing} {
+                margin-block-start: (#{$spacing}rem);
+            }
+
+            .#{$break}\:mb-#{$spacing} {
+                margin-block-end: (#{$spacing}rem);
+            }
+
+            .#{$break}\:p-#{$spacing} {
+                padding: (#{$spacing}rem);
+            }
+
+            .#{$break}\:px-#{$spacing} {
+                padding-inline: (#{$spacing}rem);
+            }
+
+            .#{$break}\:py-#{$spacing} {
+                padding-block: (#{$spacing}rem);
+            }
+
+            .#{$break}\:pl-#{$spacing} {
+                padding-inline-start: (#{$spacing}rem);
+            }
+
+            .#{$break}\:pr-#{$spacing} {
+                padding-inline-end: (#{$spacing}rem);
+            }
+
+            .#{$break}\:pt-#{$spacing} {
+                padding-block-start: (#{$spacing}rem);
+            }
+
+            .#{$break}\:pb-#{$spacing} {
+                padding-block-end: (#{$spacing}rem);
+            }
+        }
+
+        // Text Alignment
+        @each $align in $align-directions {
+            .#{$break}\:text-#{$align} {
+                text-align: #{$align};
+            }
+        }
+    }
 }

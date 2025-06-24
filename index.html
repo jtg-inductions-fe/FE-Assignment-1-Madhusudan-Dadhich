@@ -6,17 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <header class="sticky sticky__top">
-            <nav id="header-navbar" class="navbar">
-                <div class="container navbar__container">
+        <header class="d-inline">
+            <nav id="header-navbar" class="navbar sticky sticky__top">
+                <div
+                    class="container navbar__container mt-0 lg:mt-2 d-flex flex-row md:flex-row-reverse lg:flex-row justify-space-between items-center"
+                >
                     <a href="#" class="navbar__logo" title="Travlog">
                         <img
                             src="/assets/resources/vectors/ic_logo.svg"
                             alt="Travlog Logo"
                         />
                     </a>
-                    <ul id="header-navlinks" class="navbar__links" role="list">
-                        <li class="navbar__link">
+                    <ul
+                        id="header-navlinks"
+                        class="navbar__links d-flex flex-column justify-center items-center gap-2"
+                        role="list"
+                    >
+                        <li
+                            class="navbar__link ff-circular-std fw-700 btn-text lh-120"
+                        >
                             <a
                                 href="#hero"
                                 class="navbar__link active"
@@ -24,7 +32,9 @@
                                 >Home</a
                             >
                         </li>
-                        <li class="navbar__link">
+                        <li
+                            class="navbar__link ff-circular-std fw-700 btn-text lh-120"
+                        >
                             <a
                                 href="#services"
                                 class="navbar__link"
@@ -32,7 +42,9 @@
                                 >Discover</a
                             >
                         </li>
-                        <li class="navbar__link">
+                        <li
+                            class="navbar__link ff-circular-std fw-700 btn-text lh-120"
+                        >
                             <a
                                 href="#key-features"
                                 class="navbar__link"
@@ -40,7 +52,9 @@
                                 >Special Deals</a
                             >
                         </li>
-                        <li class="navbar__link">
+                        <li
+                            class="navbar__link ff-circular-std fw-700 btn-text lh-120"
+                        >
                             <a
                                 href="#newsletter"
                                 class="navbar__link"
@@ -49,7 +63,11 @@
                             >
                         </li>
                     </ul>
-                    <ul id="header-authlinks" class="navbar__auth" role="list">
+                    <ul
+                        id="header-authlinks"
+                        class="navbar__auth d-flex items-center flex-column gap-2"
+                        role="list"
+                    >
                         <li>
                             <a
                                 href="#"
@@ -69,7 +87,7 @@
                     </ul>
                     <button
                         id="header-nav-toggler"
-                        class="navbar__hamburger button"
+                        class="navbar__hamburger button d-block lg:d-none"
                         aria-label="toggler navbar"
                         title="Nav Menu"
                     >
@@ -77,13 +95,17 @@
                     </button>
                 </div>
             </nav>
-        </header>
-        <main>
-            <section class="hero" aria-labelledby="hero-section">
-                <div class="container">
-                    <div class="hero__wrapper">
-                        <div class="hero__image">
-                            <div class="hero__image-wrapper">
+            <section class="hero my-2 md:my-0" aria-labelledby="hero-section">
+                <div
+                    class="container hero__container d-flex flex-column gap-4 lg:gap-0"
+                >
+                    <div
+                        class="hero__wrapper lg:d-flex lg:flex-row-reverse lg:justify-space-between"
+                    >
+                        <div class="hero__image mb-2 md:m-4 lg:mx-0">
+                            <div
+                                class="hero__image-wrapper d-grid gap-1 md:gap-2 px-3 md:px-6 pt-2 md:pt-5 justify-center"
+                            >
                                 <div class="hero__item">
                                     <img
                                         src="assets/resources/images/hero_section_1.png"
@@ -91,11 +113,11 @@
                                         aria-hidden="true"
                                     />
                                     <div
-                                        class="hero__decoration hero__decoration-send-message"
+                                        class="hero__decoration hero__decoration-send-message button button__icon button__icon--pink"
                                         aria-hidden="true"
                                     >
                                         <i
-                                            class="icon icon-ic_send_message"
+                                            class="icon icon-ic_send_message hero__decoration-icon d-block"
                                             aria-hidden="true"
                                         ></i>
                                     </div>
@@ -107,11 +129,11 @@
                                         aria-hidden="true"
                                     />
                                     <div
-                                        class="hero__decoration hero__decoration-add-user"
+                                        class="hero__decoration hero__decoration-add-user button button__icon button__icon--orange"
                                         aria-hidden="true"
                                     >
                                         <i
-                                            class="icon icon-ic_add_user"
+                                            class="icon icon-ic_add_user hero__decoration-icon d-block"
                                             aria-hidden="true"
                                         ></i>
                                     </div>
@@ -123,11 +145,11 @@
                                         aria-hidden="true"
                                     />
                                     <div
-                                        class="hero__decoration hero__decoration-location-btn"
+                                        class="hero__decoration hero__decoration-location-btn button button__fill button__fill--white button__fill--small d-flex items-flex-end ff-circularstd decorative-btn-text lh-120 fw-700"
                                         aria-hidden="true"
                                     >
                                         <i
-                                            class="icon icon-ic_location_yellow"
+                                            class="icon icon-ic_location_yellow hero__decoration-icon hero__decoration-location-icon d-block"
                                             aria-hidden="true"
                                         ></i>
                                         Top Places
@@ -135,62 +157,88 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hero__content">
-                            <div class="hero__description">
-                                <button class="hero__description-btn">
+                        <div
+                            class="hero__content d-flex flex-column items-center lg:items-flex-start lg:justify-center gap-2"
+                        >
+                            <div
+                                class="hero__description d-flex flex-column justify-center items-center lg:items-flex-start gap-1 md:px-9 lg:px-0"
+                            >
+                                <button
+                                    class="hero__description-btn button button__fill button__fill--white d-flex items-flex-end gap-1 ff-circular-std btn-text fw-700 lh-120"
+                                    title="Explore the world!"
+                                >
                                     <p>Explore the world!</p>
                                     <i
-                                        class="icon icon-ic_work"
+                                        class="icon icon-ic_work hero__description-icon d-block"
                                         aria-hidden="true"
                                     ></i>
                                 </button>
-                                <h1 class="hero__description-title">
-                                    Travel <strong>top destination</strong> of
-                                    the world
+                                <h1
+                                    class="hero__description-title title__page ff-circular-std fw-700 lh-120 text-center lg:text-start"
+                                >
+                                    Travel
+                                    <strong
+                                        class="hero__description-title--pink"
+                                        >top destination</strong
+                                    >
+                                    of the world
                                 </h1>
-                                <p class="hero__description-text">
+                                <p
+                                    class="hero__description-text body__section ff-inter fw-400 lh-160 text-center lg:text-start md:mt-0"
+                                >
                                     We always make our customer happy by
-                                    providing <br />
-                                    as many choices as possible
+                                    providing as many choices as possible
                                 </p>
                             </div>
-                            <div class="hero__action">
-                                <button class="hero__get-started">
+                            <div
+                                class="hero__action d-flex flex-column md:flex-row justify-center lg:justify-flex-start items-center md:gap-1 ff-circular-std btn-text fw-700 lh-120"
+                            >
+                                <button
+                                    class="hero__get-started button button__fill button__fill--primary button__fill--medium"
+                                    title="Get Started"
+                                >
                                     Get Started
                                 </button>
-                                <button class="hero__watch-demo">
-                                    <i class="icon icon-ic_play_circle"></i>
+                                <button
+                                    class="hero__watch-demo button button__outline button__outline--medium d-flex justify-center items-flex-end ff-circular-std btn-text fw-700 lh-120"
+                                    title="Watch Demo"
+                                >
+                                    <i
+                                        class="icon icon-ic_play_circle hero__watch-demo-icon d-block"
+                                    ></i>
                                     Watch Demo
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="hero__partner">
-                        <div class="hero__partner-wrapper">
+                    <div
+                        class="hero__partner d-flex flex-wrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0"
+                    >
+                        <div class="hero__partner-wrapper" title="tripadvisor">
                             <img
                                 src="assets/resources/vectors/company_1.svg"
                                 alt="tripadvisor"
                             />
                         </div>
-                        <div class="hero__partner-wrapper">
+                        <div class="hero__partner-wrapper" title="expedia">
                             <img
                                 src="assets/resources/vectors/company_2.svg"
                                 alt="expedia"
                             />
                         </div>
-                        <div class="hero__partner-wrapper">
+                        <div class="hero__partner-wrapper" title="booking.com">
                             <img
                                 src="assets/resources/vectors/company_3.svg"
                                 alt="booking.com"
                             />
                         </div>
-                        <div class="hero__partner-wrapper">
+                        <div class="hero__partner-wrapper" title="airbnb">
                             <img
                                 src="assets/resources/vectors/company_4.svg"
                                 alt="airbnb"
                             />
                         </div>
-                        <div class="hero__partner-wrapper">
+                        <div class="hero__partner-wrapper" title="orbitz">
                             <img
                                 src="assets/resources/vectors/company_5.svg"
                                 alt="orbitz"
@@ -199,14 +247,15 @@
                     </div>
                 </div>
                 <div class="hero__blur"></div>
-                <div class="hero__decorative">
+                <div class="hero__decorative d-none md:d-block">
                     <img
                         src="assets/resources/vectors/hero_background_decorative.svg"
                         alt="A number of pointing shapes pointing upwards"
                     />
                 </div>
             </section>
-        </main>
+        </header>
+        <main></main>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
