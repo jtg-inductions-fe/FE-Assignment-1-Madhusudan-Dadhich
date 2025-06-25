@@ -1,16 +1,17 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
-$horizontal-padding: map-get(
+$padding-horizontal: map.get(
     $map: $button-padding,
     $key: 'horizontal',
 );
-$vertical-padding: map-get(
+$padding-vertical: map.get(
     $map: $button-padding,
     $key: 'vertical',
 );
 
 .button {
-    @include font-style($circularstd-bold, $md-btn-font-size);
+    @include font-style($circularstd-bold, $md-btn-font-size, $line-height-120);
     border: 0;
     border-radius: $btn-border-radius;
     cursor: pointer;
@@ -23,7 +24,7 @@ $vertical-padding: map-get(
     }
 
     &__text {
-        padding: $vertical-padding $horizontal-padding;
+        padding: px-to-rem($padding-vertical) px-to-rem($padding-horizontal);
         background-color: $transparent;
         color: $tb-text;
 
@@ -35,7 +36,7 @@ $vertical-padding: map-get(
     }
 
     &__fill {
-        padding: $vertical-padding $horizontal-padding;
+        padding: px-to-rem($padding-vertical) px-to-rem($padding-horizontal);
         background-color: $fb-bg;
 
         &:hover,
@@ -45,6 +46,84 @@ $vertical-padding: map-get(
 
         &--primary {
             color: $fb-text;
+        }
+
+        &--white {
+            background-color: $white;
+            color: $black;
+
+            &:hover,
+            &:focus-visible {
+                background-color: $white;
+            }
+        }
+
+        &--hover-shadow {
+            &:hover,
+            &:focus-visible {
+                box-shadow: $button-hover-shadow;
+            }
+        }
+
+        &--small {
+            padding: px-to-rem($sm-btn-vertical-padding)
+                px-to-rem($sm-btn-horizontal-padding);
+        }
+
+        &--medium {
+            padding: px-to-rem($md-btn-vertical-padding);
+        }
+    }
+
+    &__outline {
+        padding: px-to-rem($padding-vertical) ($padding-horizontal);
+        background-color: $transparent;
+        border: 1px solid $grey-border;
+
+        &:hover,
+        &:focus-visible {
+            background-color: $white;
+        }
+
+        &--medium {
+            padding: px-to-rem($md-btn-vertical-padding);
+        }
+    }
+
+    &__icon {
+        padding: px-to-rem($icon-padding-sm);
+
+        &--pink {
+            background-color: $bg-pink;
+        }
+
+        &--orange {
+            background-color: $bg-orange;
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__fill {
+            &--small {
+                padding: px-to-rem($padding-vertical)
+                    px-to-rem($padding-horizontal);
+            }
+
+            &--medium {
+                padding: px-to-rem($padding-vertical)
+                    px-to-rem($padding-horizontal);
+            }
+        }
+
+        &__outline {
+            &--medium {
+                padding: px-to-rem($padding-vertical)
+                    px-to-rem($padding-horizontal);
+            }
+        }
+
+        &__icon {
+            padding: px-to-rem($icon-padding);
         }
     }
 }

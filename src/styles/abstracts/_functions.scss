@@ -1,0 +1,15 @@
+@use './variables' as variables;
+
+/// Converts px value to rem value
+///
+/// @param {Number} $value - px value (this value should be unitless)
+///
+/// @return {Number} Return value will have Rem unit
+///
+/// @example
+///     $value: 16
+///     px-to-rem($value)
+///     // 1rem
+@function px-to-rem($value) {
+    @return (calc($value / variables.$default-rem-value) * 1rem);
+}

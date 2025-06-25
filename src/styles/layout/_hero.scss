@@ -1,0 +1,247 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.hero {
+    &__blur {
+        position: absolute;
+        top: px-to-rem(36) * -1;
+        left: px-to-rem(33) * -1;
+        shape-outside: ellipse(px-to-rem(136) px-to-rem(174));
+        background-color: $bg-orange;
+        width: px-to-rem(272);
+        height: px-to-rem(348);
+        opacity: 50%;
+        filter: blur(px-to-rem(170));
+        z-index: -1;
+    }
+
+    &__image {
+        background-image: url($hero-bg-path);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &-wrapper {
+            grid-template-columns: repeat(2, minmax(px-to-rem(140), 1fr));
+            place-items: center;
+
+            & > :last-child {
+                grid-column: 2/3;
+                grid-row: 1/3;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__decoration {
+        position: absolute;
+
+        &-icon {
+            font-size: px-to-rem(16);
+            width: px-to-rem(16);
+            height: px-to-rem(16);
+        }
+
+        &-send-message {
+            left: px-to-rem(17.97) * -1;
+            bottom: px-to-rem(15.4) * -1;
+            background-color: $bg-pink;
+            box-shadow: $decorative-box-shadow;
+        }
+
+        &-add-user {
+            right: px-to-rem(89.98) * -1;
+            bottom: px-to-rem(3.08) * -1;
+            background-color: $bg-orange;
+            box-shadow: $decorative-box-shadow;
+        }
+
+        &-location-btn {
+            right: px-to-rem(47.23) * -1;
+            bottom: px-to-rem(24.13);
+            box-shadow: $decorative-box-shadow;
+        }
+
+        &-location-icon {
+            font-size: px-to-rem(12);
+        }
+    }
+
+    &__description {
+        &-btn {
+            box-shadow: $icon-button-box-shadow;
+            text-decoration: none;
+            color: $bg-pink;
+        }
+
+        &-icon {
+            font-size: px-to-rem(20);
+            width: px-to-rem(20);
+            height: px-to-rem(20);
+        }
+
+        &-title {
+            text-wrap: wrap;
+            word-wrap: break-word;
+            color: $black;
+
+            &--pink {
+                color: $bg-pink;
+            }
+        }
+
+        &-text {
+            margin-top: px-to-rem(8);
+            color: $link-text-inactive;
+            text-wrap: wrap;
+            word-wrap: break-word;
+            @extend %grayscale-50;
+        }
+    }
+
+    &__action {
+        width: 100%;
+        gap: px-to-rem(24);
+    }
+
+    &__get-started {
+        width: 100%;
+    }
+
+    &__watch-demo {
+        width: 100%;
+        gap: px-to-rem(8);
+        text-decoration: none;
+        color: $black;
+
+        &-icon {
+            font-size: px-to-rem(20);
+            width: px-to-rem(20);
+            height: px-to-rem(20);
+        }
+    }
+
+    &__partner {
+        gap: px-to-rem(27);
+
+        &-wrapper img {
+            height: px-to-rem(20);
+        }
+    }
+
+    // Styling for medium screen
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__blur {
+            top: px-to-rem(174) * -1;
+            left: px-to-rem(163) * -1;
+            shape-outside: ellipse(px-to-rem(225) px-to-rem(225));
+            width: px-to-rem(500);
+            height: px-to-rem(500);
+            filter: blur(px-to-rem(250));
+        }
+
+        &__decoration {
+            &-icon {
+                font-size: px-to-rem(32);
+                width: px-to-rem(32);
+                height: px-to-rem(32);
+            }
+
+            &-send-message {
+                left: px-to-rem(35) * -1;
+                bottom: px-to-rem(30) * -1;
+            }
+
+            &-add-user {
+                right: px-to-rem(176) * -1;
+                bottom: px-to-rem(6) * -1;
+            }
+
+            &-location-btn {
+                right: px-to-rem(92) * -1;
+                bottom: px-to-rem(47);
+            }
+
+            &-location-icon {
+                font-size: px-to-rem(24);
+                width: px-to-rem(24);
+                height: px-to-rem(24);
+                margin-inline-end: px-to-rem(8);
+            }
+        }
+
+        &__content {
+            gap: px-to-rem(43);
+        }
+
+        &__description {
+            gap: px-to-rem(43);
+
+            &-title {
+                text-wrap: balance;
+            }
+        }
+
+        &__get-started {
+            width: auto;
+        }
+
+        &__watch-demo {
+            width: auto;
+        }
+
+        &__partner {
+            &-wrapper img {
+                height: px-to-rem(32);
+            }
+        }
+
+        &__decorative {
+            position: absolute;
+            top: px-to-rem(1266.75);
+            left: px-to-rem(38);
+        }
+    }
+
+    // Styling for large screen
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        overflow-x: hidden;
+
+        &__blur {
+            top: px-to-rem(42.91);
+            left: px-to-rem(70.99) * -1;
+            shape-outside: ellipse(px-to-rem(226) px-to-rem(222));
+            width: px-to-rem(503.65);
+            height: px-to-rem(494.93);
+            filter: blur(px-to-rem(240));
+        }
+
+        &__content {
+            min-width: px-to-rem(420);
+            width: min-content;
+        }
+
+        &__partner {
+            gap: px-to-rem(100);
+            animation: marquee 10s linear infinite;
+        }
+
+        &__decorative {
+            top: px-to-rem(867.47);
+            left: px-to-rem(39.34);
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

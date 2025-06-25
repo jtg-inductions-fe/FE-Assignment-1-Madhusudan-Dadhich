@@ -1,0 +1,174 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+/**
+ * All the values are in px and are converted to rem using px-to-rem()
+ */
+
+// Default styling for small screen sizes
+
+/**
+ * Font Size Utilities
+ */
+
+// Maps for font sizes at different resolutions
+$title-page: (
+    'small': 40,
+    'medium': 56,
+    'large': 69,
+);
+
+$title-section: (
+    'small': 32,
+    'medium': 40,
+    'large': 44,
+);
+
+$body-section: (
+    'small': 16,
+    'medium': 18,
+    'large': 18,
+);
+
+$button-text: (
+    'small': 14,
+    'medium': 14,
+    'large': 14,
+);
+
+$button-text-lg: (
+    'small': 16,
+    'medium': 23,
+    'large': 23,
+);
+
+$decorative-btn: (
+    'small': 8,
+    'medium': 14,
+    'large': 14,
+);
+
+// Font Size
+.title {
+    &__page {
+        font-size: px-to-rem(map.get($map: $title-page, $key: 'small'));
+    }
+
+    &__section {
+        font-size: px-to-rem(map.get($map: $title-section, $key: 'small'));
+    }
+}
+
+.body {
+    &__section {
+        font-size: px-to-rem(map.get($map: $body-section, $key: 'small'));
+    }
+}
+
+.btn-text {
+    font-size: px-to-rem(map.get($map: $button-text, $key: 'small'));
+}
+
+.decorative-btn-text {
+    font-size: px-to-rem(map.get($map: $decorative-btn, $key: 'small'));
+}
+
+/**
+ * Utilities for font weight, font family, line height letter spacing and text align
+ */
+
+// Utility Variables
+$font-family: (
+    'circular-std': 'circularstd',
+    'inter': 'inter',
+);
+$font-weight: ('400', '500', '700', '900');
+$line-height: (
+    '120': '1.20',
+    '160': '1.60',
+); // These values are in percentage.
+$letter-spacing: (
+    '20': '0.20',
+); // These values are in percentage.
+
+// Font Family
+@each $family, $value in $font-family {
+    .ff-#{$family} {
+        font-family: #{$value};
+    }
+}
+
+// Font Weight
+@each $weight in $font-weight {
+    .fw-#{$weight} {
+        font-weight: #{$weight};
+    }
+}
+
+// Line Height
+@each $attribute, $height in $line-height {
+    .lh-#{$attribute} {
+        line-height: #{$height};
+    }
+}
+
+// Letter Spacing
+@each $attribute, $spacing in $letter-spacing {
+    .ls-#{$attribute} {
+        letter-spacing: #{$spacing}rem;
+    }
+}
+
+// Styling for medium screen sizes
+@include media-up(map.get($map: $screen-size, $key: 'medium')) {
+    .title {
+        &__page {
+            font-size: px-to-rem(map.get($map: $title-page, $key: 'medium'));
+        }
+
+        &__section {
+            font-size: px-to-rem(map.get($map: $title-section, $key: 'medium'));
+        }
+    }
+
+    .body {
+        &__section {
+            font-size: px-to-rem(map.get($map: $body-section, $key: 'medium'));
+        }
+    }
+
+    .btn-text {
+        font-size: px-to-rem(map.get($map: $button-text, $key: 'medium'));
+    }
+
+    .decorative-btn-text {
+        font-size: px-to-rem(map.get($map: $decorative-btn, $key: 'medium'));
+    }
+}
+
+// Styling for large screen sizes
+@include media-up(map.get($map: $screen-size, $key: 'large')) {
+    .title {
+        &__page {
+            font-size: px-to-rem(map.get($map: $title-page, $key: 'large'));
+        }
+
+        &__section {
+            font-size: px-to-rem(map.get($map: $title-section, $key: 'large'));
+        }
+    }
+
+    .body {
+        &__section {
+            font-size: px-to-rem(map.get($map: $body-section, $key: 'large'));
+        }
+    }
+
+    .btn-text {
+        font-size: px-to-rem(map.get($map: $button-text, $key: 'large'));
+    }
+
+    .decorative-btn-text {
+        font-size: px-to-rem(map.get($map: $decorative-btn, $key: 'large'));
+    }
+}

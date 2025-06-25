@@ -1,13 +1,5 @@
+@use 'sass:map';
 @use '../abstracts' as *;
-
-$medium-screen-size: map-get(
-    $map: $screen-size,
-    $key: 'medium',
-);
-$large-screen-size: map-get(
-    $map: $screen-size,
-    $key: 'large',
-);
 
 .navbar {
     height: auto;
@@ -22,57 +14,29 @@ $large-screen-size: map-get(
 
     &__container {
         position: relative;
-        margin-block-start: 0;
         height: 112px; // fixed height of header
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        @include media-up($medium-screen-size) {
-            flex-direction: row-reverse;
-        }
-
-        @include media-up($large-screen-size) {
-            flex-direction: row;
-            margin-block-start: 34px;
-        }
     }
 
     &__logo {
         position: relative;
         left: 0;
-
-        @include media-up($medium-screen-size) {
-            position: absolute;
-            left: calc(50% - 20px);
-        }
-
-        @include media-up($large-screen-size) {
-            position: relative;
-            left: 0;
-        }
     }
 
     &__links {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
         position: absolute;
         visibility: hidden;
         opacity: 0;
         top: 24%;
         right: -2%;
-        min-width: 250px;
-        padding: 30px 40px;
-        border-radius: 10px 10px 0 0;
+        min-width: px-to-rem(250);
+        padding: px-to-rem(30) px-to-rem(40);
+        border-radius: px-to-rem(10) px-to-rem(10) 0 0;
         box-shadow: 0px 41px 89px $black-20;
         background-color: white;
         transform: scale(0.4);
         transform-origin: top right;
         z-index: -1;
         transition: $transition-slow 0.2s;
-        align-items: center;
 
         &.active {
             visibility: visible;
@@ -80,32 +44,9 @@ $large-screen-size: map-get(
             transform: scale(1);
             z-index: 4;
         }
-
-        @include media-up($medium-screen-size) {
-            visibility: hidden;
-            right: unset;
-            left: -1%;
-            border-radius: 10px;
-            transform-origin: top left;
-
-            &.active {
-                visibility: visible;
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @include media-up($large-screen-size) {
-            all: initial;
-            display: flex;
-            position: relative;
-            flex-direction: row;
-            gap: 64px;
-        }
     }
 
     &__link {
-        @include font-style($circularstd-bold, $md-btn-font-size);
         color: $link-text-inactive;
         text-decoration: none;
 
@@ -117,20 +58,16 @@ $large-screen-size: map-get(
     }
 
     &__auth {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 30px;
         position: absolute;
         visibility: hidden;
         opacity: 0;
         top: calc(
-            24% + 220px
+            25% + 220px
         ); // adding additional fixed height of the nav links
         right: -2%;
-        min-width: 250px;
-        padding: 15px 40px 30px;
-        border-radius: 0 0 10px 10px;
+        min-width: px-to-rem(250);
+        padding: px-to-rem(15) px-to-rem(40) px-to-rem(30);
+        border-radius: 0 0 px-to-rem(10) px-to-rem(10);
         box-shadow: 0px 41px 89px $black-20;
         background-color: $white;
         transform: scale(0.4);
@@ -145,9 +82,34 @@ $large-screen-size: map-get(
             transform: scale(1);
             z-index: 4;
         }
+    }
+
+    &__hamburger {
+        z-index: 100;
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__logo {
+            position: absolute;
+            left: calc(50% - 20px);
+        }
+
+        &__links {
+            visibility: hidden;
+            right: unset;
+            left: -1%;
+            border-radius: px-to-rem(10);
+            transform-origin: top left;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
         // reset css properties to initial so that it does not inherit absolute positioning and other properties
-        @include media-up($medium-screen-size) {
+        &__auth {
             all: initial;
             display: flex;
             flex-direction: row;
@@ -155,13 +117,18 @@ $large-screen-size: map-get(
         }
     }
 
-    &__hamburger {
-        display: block;
-        z-index: 100;
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__logo {
+            position: relative;
+            left: 0;
+        }
 
-        // hide hamburger for large screen size
-        @include media-up($large-screen-size) {
-            display: none;
+        // reset css properties to initial so that it does not inherit absolute positioning and other properties
+        &__links {
+            all: initial;
+            display: flex;
+            flex-direction: row;
+            gap: 64px;
         }
     }
 }
