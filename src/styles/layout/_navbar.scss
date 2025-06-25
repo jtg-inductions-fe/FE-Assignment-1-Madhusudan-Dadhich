@@ -1,10 +1,6 @@
 @use 'sass:map';
 @use '../abstracts' as *;
 
-header {
-    background: radial-gradient(ellipse at top left, #e66465 1%, #fff 40%);
-}
-
 .navbar {
     height: auto;
     z-index: 3;

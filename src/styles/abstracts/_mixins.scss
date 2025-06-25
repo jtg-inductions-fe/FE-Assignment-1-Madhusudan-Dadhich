@@ -82,31 +82,6 @@
     font-size: #{$font-size};
     line-height: #{$line-height};
 }
-/// Mixin to add card title font styles
-///
-/// @param {Number} $font-size - font size to apply (unitless)
-/// @param {Number} $font-weight - font weight to apply (unitless)
-@mixin card-title-font-style($font-size, $font-weight) {
-    @include font-style(
-        $circularstd-bold,
-        px-to-rem($font-size),
-        $line-height-120
-    );
-    color: $black;
-}
-
-/// Mixin to add card subtitle font styles
-///
-/// @param {Number} $font-size - font size to apply (unitless)
-/// @param {Number} $font-weight - font weight to apply (unitless)
-@mixin card-subtitle-font-style($font-size, $font-weight) {
-    @include font-style(
-        $inter-regular,
-        px-to-rem($font-size),
-        $line-height-160
-    );
-    color: $link-text-inactive;
-}
 
 // Placeholder for providing styling for sub title of section
 %section-sub-title {

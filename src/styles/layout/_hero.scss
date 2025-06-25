@@ -265,7 +265,7 @@
 
         &__partner {
             gap: px-to-rem(100);
-            // animation: marquee 10s linear infinite;
+            animation: marquee 10s linear infinite;
         }
 
         &__decorative {
@@ -277,10 +277,10 @@
 
 @keyframes marquee {
     0% {
-        transform: translateX(100%);
+        transform: translateX(130%);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-130%);
     }
 }

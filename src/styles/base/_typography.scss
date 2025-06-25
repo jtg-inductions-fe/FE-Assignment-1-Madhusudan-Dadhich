@@ -182,7 +182,7 @@ $letter-spacing: (
     .subtitle {
         &__section {
             font-size: px-to-rem(
-                map.get($map: $subtitle-section, $key: 'large')
+                map.get($map: $subtitle-section, $key: 'medium')
             );
         }
     }

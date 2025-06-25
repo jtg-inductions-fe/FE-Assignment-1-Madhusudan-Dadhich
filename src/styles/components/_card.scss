@@ -6,6 +6,7 @@
     border: 1px solid $card-border;
     border-radius: px-to-rem($card-border-radius);
     cursor: pointer;
+    transform: scale(1);
     transition:
         transform 0.5s,
         box-shadow 0.5s;
@@ -27,7 +28,7 @@
 @include media-up(map.get($map: $screen-size, $key: 'large')) {
     .card {
         padding-block-end: px-to-rem(98);
-        min-height: px-to-rem(443);
+        min-height: px-to-rem($card-min-height-lg);
     }
 }
 
