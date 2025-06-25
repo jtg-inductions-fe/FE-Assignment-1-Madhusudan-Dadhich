@@ -9,7 +9,7 @@
         <header class="d-inline">
             <nav id="header-navbar" class="navbar sticky sticky__top">
                 <div
-                    class="container navbar__container mt-0 lg:mt-2 d-flex flex-row md:flex-row-reverse lg:flex-row justify-space-between items-center"
+                    class="container navbar__container mt-0 d-flex flex-row md:flex-row-reverse lg:flex-row justify-space-between items-center"
                 >
                     <a href="#" class="navbar__logo" title="Travlog">
                         <img
@@ -104,7 +104,7 @@
                     >
                         <div class="hero__image mb-2 md:m-4 lg:mx-0">
                             <div
-                                class="hero__image-wrapper d-grid gap-1 md:gap-2 px-3 md:px-6 pt-2 md:pt-5 justify-center"
+                                class="hero__image-wrapper d-grid gap-1 md:gap-2 justify-center"
                             >
                                 <div class="hero__item">
                                     <img
@@ -174,6 +174,7 @@
                                     ></i>
                                 </button>
                                 <h1
+                                    id="hero-section"
                                     class="hero__description-title title__page ff-circular-std fw-700 lh-120 text-center lg:text-start"
                                 >
                                     Travel
@@ -184,7 +185,7 @@
                                     of the world
                                 </h1>
                                 <p
-                                    class="hero__description-text body__section ff-inter fw-400 lh-160 text-center lg:text-start md:mt-0"
+                                    class="hero__description-text body__section ff-inter fw-400 lh-160 text-center lg:text-start"
                                 >
                                     We always make our customer happy by
                                     providing as many choices as possible
@@ -212,7 +213,7 @@
                         </div>
                     </div>
                     <div
-                        class="hero__partner d-flex flex-wrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0"
+                        class="hero__partner d-flex flex-wrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
                     >
                         <div class="hero__partner-wrapper" title="tripadvisor">
                             <img
@@ -256,16 +257,34 @@
             </section>
         </header>
         <main>
-            <section class="services" aria-labelledby="services-section">
-                <div class="container">
-                    <div class="services__content">
-                        <p class="services__sub-title">SERVICES</p>
-                        <h2 class="services__title">
+            <section
+                class="services py-2 lg:pb-0"
+                aria-labelledby="services-section"
+            >
+                <div
+                    class="container d-flex flex-column lg:flex-row justify-center gap-2 md:gap-4 lg:gap-0 md:mt-2 lg:mt-0"
+                >
+                    <div
+                        class="services__content d-flex flex-column items-center lg:items-flex-start justify-center"
+                    >
+                        <p
+                            id="services-section"
+                            class="services__sub-title ff-circular-std fw-700 subtitle__section lh-120 ls-20 lg:text-start"
+                        >
+                            SERVICES
+                        </p>
+                        <h2
+                            class="services__title ff-circular-std fw-700 title__section lh-120 text-center lg:text-start"
+                        >
                             Our top value categories for you
                         </h2>
                     </div>
-                    <div class="services__cards">
-                        <div class="services__item">
+                    <div
+                        class="services__cards d-flex flex-column md:flex-row gap-1"
+                    >
+                        <div
+                            class="services__item card d-flex items-center text-center flex-column gap-2 md:gap-4 p-2 md:px-4 md:pt-4"
+                        >
                             <div class="services__wrapper">
                                 <img
                                     src="assets/resources/images/services_1.png"
@@ -273,16 +292,22 @@
                                 />
                             </div>
                             <div class="services__description">
-                                <h3 class="services__description-title">
+                                <h3
+                                    class="services__description-title ff-circular-std fw-700 lh-120 title__card--services mb-2"
+                                >
                                     Best Tour Guide
                                 </h3>
-                                <p class="services__description-text">
+                                <p
+                                    class="services__description-text ff-inter fw-400 lh-160 body__card--services"
+                                >
                                     What looked like a small patch of purple
                                     grass, above five feet.
                                 </p>
                             </div>
                         </div>
-                        <div class="services__item">
+                        <div
+                            class="services__item card d-flex items-center text-center flex-column gap-2 md:gap-4 p-2 md:px-4 md:pt-4 lg:pb-6"
+                        >
                             <div class="services__wrapper">
                                 <img
                                     src="assets/resources/images/services_2.png"
@@ -290,16 +315,22 @@
                                 />
                             </div>
                             <div class="services__description">
-                                <h3 class="services__description-title">
+                                <h3
+                                    class="services__description-title ff-circular-std fw-700 lh-120 title__card--services mb-2"
+                                >
                                     Easy Booking
                                 </h3>
-                                <p class="services__description-text">
+                                <p
+                                    class="services__description-text ff-inter fw-400 lh-160 body__card--services"
+                                >
                                     Square, was moving across the sand in their
                                     direction.
                                 </p>
                             </div>
                         </div>
-                        <div class="services__item">
+                        <div
+                            class="services__item card d-flex items-center text-center flex-column gap-2 md:gap-4 p-2 md:px-4 md:pt-4 lg:pb-6"
+                        >
                             <div class="services__wrapper">
                                 <img
                                     src="assets/resources/images/services_3.png"
@@ -307,10 +338,14 @@
                                 />
                             </div>
                             <div class="services__description">
-                                <h3 class="services__description-title">
+                                <h3
+                                    class="services__description-title ff-circular-std fw-700 lh-120 title__card--services mb-2"
+                                >
                                     Weather Forecast
                                 </h3>
-                                <p class="services__description-text">
+                                <p
+                                    class="services__description-text ff-inter fw-400 lh-160 body__card--services"
+                                >
                                     What looked like a small patch of purple
                                     grass, above five feet.
                                 </p>
@@ -318,7 +353,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="services__blur"></div>
+                <!-- <div class="services__blur"></div> -->
             </section>
         </main>
         <script type="module" src="./src/script/index.js"></script>

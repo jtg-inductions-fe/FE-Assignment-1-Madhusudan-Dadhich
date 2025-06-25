@@ -41,7 +41,7 @@ $screen-size: (
 $screen-max-width: (
     'small': 396.24px,
     'medium': 896px,
-    'large': 1205.28px,
+    'large': 1192.32px,
 );
 
 // Buttons
@@ -96,17 +96,6 @@ $md-btn-font-size: 14px;
 $line-height-120: 120%;
 $line-height-160: 160%;
 
-/**
- * Base container margin
- * prefix usage
- *     -sm is intended for small screen sizes
- *     -md is inteded for medium screen sizes
- *     -lg is inteded for large screen sizes
- */
-$container-margin-inline-sm: 16px;
-$container-margin-inline-md: 64px;
-$container-margin-inline-lg: 130px;
-
 // Card
 $card-border-radius: 32;
 
@@ -135,6 +124,7 @@ $icon-button-box-shadow:
     0px 308px 185px 0px rgba(0, 0, 0, 0.04),
     0px 548px 219px 0px rgba(0, 0, 0, 0.01),
     0px 856px 240px 0px rgba(0, 0, 0, 0);
+$card-box-shadow: 0px 41px 89px 0px rgba(0, 0, 0, 0.1);
 
 // File Paths
 $hero-bg-path: 'assets/resources/vectors/hero_background.svg';

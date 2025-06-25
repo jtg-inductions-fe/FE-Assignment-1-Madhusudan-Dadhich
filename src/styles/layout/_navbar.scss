@@ -122,6 +122,8 @@ header {
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        margin-block-start: px-to-rem(34);
+
         &__logo {
             position: relative;
             left: 0;

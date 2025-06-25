@@ -1,35 +1,38 @@
 @use 'sass:map';
 @use '../abstracts' as *;
 
-// Placeholder to provide base card layout
-%card-wrapper {
+.card {
     background-color: $white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: px-to-rem(32);
-    padding: px-to-rem(32);
     border: 1px solid $card-border;
     border-radius: px-to-rem($card-border-radius);
-
-    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
-        gap: px-to-rem(64);
-        padding: px-to-rem(64) px-to-rem(64) px-to-rem(35);
-    }
-
-    @include media-up(map.get($map: $screen-size, $key: 'large')) {
-        padding-block-end: px-to-rem(96);
-    }
+    cursor: pointer;
+    transition:
+        transform 0.5s,
+        box-shadow 0.5s;
+    transition-delay: 100ms;
 
     &:hover,
     &:focus-visible {
         @extend %card-shadow;
+        transform: scale(1.05);
+    }
+}
+
+@include media-up(map.get($map: $screen-size, $key: 'medium')) {
+    .card {
+        padding-block-end: px-to-rem(35);
+    }
+}
+
+@include media-up(map.get($map: $screen-size, $key: 'large')) {
+    .card {
+        padding-block-end: px-to-rem(98);
+        min-height: px-to-rem(443);
     }
 }
 
 // Placeholder to provide shadow to card
 %card-shadow {
     border: 0;
-    box-shadow: 0px 41px 89px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: $card-box-shadow;
 }
