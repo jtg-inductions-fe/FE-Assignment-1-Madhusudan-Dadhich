@@ -1,0 +1,83 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.travel-point {
+    margin-block: px-to-rem(31) px-to-rem(93);
+
+    &__container {
+        position: relative;
+        gap: px-to-rem(37.51);
+    }
+
+    &__description {
+        &-subtitle {
+            color: $bg-pink;
+        }
+
+        &-title {
+            text-wrap: initial;
+            color: $black;
+        }
+
+        &-text {
+            color: $link-text-inactive;
+            @extend %grayscale-50;
+        }
+    }
+
+    &__cards {
+        grid-template-columns: 1fr;
+    }
+
+    &__item {
+        &-title {
+            color: $bg-orange;
+        }
+
+        &-description {
+            color: $black;
+            white-space: nowrap;
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__container {
+            gap: px-to-rem(73.6);
+        }
+
+        &__image {
+            margin: px-to-rem(64) 0 0 px-to-rem(39);
+        }
+
+        &__cards {
+            grid-template-columns: repeat(2, minmax(px-to-rem(400), 1fr));
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__container {
+            gap: 0;
+            margin-block-start: px-to-rem(112);
+        }
+
+        &__image {
+            position: absolute;
+            margin: 0;
+            left: (px-to-rem($container-margin-inline-lg) * -1);
+        }
+
+        &__content {
+            max-width: px-to-rem(441.6);
+        }
+
+        &__cards {
+            grid-template-columns: repeat(2, minmax(px-to-rem(210), 1fr));
+        }
+
+        &__decorative {
+            position: absolute;
+            top: px-to-rem(272);
+            right: px-to-rem(64) * -1;
+        }
+    }
+}

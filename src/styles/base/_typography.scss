@@ -30,6 +30,12 @@ $title-card-services: (
     'large': 28,
 );
 
+$title-card-travel-point: (
+    'small': 35,
+    'medium': 35,
+    'large': 35,
+);
+
 $subtitle-section: (
     'small': 16,
     'medium': 23,
@@ -43,6 +49,12 @@ $body-section: (
 );
 
 $body-card-services: (
+    'small': 18,
+    'medium': 18,
+    'large': 18,
+);
+
+$body-card-travel-point: (
     'small': 18,
     'medium': 18,
     'large': 18,
@@ -82,6 +94,12 @@ $decorative-btn: (
                 map.get($map: $title-card-services, $key: 'small')
             );
         }
+
+        &--travelpoint {
+            font-size: px-to-rem(
+                map.get($map: $title-card-travel-point, $key: 'small')
+            );
+        }
     }
 }
 
@@ -100,6 +118,12 @@ $decorative-btn: (
         &--services {
             font-size: px-to-rem(
                 map.get($map: $body-card-services, $key: 'small')
+            );
+        }
+
+        &--travelpoint {
+            font-size: px-to-rem(
+                map.get($map: $body-card-travel-point, $key: 'small')
             );
         }
     }
@@ -176,6 +200,12 @@ $letter-spacing: (
                     map.get($map: $title-card-services, $key: 'medium')
                 );
             }
+
+            &--travelpoint {
+                font-size: px-to-rem(
+                    map.get($map: $title-card-travel-point, $key: 'medium')
+                );
+            }
         }
     }
 
@@ -196,6 +226,12 @@ $letter-spacing: (
             &--services {
                 font-size: px-to-rem(
                     map.get($map: $body-card-services, $key: 'medium')
+                );
+            }
+
+            &--travelpoint {
+                font-size: px-to-rem(
+                    map.get($map: $body-card-travel-point, $key: 'medium')
                 );
             }
         }
@@ -227,6 +263,12 @@ $letter-spacing: (
                     map.get($map: $title-card-services, $key: 'large')
                 );
             }
+
+            &--travelpoint {
+                font-size: px-to-rem(
+                    map.get($map: $title-card-travel-point, $key: 'large')
+                );
+            }
         }
     }
 
@@ -247,6 +289,12 @@ $letter-spacing: (
             &--services {
                 font-size: px-to-rem(
                     map.get($map: $body-card-services, $key: 'large')
+                );
+            }
+
+            &--travelpoint {
+                font-size: px-to-rem(
+                    map.get($map: $body-card-travel-point, $key: 'large')
                 );
             }
         }
