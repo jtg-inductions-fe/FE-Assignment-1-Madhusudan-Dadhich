@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.services {
+    position: relative;
+    padding-block-start: px-to-rem(37);
+
+    &__content {
+        gap: px-to-rem(18);
+    }
+
+    &__sub-title {
+        @extend %section-sub-title;
+    }
+
+    &__title {
+        @extend %section-title;
+    }
+
+    &__wrapper {
+        width: px-to-rem(64);
+        height: px-to-rem(64);
+    }
+
+    &__description {
+        &-text {
+            color: $link-text-inactive;
+            @extend %grayscale-50;
+        }
+    }
+
+    &__blur {
+        display: none;
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__blur {
+            display: block;
+            position: absolute;
+            top: px-to-rem(287) * -1;
+            right: px-to-rem(392) * -1;
+            shape-outside: ellipse(px-to-rem(203) px-to-rem(203));
+            background-color: $bg-yellow;
+            width: px-to-rem(406);
+            height: px-to-rem(406);
+            opacity: 0.5;
+            filter: blur(px-to-rem(150));
+            z-index: -1;
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        padding-block-start: px-to-rem(80);
+
+        &__cards {
+            gap: px-to-rem(21);
+        }
+
+        &__item {
+            &:last-child {
+                display: none;
+            }
+        }
+
+        &__blur {
+            top: px-to-rem(38.37) * -1;
+            right: px-to-rem(334.15) * -1;
+            shape-outside: ellipse(px-to-rem(226) px-to-rem(222));
+            width: px-to-rem(503.65);
+            height: px-to-rem(494.93);
+            filter: blur(px-to-rem(300));
+        }
+    }
+}

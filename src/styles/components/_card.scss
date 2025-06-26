@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.card {
+    background-color: $white;
+    border: 1px solid $card-border;
+    border-radius: px-to-rem($card-border-radius);
+    cursor: pointer;
+    transform: scale(1);
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+    transition-delay: 100ms;
+
+    &:hover,
+    &:focus-visible {
+        @extend %card-shadow;
+        transform: scale(1.05);
+    }
+}
+
+@include media-up(map.get($map: $screen-size, $key: 'medium')) {
+    .card {
+        padding-block-end: px-to-rem(35);
+    }
+}
+
+@include media-up(map.get($map: $screen-size, $key: 'large')) {
+    .card {
+        padding-block-end: px-to-rem(98);
+        min-height: px-to-rem($card-min-height-lg);
+    }
+}
+
+// Placeholder to provide shadow to card
+%card-shadow {
+    border: 0;
+    box-shadow: $card-box-shadow;
+}

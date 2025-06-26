@@ -1,4 +1,7 @@
 @use 'sass:map';
+@use './variables' as *;
+@use './colors' as *;
+@use './functions' as *;
 
 /// Mixin to generate font face for a font family
 ///
@@ -80,6 +83,26 @@
     line-height: #{$line-height};
 }
 
+// Placeholder for providing styling for sub title of section
+%section-sub-title {
+    color: $bg-pink;
+}
+
+// Placeholder for providing styling for title of section
+%section-title {
+    color: $black;
+    text-wrap: wrap;
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        text-wrap: balance;
+    }
+}
+
+/// Mixin to add prefix properties like -moz, -webkit
+///
+/// @param {List} $prefixes - List of prefixes which need to be added as prefix to provided property
+/// @param {String} $property - Property to prefix
+/// @param {Any} $value - Value for property
 @mixin prefix-properties($prefixes, $property, $value) {
     @each $prefix in $prefixes {
         #{$prefix}-#{$property}: $value;
@@ -115,7 +138,7 @@ $display-props: (
     'none'
 );
 $flex-directions: ('row', 'column', 'row-reverse', 'column-reverse');
-$flex-spacing: (0, 1, 2, 3, 4); // spacings are provided inrem
+$flex-spacing: (0, 1, 2, 3, 4, 5); // spacings are provided inrem
 $other-spacing: (
     0,
     1,

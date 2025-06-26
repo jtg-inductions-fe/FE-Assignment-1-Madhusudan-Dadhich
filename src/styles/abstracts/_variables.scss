@@ -41,7 +41,7 @@ $screen-size: (
 $screen-max-width: (
     'small': 396.24px,
     'medium': 896px,
-    'large': 1205.28px,
+    'large': 1192.32px,
 );
 
 // Buttons
@@ -57,18 +57,9 @@ $sm-btn-vertical-padding: 8;
 $sm-btn-horizontal-padding: 16;
 $md-btn-vertical-padding: 24;
 
+// pixel values without unit
+// [Example: if pixel value is 16px then value will be 16.]
 // Font sizes
-$title-font-size: 69;
-$title-font-size-sm: 40;
-$title-font-size-md: 56;
-$description-font-size-sm: 16;
-$description-font-size-md: 18;
-$description-font-size-lg: 18;
-$section-title-font-size: 44px;
-$section-subtitle-font-size: 23px;
-$section-body-font-size: 18px;
-$services-card-title-font-size: 28px;
-$services-card-body-font-size: 18px;
 $travel-card-title-font-size: 28px;
 $travel-card-body-font-size: 18px;
 $features-card-title-font-size: 23px;
@@ -86,16 +77,9 @@ $md-btn-font-size: 14px;
 $line-height-120: 120%;
 $line-height-160: 160%;
 
-/**
- * Base container margin
- * prefix usage
- *     -sm is intended for small screen sizes
- *     -md is inteded for medium screen sizes
- *     -lg is inteded for large screen sizes
- */
-$container-margin-inline-sm: 16px;
-$container-margin-inline-md: 64px;
-$container-margin-inline-lg: 130px;
+// Card
+$card-border-radius: 32;
+$card-min-height-lg: 443;
 
 // transition
 $transition-slow: cubic-bezier(0, 0.7, 0.3, 1);
@@ -122,6 +106,7 @@ $icon-button-box-shadow:
     0px 308px 185px 0px rgba(0, 0, 0, 0.04),
     0px 548px 219px 0px rgba(0, 0, 0, 0.01),
     0px 856px 240px 0px rgba(0, 0, 0, 0);
+$card-box-shadow: 0px 41px 89px 0px rgba(0, 0, 0, 0.1);
 
 // File Paths
 $hero-bg-path: 'assets/resources/vectors/hero_background.svg';

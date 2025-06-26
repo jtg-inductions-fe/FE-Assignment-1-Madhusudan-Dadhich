@@ -24,8 +24,26 @@ $title-section: (
     'large': 44,
 );
 
+$title-card-services: (
+    'small': 24,
+    'medium': 28,
+    'large': 28,
+);
+
+$subtitle-section: (
+    'small': 16,
+    'medium': 23,
+    'large': 23,
+);
+
 $body-section: (
     'small': 16,
+    'medium': 18,
+    'large': 18,
+);
+
+$body-card-services: (
+    'small': 18,
     'medium': 18,
     'large': 18,
 );
@@ -57,11 +75,33 @@ $decorative-btn: (
     &__section {
         font-size: px-to-rem(map.get($map: $title-section, $key: 'small'));
     }
+
+    &__card {
+        &--services {
+            font-size: px-to-rem(
+                map.get($map: $title-card-services, $key: 'small')
+            );
+        }
+    }
+}
+
+.subtitle {
+    &__section {
+        font-size: px-to-rem(map.get($map: $subtitle-section, $key: 'small'));
+    }
 }
 
 .body {
     &__section {
         font-size: px-to-rem(map.get($map: $body-section, $key: 'small'));
+    }
+
+    &__card {
+        &--services {
+            font-size: px-to-rem(
+                map.get($map: $body-card-services, $key: 'small')
+            );
+        }
     }
 }
 
@@ -129,11 +169,35 @@ $letter-spacing: (
         &__section {
             font-size: px-to-rem(map.get($map: $title-section, $key: 'medium'));
         }
+
+        &__card {
+            &--services {
+                font-size: px-to-rem(
+                    map.get($map: $title-card-services, $key: 'medium')
+                );
+            }
+        }
+    }
+
+    .subtitle {
+        &__section {
+            font-size: px-to-rem(
+                map.get($map: $subtitle-section, $key: 'medium')
+            );
+        }
     }
 
     .body {
         &__section {
             font-size: px-to-rem(map.get($map: $body-section, $key: 'medium'));
+        }
+
+        &__card {
+            &--services {
+                font-size: px-to-rem(
+                    map.get($map: $body-card-services, $key: 'medium')
+                );
+            }
         }
     }
 
@@ -156,11 +220,35 @@ $letter-spacing: (
         &__section {
             font-size: px-to-rem(map.get($map: $title-section, $key: 'large'));
         }
+
+        &__card {
+            &--services {
+                font-size: px-to-rem(
+                    map.get($map: $title-card-services, $key: 'large')
+                );
+            }
+        }
+    }
+
+    .subtitle {
+        &__section {
+            font-size: px-to-rem(
+                map.get($map: $subtitle-section, $key: 'large')
+            );
+        }
     }
 
     .body {
         &__section {
             font-size: px-to-rem(map.get($map: $body-section, $key: 'large'));
+        }
+
+        &__card {
+            &--services {
+                font-size: px-to-rem(
+                    map.get($map: $body-card-services, $key: 'large')
+                );
+            }
         }
     }
 
