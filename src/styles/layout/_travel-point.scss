@@ -41,6 +41,8 @@
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        margin-block-end: 0;
+
         &__container {
             gap: px-to-rem(73.6);
         }

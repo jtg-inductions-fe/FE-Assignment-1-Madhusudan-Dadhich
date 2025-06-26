@@ -1,88 +1,45 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .key-features {
     &__container {
-        display: flex;
-        flex-direction: column;
-        gap: px-to-rem(96);
         padding-inline: px-to-rem(24);
-
-        @include media-up($medium-screen-size) {
-            padding: px-to-rem(64) px-to-rem(32);
-            gap: px-to-rem(70);
-        }
-
-        @include media-up($large-screen-size) {
-            flex-direction: row-reverse;
-            padding: px-to-rem(64) 0;
-            align-items: start;
-            justify-content: space-between;
-        }
     }
 
     &__image {
         padding-inline-end: px-to-rem(56);
         place-self: center;
-
-        @include media-up($medium-screen-size) {
-            padding-inline-end: px-to-rem(112);
-        }
-
-        @include media-up($large-screen-size) {
-            padding-inline-end: 0;
-        }
     }
 
     &__content {
+        margin-block-start: px-to-rem(8);
         margin-inline: px-to-rem(8);
-
-        @include media-up($medium-screen-size) {
-            margin-inline: 0;
-        }
-
-        @include media-up($large-screen-size) {
-            flex: 0 0 auto;
-            min-width: min-content;
-            width: 100%;
-            max-width: 560px;
-            margin-inline-start: px-to-rem(24);
-        }
-    }
-
-    &__description {
-        margin-block-end: px-to-rem(32);
-
-        @include media-up($medium-screen-size) {
-            margin-block-end: px-to-rem(64);
-        }
     }
 
     &__sub-title {
-        margin-block-end: px-to-rem(16);
+        color: $bg-pink;
     }
 
     &__title {
-        margin-block-end: px-to-rem(32);
-        text-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    &__body {
+        color: $link-text-inactive;
+        @extend %grayscale-50;
     }
 
     &__cards {
-        display: flex;
-        flex-direction: column;
         gap: px-to-rem(8);
-
-        @include media-up($medium-screen-size) {
-            gap: 0;
-        }
     }
 
     &__card {
-        text-align: start;
+        gap: px-to-rem(27.2);
     }
 
     &__icons {
         border: 0;
-        border-radius: px-to-rem(32);
+        border-radius: $features-icon-border-radius;
 
         &--orange {
             background-color: $bg-orange;
@@ -108,5 +65,67 @@
 
     &__card-title {
         margin-block-end: px-to-rem(8);
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__container {
+            padding: px-to-rem(64) px-to-rem(32);
+            gap: px-to-rem(57);
+        }
+
+        &__image {
+            padding-inline-end: px-to-rem(112);
+        }
+
+        &__content {
+            margin-inline: 0;
+        }
+
+        &__cards {
+            gap: 0;
+        }
+
+        &__card {
+            gap: px-to-rem(32);
+        }
+
+        &__icons {
+            &--orange {
+                background-color: $bg-orange;
+                padding: px-to-rem(28) px-to-rem(33);
+            }
+
+            &--yellow {
+                background-color: $bg-yellow;
+                padding: px-to-rem(28) px-to-rem(32);
+            }
+
+            &--pink {
+                background-color: $bg-pink;
+                padding: px-to-rem(30) px-to-rem(30);
+            }
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__container {
+            padding: px-to-rem(120) 0;
+        }
+
+        &__image {
+            padding-inline-end: 0;
+        }
+
+        &__content {
+            flex: 0 0 auto;
+            min-width: min-content;
+            width: 100%;
+            max-width: 560px;
+            margin-inline-start: px-to-rem(16);
+        }
+
+        &__cards {
+            padding-block-start: px-to-rem(30);
+        }
     }
 }

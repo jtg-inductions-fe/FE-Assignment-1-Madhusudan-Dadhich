@@ -15,7 +15,18 @@
     &:hover,
     &:focus-visible {
         @extend %card-shadow;
-        transform: scale(1.05);
+        transform: scale(1.02);
+    }
+
+    &__features {
+        border: 0;
+        background-color: $transparent;
+
+        &:hover,
+        &:focus-visible {
+            border: 1px solid $card-border;
+            box-shadow: none;
+        }
     }
 }
 
@@ -23,6 +34,10 @@
     .card {
         &__services {
             padding-block-end: px-to-rem(35);
+        }
+
+        &__features {
+            width: 100%;
         }
     }
 }
