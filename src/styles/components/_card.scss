@@ -21,14 +21,18 @@
 
 @include media-up(map.get($map: $screen-size, $key: 'medium')) {
     .card {
-        padding-block-end: px-to-rem(35);
+        &__services {
+            padding-block-end: px-to-rem(35);
+        }
     }
 }
 
 @include media-up(map.get($map: $screen-size, $key: 'large')) {
     .card {
-        padding-block-end: px-to-rem(98);
-        min-height: px-to-rem($card-min-height-lg);
+        &__services {
+            padding-block-end: px-to-rem(98);
+            min-height: px-to-rem($card-min-height-lg);
+        }
     }
 }
 
