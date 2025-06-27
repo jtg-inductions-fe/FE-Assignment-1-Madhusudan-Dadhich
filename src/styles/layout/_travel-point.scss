@@ -22,6 +22,7 @@
         &-text {
             color: $link-text-inactive;
             @extend %grayscale-50;
+            @include truncate(3);
         }
     }
 

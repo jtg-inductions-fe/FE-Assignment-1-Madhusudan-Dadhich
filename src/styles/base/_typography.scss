@@ -48,6 +48,18 @@ $title-card-testimonial: (
     'large': 28,
 );
 
+$title-footer: (
+    'small': 24,
+    'medium': 24,
+    'large': 24,
+);
+
+$title-footer-nav: (
+    'small': 23,
+    'medium': 23,
+    'large': 23,
+);
+
 $subtitle-section: (
     'small': 16,
     'medium': 23,
@@ -142,6 +154,14 @@ $decorative-btn: (
                 map.get($map: $title-card-testimonial, $key: 'small')
             );
         }
+    }
+
+    &__footer {
+        font-size: map.get($map: $title-footer, $key: 'small');
+    }
+
+    &__footer-nav {
+        font-size: map.get($map: $title-footer-nav, $key: 'small');
     }
 }
 
@@ -285,6 +305,14 @@ $letter-spacing: (
                 );
             }
         }
+
+        &__footer {
+            font-size: map.get($map: $title-footer, $key: 'medium');
+        }
+
+        &__footer-nav {
+            font-size: map.get($map: $title-footer-nav, $key: 'medium');
+        }
     }
 
     .subtitle {
@@ -385,6 +413,14 @@ $letter-spacing: (
                     map.get($map: $title-card-testimonial, $key: 'large')
                 );
             }
+        }
+
+        &__footer {
+            font-size: map.get($map: $title-footer, $key: 'large');
+        }
+
+        &__footer-nav {
+            font-size: map.get($map: $title-footer-nav, $key: 'large');
         }
     }
 

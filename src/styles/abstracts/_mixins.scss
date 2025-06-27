@@ -115,6 +115,19 @@
     @include prefix-properties(('-webkit', '-moz'), 'filter', grayscale(50%));
 }
 
+/// Mixin to clamp lines
+///
+/// @param {Number} $lines - Number of lines to clamp
+@mixin truncate($lines) {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    @include prefix-properties(('-webkit', '-moz'), 'line-clamp', $lines);
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 // Utility variables
 $breakpoints: (
     md: 1024px,
@@ -385,6 +398,13 @@ $flex-wraps: ('wrap', 'nowrap', 'wrap-reverse');
         @each $align in $align-directions {
             .#{$break}\:text-#{$align} {
                 text-align: #{$align};
+            }
+        }
+
+        // Flex Wrap
+        @each $wrap in $flex-wraps {
+            .#{$break}\:flex-#{$wrap} {
+                flex-wrap: #{$wrap};
             }
         }
     }
