@@ -193,6 +193,10 @@ $decorative-btn: (
 
 .btn-text {
     font-size: px-to-rem(map.get($map: $button-text, $key: 'small'));
+
+    &__large {
+        font-size: px-to-rem(map.get($map: $button-text-lg, $key: 'small'));
+    }
 }
 
 .decorative-btn-text {
@@ -333,6 +337,12 @@ $letter-spacing: (
 
     .btn-text {
         font-size: px-to-rem(map.get($map: $button-text, $key: 'medium'));
+
+        &__large {
+            font-size: px-to-rem(
+                map.get($map: $button-text-lg, $key: 'medium')
+            );
+        }
     }
 
     .decorative-btn-text {
@@ -428,6 +438,10 @@ $letter-spacing: (
 
     .btn-text {
         font-size: px-to-rem(map.get($map: $button-text, $key: 'large'));
+
+        &__large {
+            font-size: px-to-rem(map.get($map: $button-text-lg, $key: 'large'));
+        }
     }
 
     .decorative-btn-text {

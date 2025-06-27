@@ -2,7 +2,7 @@
 @use '../abstracts' as *;
 
 .testimonials {
-    margin-block-end: px-to-rem(69);
+    margin-block-end: px-to-rem(76.8);
 
     &__sub-title {
         color: $bg-pink;
@@ -24,7 +24,6 @@
         &-icon {
             font-size: px-to-rem(26);
         }
-        padding: px-to-rem(4);
     }
 
     &__body {
@@ -61,6 +60,8 @@
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        background-position-y: 42%;
+
         &__slide {
             max-width: 75%;
         }

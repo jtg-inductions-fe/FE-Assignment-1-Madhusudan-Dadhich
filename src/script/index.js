@@ -4,12 +4,29 @@ import '../styles/main.scss';
 
 // Utilities
 
+// Email Regex
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 /**
  * Function to toggle hamburger state - active or inactive
  */
 const toggleHamburger = () => {
     navbar.classList.toggle('active');
     authWrapper.classList.toggle('active');
+};
+
+/**
+ * Function to check for valid email
+ */
+const checkEmail = (e) => {
+    e.preventDefault();
+    const email = emailInput.value;
+
+    if (email == '' || !emailRegex.test(email)) {
+        emailWrapper.classList.add('input__text--error');
+    } else {
+        emailWrapper.classList.remove('input__text--error');
+    }
 };
 
 /**
@@ -46,8 +63,13 @@ window.addEventListener('click', (e) => {
 
 // Sticky Header
 const header = document.getElementById('header-navbar');
-
 window.addEventListener('scroll', activeNav);
+
+// Validate Email
+const emailWrapper = document.getElementById('newsletter__email-wrapper');
+const subscribeBtn = document.getElementById('newsletter__subscribe-btn');
+const emailInput = document.getElementById('newsletter__email');
+subscribeBtn.addEventListener('click', checkEmail);
 
 // Splide Carousel
 new Splide('.splide').mount();

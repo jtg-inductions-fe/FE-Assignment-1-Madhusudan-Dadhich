@@ -22,9 +22,12 @@
     outline: 2px solid $focus-outline;
 }
 
-html,
 body {
     overflow-x: hidden;
+}
+
+html {
+    position: relative;
 }
 
 .sticky {
