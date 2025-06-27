@@ -1,80 +1,27 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .testimonials {
     margin-block-end: px-to-rem(69);
 
-    @include media-up($medium-screen-size) {
-        margin-block-end: 0;
-        background-image: url('assets/resources/testimonial_background.svg');
-        background-position-y: 40%;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    &__container {
-        @include media-up($medium-screen-size) {
-            position: relative;
-            padding-block: px-to-rem(56);
-        }
-    }
-
     &__sub-title {
-        margin-block-end: px-to-rem(16);
-
-        @include media-up($large-screen-size) {
-            text-align: center;
-        }
+        color: $bg-pink;
     }
 
     &__title {
-        @include media-up($large-screen-size) {
-            text-align: center;
-        }
-    }
-
-    &__slide {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: px-to-rem(64);
-        padding-block: px-to-rem(64);
-
-        @include media-up($medium-screen-size) {
-            padding-block: px-to-rem(56);
-            margin-inline: auto;
-            max-width: px-to-rem(584);
-            gap: px-to-rem(56);
-        }
-
-        @include media-up($large-screen-size) {
-            max-width: 75%;
-        }
-    }
-
-    &__card-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: px-to-rem(32);
-    }
-
-    &__slide-title {
-        font-size: px-to-rem($testimonial-card-title-font-size);
-    }
-
-    &__slide-subtitle {
-        font-size: px-to-rem($testimonial-card-body-font-size);
         color: $black;
     }
 
-    &__rating {
-        display: flex;
-        flex-direction: row;
-        gap: px-to-rem(16);
+    &__slide-title {
+        color: $bg-orange;
+    }
+
+    &__slide-subtitle {
+        color: $black;
     }
 
     &__star {
-        & i {
+        &-icon {
             font-size: px-to-rem(26);
         }
         padding: px-to-rem(4);
@@ -87,9 +34,35 @@
 
     &__navigation-arrow {
         font-size: px-to-rem(8);
+    }
 
-        @include media-up($medium-screen-size) {
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        margin-block-end: 0;
+        background-image: url($testimonial-bg-path);
+        background-position-y: 57%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &__container {
+            position: relative;
+            padding-block: px-to-rem(64);
+        }
+
+        &__slide {
+            padding-block: px-to-rem(56);
+            margin-inline: auto;
+            max-width: px-to-rem(584);
+            gap: px-to-rem(56);
+        }
+
+        &__navigation-arrow {
             font-size: px-to-rem(12);
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__slide {
+            max-width: 75%;
         }
     }
 }

@@ -42,8 +42,20 @@ $title-card-features: (
     'large': 23,
 );
 
+$title-card-testimonial: (
+    'small': 28,
+    'medium': 28,
+    'large': 28,
+);
+
 $subtitle-section: (
     'small': 16,
+    'medium': 23,
+    'large': 23,
+);
+
+$subtitle-card-testimonial: (
+    'small': 23,
     'medium': 23,
     'large': 23,
 );
@@ -70,6 +82,12 @@ $body-card-features: (
     'small': 18,
     'medium': 18,
     'large': 18,
+);
+
+$body-card-testimonial: (
+    'small': 18,
+    'medium': 23,
+    'large': 23,
 );
 
 $button-text: (
@@ -118,12 +136,26 @@ $decorative-btn: (
                 map.get($map: $title-card-features, $key: 'small')
             );
         }
+
+        &--testimonial {
+            font-size: px-to-rem(
+                map.get($map: $title-card-testimonial, $key: 'small')
+            );
+        }
     }
 }
 
 .subtitle {
     &__section {
         font-size: px-to-rem(map.get($map: $subtitle-section, $key: 'small'));
+    }
+
+    &__card {
+        &--testimonial {
+            font-size: px-to-rem(
+                map.get($map: $subtitle-card-testimonial, $key: 'small')
+            );
+        }
     }
 }
 
@@ -152,16 +184,9 @@ $decorative-btn: (
         }
 
         &--testimonials {
-            text-align: center;
-            @include card-title-font-style(
-                $section-body-font-size,
-                $circularstd-medium-font-weight
+            font-size: px-to-rem(
+                map.get($map: $body-card-testimonial, $key: 'small')
             );
-            line-height: $inter-line-height;
-
-            @include media-up($medium-screen-size) {
-                font-size: px-to-rem($testimonial-card-body-font-size);
-            }
         }
     }
 }
@@ -249,6 +274,12 @@ $letter-spacing: (
                     map.get($map: $title-card-features, $key: 'medium')
                 );
             }
+
+            &--testimonial {
+                font-size: px-to-rem(
+                    map.get($map: $title-card-testimonial, $key: 'medium')
+                );
+            }
         }
     }
 
@@ -257,6 +288,14 @@ $letter-spacing: (
             font-size: px-to-rem(
                 map.get($map: $subtitle-section, $key: 'medium')
             );
+        }
+
+        &__card {
+            &--testimonial {
+                font-size: px-to-rem(
+                    map.get($map: $subtitle-card-testimonial, $key: 'medium')
+                );
+            }
         }
     }
 
@@ -281,6 +320,12 @@ $letter-spacing: (
             &--features {
                 font-size: px-to-rem(
                     map.get($map: $body-card-features, $key: 'medium')
+                );
+            }
+
+            &--testimonial {
+                font-size: px-to-rem(
+                    map.get($map: $body-card-testimonial, $key: 'medium')
                 );
             }
         }
@@ -324,6 +369,12 @@ $letter-spacing: (
                     map.get($map: $title-card-features, $key: 'large')
                 );
             }
+
+            &--testimonial {
+                font-size: px-to-rem(
+                    map.get($map: $title-card-testimonial, $key: 'large')
+                );
+            }
         }
     }
 
@@ -332,6 +383,14 @@ $letter-spacing: (
             font-size: px-to-rem(
                 map.get($map: $subtitle-section, $key: 'large')
             );
+        }
+
+        &__card {
+            &--testimonial {
+                font-size: px-to-rem(
+                    map.get($map: $subtitle-card-testimonial, $key: 'large')
+                );
+            }
         }
     }
 
@@ -356,6 +415,12 @@ $letter-spacing: (
             &--features {
                 font-size: px-to-rem(
                     map.get($map: $body-card-features, $key: 'large')
+                );
+            }
+
+            &--testimonial {
+                font-size: px-to-rem(
+                    map.get($map: $body-card-testimonial, $key: 'large')
                 );
             }
         }

@@ -2,7 +2,7 @@
 @use '../abstracts' as *;
 
 .key-features {
-    margin-block-end: px-to-rem(71);
+    margin-block-end: px-to-rem(75.2);
 
     @include media-up($medium-screen-size) {
         margin-block-end: 0;
@@ -115,7 +115,7 @@
 
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
         &__container {
-            padding: px-to-rem(120) 0;
+            padding: px-to-rem(120) 0 px-to-rem(46);
         }
 
         &__image {

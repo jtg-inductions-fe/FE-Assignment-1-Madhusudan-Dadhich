@@ -1,13 +1,10 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .splide {
-    @include media-up($medium-screen-size) {
-        position: initial;
-    }
-
     &__pagination {
         position: relative;
-        margin-block-end: px-to-rem(28);
+        margin-block-end: px-to-rem(41.6);
         gap: px-to-rem(24);
     }
 
@@ -28,11 +25,6 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-
-        @include media-up($medium-screen-size) {
-            position: absolute;
-            top: 40%;
-        }
     }
 
     &__arrow {
@@ -42,6 +34,8 @@
         top: unset;
         position: relative;
         transform: none;
+        background-color: $primary;
+        color: $white;
         width: px-to-rem(64);
         height: px-to-rem(64);
         box-shadow:
@@ -51,26 +45,31 @@
             0px 65px 39px 0px $black-4,
             0px 116px 46px 0px $black-1;
 
-        @include media-up($medium-screen-size) {
-            padding: px-to-rem(44);
-            width: px-to-rem(100);
-            height: px-to-rem(100);
-        }
-
         &--prev {
-            background-color: $white;
-            color: $black;
             left: unset;
         }
 
         &--next {
-            background-color: $primary;
-            color: $white;
             right: unset;
         }
 
         &:disabled {
             box-shadow: none;
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        position: initial;
+
+        &__arrows {
+            position: absolute;
+            top: 41%;
+        }
+
+        &__arrow {
+            padding: px-to-rem(44);
+            width: px-to-rem(100);
+            height: px-to-rem(100);
         }
     }
 }

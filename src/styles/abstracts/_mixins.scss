@@ -34,8 +34,7 @@
         src:
             url($path + $file + '.eot?#iefix') format('embedded-opentype'),
             url($path + $file + '.woff') format('woff'),
-            url($path + $file + '.ttf') format('truetype'),
-            url($path + $file + '.svg##{$svg}') format('svg');
+            url($path + $file + '.ttf') format('truetype');
         font-weight: $weight;
         font-style: $style;
     }
