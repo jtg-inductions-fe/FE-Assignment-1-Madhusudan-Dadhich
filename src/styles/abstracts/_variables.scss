@@ -49,6 +49,7 @@ $screen-max-width: (
 // Buttons
 $btn-border-radius: 100px;
 $btn-border-radius-50: 50px;
+$features-icon-border-radius: 30px;
 $button-padding: (
     'horizontal': 32,
     'vertical': 16,
@@ -62,8 +63,6 @@ $md-btn-vertical-padding: 24;
 // pixel values without unit
 // [Example: if pixel value is 16px then value will be 16.]
 // Font sizes
-$features-card-title-font-size: 23px;
-$features-card-body-font-size: 18px;
 $testimonial-card-title-font-size: 28px;
 $testimonial-card-body-font-size: 23px;
 $newsletter-card-title-font-size: 55px;
