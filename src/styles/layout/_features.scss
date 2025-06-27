@@ -1,0 +1,131 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.key-features {
+    &__container {
+        padding-inline: px-to-rem(24);
+    }
+
+    &__image {
+        padding-inline-end: px-to-rem(56);
+        place-self: center;
+    }
+
+    &__content {
+        margin-block-start: px-to-rem(8);
+        margin-inline: px-to-rem(8);
+    }
+
+    &__sub-title {
+        color: $bg-pink;
+    }
+
+    &__title {
+        white-space: nowrap;
+    }
+
+    &__body {
+        color: $link-text-inactive;
+        @extend %grayscale-50;
+    }
+
+    &__cards {
+        gap: px-to-rem(8);
+    }
+
+    &__card {
+        gap: px-to-rem(27.2);
+    }
+
+    &__icons {
+        border: 0;
+        border-radius: $features-icon-border-radius;
+
+        &--orange {
+            background-color: $bg-orange;
+            padding: px-to-rem(30) px-to-rem(33);
+        }
+
+        &--yellow {
+            background-color: $bg-yellow;
+            padding: px-to-rem(28) px-to-rem(30);
+        }
+
+        &--pink {
+            background-color: $bg-pink;
+            padding: px-to-rem(34) px-to-rem(30);
+        }
+    }
+
+    &__icon {
+        &--small {
+            font-size: px-to-rem(32);
+        }
+    }
+
+    &__card-title {
+        margin-block-end: px-to-rem(8);
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__container {
+            padding: px-to-rem(64) px-to-rem(32);
+            gap: px-to-rem(57);
+        }
+
+        &__image {
+            padding-inline-end: px-to-rem(112);
+        }
+
+        &__content {
+            margin-inline: 0;
+        }
+
+        &__cards {
+            gap: 0;
+        }
+
+        &__card {
+            gap: px-to-rem(32);
+        }
+
+        &__icons {
+            &--orange {
+                background-color: $bg-orange;
+                padding: px-to-rem(28) px-to-rem(33);
+            }
+
+            &--yellow {
+                background-color: $bg-yellow;
+                padding: px-to-rem(28) px-to-rem(32);
+            }
+
+            &--pink {
+                background-color: $bg-pink;
+                padding: px-to-rem(30) px-to-rem(30);
+            }
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__container {
+            padding: px-to-rem(120) 0;
+        }
+
+        &__image {
+            padding-inline-end: 0;
+        }
+
+        &__content {
+            flex: 0 0 auto;
+            min-width: min-content;
+            width: 100%;
+            max-width: 560px;
+            margin-inline-start: px-to-rem(16);
+        }
+
+        &__cards {
+            padding-block-start: px-to-rem(30);
+        }
+    }
+}
