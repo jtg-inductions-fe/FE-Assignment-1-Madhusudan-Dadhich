@@ -62,7 +62,7 @@
                         <li>
                             <a
                                 href="#"
-                                class="navbar__login-button button button__text"
+                                class="navbar__login-button button button__text ff-circular-std fw-700 lh-120 btn-text"
                                 title="Log In"
                                 >Log In</a
                             >
@@ -70,7 +70,7 @@
                         <li>
                             <a
                                 href="#"
-                                class="navbar__signup-button button button__fill button__fill--primary"
+                                class="navbar__signup-button button button__fill button__fill--primary ff-circular-std fw-700 lh-120 btn-text"
                                 title="Sign Up"
                                 >Sign Up</a
                             >
@@ -136,7 +136,7 @@
                                         aria-hidden="true"
                                     />
                                     <button
-                                        class="hero__decoration hero__decoration-location-btn button button__fill button__fill--white button__fill--small d-flex items-flex-end ff-circularstd decorative-btn-text lh-120 fw-700"
+                                        class="hero__decoration hero__decoration-location-btn button button__fill button__fill--white button__fill--small d-flex items-flex-end ff-circular-std decorative-btn-text lh-120 fw-700"
                                         aria-hidden="true"
                                     >
                                         <i
@@ -814,19 +814,26 @@
                 </div>
             </section>
             <section class="newsletter" aria-labelledby="newsletter-section">
-                <div class="container newsletter__container">
-                    <p class="newsletter__sub-title section__sub-title">
+                <div class="container newsletter__container px-2">
+                    <p
+                        class="newsletter__sub-title subtitle__section ff-circular-std fw-700 lh-120 ls-20 mb-2 text-center"
+                    >
                         SUBSCRIBE TO OUR NEWSLETTER
                     </p>
-                    <h2 class="newsletter__title section__title">
+                    <h2
+                        class="newsletter__title title__section ff-circular-std fw-700 lh-120 mb-4 text-center"
+                    >
                         Prepare yourself & let's explore the beauty of the world
                     </h2>
-                    <form action="" class="newsletter__form">
+                    <form
+                        action=""
+                        class="newsletter__form d-flex flex-column md:flex-row gap-2"
+                    >
                         <div
                             id="newsletter__email-wrapper"
                             class="input input__email input__email--icon"
                         >
-                            <i class="icon icon__ic-email input__icon"></i>
+                            <i class="icon icon-ic_email input__icon"></i>
                             <input
                                 type="email"
                                 placeholder="Your Email"
@@ -839,12 +846,15 @@
                         <input
                             type="button"
                             value="Subscribe"
-                            class="button button__fill button__fill--primary button__fill--large"
+                            class="button button__fill button__fill--primary button__fill--large btn-text__large ff-circular-std fw-700 lh-120"
                             id="newsletter__subscribe-btn"
                             title="Subscribe"
                         />
                     </form>
-                    <div class="newsletter__decorative" aria-hidden="true">
+                    <div
+                        class="newsletter__decorative d-none md:d-block"
+                        aria-hidden="true"
+                    >
                         <img
                             src="assets/resources/vectors/newsletter_decorative.svg"
                             alt=""
@@ -853,7 +863,7 @@
                     </div>
                 </div>
                 <div
-                    class="newsletter__background-decorative"
+                    class="newsletter__background-decorative d-none md:d-block"
                     aria-hidden="true"
                 >
                     <img

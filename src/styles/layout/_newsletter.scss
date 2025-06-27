@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .newsletter {
@@ -5,57 +6,43 @@
 
     &__container {
         position: relative;
-        padding-inline: px-to-rem(32);
     }
 
     &__sub-title {
-        margin-block-end: px-to-rem(32);
+        color: $bg-pink;
     }
 
     &__title {
-        margin-block-end: px-to-rem(64);
+        color: $black;
+        text-wrap: wrap;
     }
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-        gap: px-to-rem(32);
-    }
-
-    &__decorative,
-    &__background-decorative {
-        display: none;
-    }
-
-    @include media-up($medium-screen-size) {
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
         &__container {
             border: none;
             border-radius: px-to-rem(32);
             background-color: $light-yellow;
-            margin-block-start: px-to-rem(16);
             padding: px-to-rem(128) px-to-rem(64);
         }
 
-        &__form {
-            flex-direction: row;
+        &__sub-title {
+            margin-block-end: px-to-rem(38.4);
         }
 
         &__decorative {
-            display: block;
             position: absolute;
             top: px-to-rem(51) * -1;
             left: px-to-rem(37) * -1;
         }
 
         &__background-decorative {
-            display: block;
             position: absolute;
             top: px-to-rem(328) * -1;
             right: 0;
         }
     }
 
-    @include media-up($large-screen-size) {
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
         position: initial; // [Because of overflow issue with relative position of section] Refer to _base.scss for more.
         margin-block-start: px-to-rem(64);
         margin-block-end: px-to-rem(

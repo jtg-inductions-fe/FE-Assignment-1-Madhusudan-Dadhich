@@ -11,7 +11,6 @@ $padding-vertical: map.get(
 );
 
 .button {
-    @include font-style($circularstd-bold, $md-btn-font-size, $line-height-120);
     border: 0;
     border-radius: $btn-border-radius;
     cursor: pointer;
@@ -73,6 +72,11 @@ $padding-vertical: map.get(
         &--medium {
             padding: px-to-rem($md-btn-vertical-padding);
         }
+
+        &--large {
+            border-radius: px-to-rem(16);
+            padding: px-to-rem(24);
+        }
     }
 
     &__outline {
@@ -112,6 +116,12 @@ $padding-vertical: map.get(
             &--medium {
                 padding: px-to-rem($padding-vertical)
                     px-to-rem($padding-horizontal);
+            }
+
+            &--large {
+                border-radius: px-to-rem(32);
+                padding: px-to-rem($lg-btn-vertical-padding)
+                    px-to-rem($lg-btn-horizontal-padding);
             }
         }
 

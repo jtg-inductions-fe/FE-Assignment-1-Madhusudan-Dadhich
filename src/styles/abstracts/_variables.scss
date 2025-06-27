@@ -59,6 +59,8 @@ $icon-padding: 16;
 $sm-btn-vertical-padding: 8;
 $sm-btn-horizontal-padding: 16;
 $md-btn-vertical-padding: 24;
+$lg-btn-vertical-padding: 34;
+$lg-btn-horizontal-padding: 64;
 
 // pixel values without unit
 // [Example: if pixel value is 16px then value will be 16.]
@@ -87,14 +89,6 @@ $line-height-160: 160%;
 // Card
 $card-border-radius: 32;
 $card-min-height-lg: 443;
-$medium-screen-size: map.get(
-    $map: $screen-size,
-    $key: 'medium',
-);
-$large-screen-size: map.get(
-    $map: $screen-size,
-    $key: 'medium',
-);
 
 // Container margin
 $container-margin-inline-lg: 123;

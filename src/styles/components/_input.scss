@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../abstracts' as *;
 
 .input {
@@ -34,7 +35,7 @@
         padding: px-to-rem(3) px-to-rem(2);
     }
 
-    @include media-up($medium-screen-size) {
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
         width: 100%;
 
         &__text {
