@@ -33,18 +33,23 @@ const checkEmail = (e) => {
  * Function to handle toggling of Accordion
  */
 const toggleAccordion = (e) => {
-    if (e.target != null) {
+    let element = e.target;
+    if (element != null) {
+        if (element.parentElement.classList.contains('footer__nav-title')) {
+            element = element.parentElement;
+        }
+
         if (
-            e.target.parentElement.classList.contains('open') &&
-            e.target.nextElementSibling != null &&
-            e.target.nextElementSibling.classList.contains('open')
+            element.parentElement.classList.contains('open') &&
+            element.nextElementSibling != null &&
+            element.nextElementSibling.classList.contains('open')
         ) {
-            e.target.nextElementSibling.classList.remove('open');
-            e.target.parentElement.classList.remove('open');
+            element.nextElementSibling.classList.remove('open');
+            element.parentElement.classList.remove('open');
         } else {
-            if (e.target.nextElementSibling != null) {
-                e.target.nextElementSibling.classList.add('open');
-                e.target.parentElement.classList.add('open');
+            if (element.nextElementSibling != null) {
+                element.nextElementSibling.classList.add('open');
+                element.parentElement.classList.add('open');
             }
         }
     }
@@ -61,6 +66,23 @@ const activeNav = () => {
     ) {
         toggleHamburger();
     }
+};
+
+const handleTestimonialTabIndex = () => {
+    if (window.screen.availWidth < 1024) {
+        testimonialNavPrev.removeAttribute('tabindex');
+        testimonialNavNext.removeAttribute('tabindex');
+    } else {
+        testimonialNavPrev.setAttribute('tabindex', 15);
+        testimonialNavNext.setAttribute('tabindex', 16);
+    }
+};
+
+// Page Loader
+const pageLoader = document.getElementById('overlay-loader');
+
+window.onload = () => {
+    pageLoader.classList.add('loaded');
 };
 
 // Navbar Hamburger Toggle
@@ -94,6 +116,15 @@ subscribeBtn.addEventListener('click', checkEmail);
 
 // Splide Carousel
 new Splide('.splide').mount();
+
+const testimonialNavPrev = document.getElementById('testimonial-arrow-prev');
+const testimonialNavNext = document.getElementById('testimonial-arrow-next');
+
+handleTestimonialTabIndex();
+
+window.onresize = () => {
+    handleTestimonialTabIndex();
+};
 
 // Footer Accordion
 const footerAccordions = document.getElementsByClassName('footer__nav-title');

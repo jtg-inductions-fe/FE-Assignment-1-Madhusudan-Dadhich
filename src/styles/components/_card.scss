@@ -57,31 +57,3 @@
     border: 0;
     box-shadow: $card-box-shadow;
 }
-
-.card-wrapper {
-    background-color: $white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: px-to-rem(32);
-    border-radius: px-to-rem($card-border-radius);
-    cursor: pointer;
-
-    &__features {
-        border: 0;
-        align-items: start;
-        gap: px-to-rem(32);
-        transition: all 0.3s;
-
-        &:hover {
-            border: 1px solid $card-border;
-            transform: scale(1.02);
-        }
-
-        @include media-up($medium-screen-size) {
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-        }
-    }
-}

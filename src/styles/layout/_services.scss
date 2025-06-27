@@ -18,6 +18,10 @@
         @extend %section-title;
     }
 
+    &__item {
+        max-height: px-to-rem(280);
+    }
+
     &__wrapper {
         width: px-to-rem(64);
         height: px-to-rem(64);
@@ -35,6 +39,11 @@
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__item {
+            max-width: px-to-rem(288);
+            max-height: px-to-rem(443);
+        }
+
         &__blur {
             display: block;
             position: absolute;

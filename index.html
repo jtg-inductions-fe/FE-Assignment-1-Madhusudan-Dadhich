@@ -4,14 +4,96 @@
         <title>Travlog</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Preload images -->
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_1.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_2.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_3.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_1.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/key_features.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/profile_image.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/services_1.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/services_2.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/services_3.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/travel_point_decorative.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/travel_point.webp"
+            as="image"
+            type="image/webp"
+        />
     </head>
     <body>
+        <div
+            id="overlay-loader"
+            class="preload d-flex justify-center items-center"
+        >
+            <img
+                src="assets/resources/gifs/loading-animation.gif"
+                alt="Loading"
+            />
+        </div>
         <header class="d-inline">
             <nav id="header-navbar" class="navbar sticky sticky__top">
                 <div
                     class="container navbar__container mt-0 d-flex flex-row md:flex-row-reverse lg:flex-row justify-space-between items-center"
                 >
-                    <a href="#" class="navbar__logo" title="Travlog">
+                    <a
+                        href="#"
+                        class="navbar__logo"
+                        title="Travlog"
+                        tabindex="1"
+                    >
                         <img
                             src="/assets/resources/vectors/ic_logo.svg"
                             alt="Travlog Logo"
@@ -25,14 +107,22 @@
                         <li
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
-                            <a href="#" class="navbar__link active" title="Home"
+                            <a
+                                href="#"
+                                class="navbar__link active"
+                                title="Home"
+                                tabindex="2"
                                 >Home</a
                             >
                         </li>
                         <li
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
-                            <a href="#" class="navbar__link" title="Discover"
+                            <a
+                                href="#services"
+                                class="navbar__link"
+                                title="Discover"
+                                tabindex="3"
                                 >Discover</a
                             >
                         </li>
@@ -40,16 +130,21 @@
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
                             <a
-                                href="#"
+                                href="#features"
                                 class="navbar__link"
                                 title="Special Deals"
+                                tabindex="4"
                                 >Special Deals</a
                             >
                         </li>
                         <li
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
-                            <a href="#" class="navbar__link" title="Contact"
+                            <a
+                                href="#newsletter"
+                                class="navbar__link"
+                                title="Contact"
+                                tabindex="5"
                                 >Contact</a
                             >
                         </li>
@@ -64,6 +159,7 @@
                                 href="#"
                                 class="navbar__login-button button button__text ff-circular-std fw-700 lh-120 btn-text"
                                 title="Log In"
+                                tabindex="6"
                                 >Log In</a
                             >
                         </li>
@@ -72,6 +168,7 @@
                                 href="#"
                                 class="navbar__signup-button button button__fill button__fill--primary ff-circular-std fw-700 lh-120 btn-text"
                                 title="Sign Up"
+                                tabindex="7"
                                 >Sign Up</a
                             >
                         </li>
@@ -81,6 +178,7 @@
                         class="navbar__hamburger button d-block lg:d-none"
                         aria-label="toggler navbar"
                         title="Nav Menu"
+                        tabindex="8"
                     >
                         <i class="icon icon-ic_hamburger"></i>
                     </button>
@@ -99,13 +197,14 @@
                             >
                                 <div class="hero__item">
                                     <img
-                                        src="assets/resources/images/hero_section_1.png"
+                                        src="assets/resources/images/hero_section_1.webp"
                                         alt=""
                                         aria-hidden="true"
                                     />
                                     <button
                                         class="hero__decoration hero__decoration-send-message button button__icon button__icon--pink"
-                                        aria-hidden="true"
+                                        tabindex="9"
+                                        title="send message"
                                     >
                                         <i
                                             class="icon icon-ic_send_message hero__decoration-icon d-block"
@@ -115,13 +214,14 @@
                                 </div>
                                 <div class="hero__item">
                                     <img
-                                        src="assets/resources/images/hero_section_2.png"
+                                        src="assets/resources/images/hero_section_2.webp"
                                         alt=""
                                         aria-hidden="true"
                                     />
                                     <button
                                         class="hero__decoration hero__decoration-add-user button button__icon button__icon--orange"
-                                        aria-hidden="true"
+                                        title="add user"
+                                        tabindex="11"
                                     >
                                         <i
                                             class="icon icon-ic_add_user hero__decoration-icon d-block"
@@ -131,13 +231,14 @@
                                 </div>
                                 <div class="hero__item">
                                     <img
-                                        src="assets/resources/images/hero_section_3.png"
+                                        src="assets/resources/images/hero_section_3.webp"
                                         alt=""
                                         aria-hidden="true"
                                     />
                                     <button
                                         class="hero__decoration hero__decoration-location-btn button button__fill button__fill--white button__fill--small d-flex items-flex-end ff-circular-std decorative-btn-text lh-120 fw-700"
-                                        aria-hidden="true"
+                                        title="Top places"
+                                        tabindex="10"
                                     >
                                         <i
                                             class="icon icon-ic_location_yellow hero__decoration-icon hero__decoration-location-icon d-block"
@@ -156,6 +257,7 @@
                             >
                                 <button
                                     class="hero__description-btn button button__fill button__fill--white d-flex items-flex-end gap-1 ff-circular-std btn-text fw-700 lh-120"
+                                    tabindex="12"
                                     title="Explore the world!"
                                 >
                                     <p>Explore the world!</p>
@@ -188,12 +290,14 @@
                                 <button
                                     class="hero__get-started button button__fill button__fill--primary button__fill--medium"
                                     title="Get Started"
+                                    tabindex="13"
                                 >
                                     Get Started
                                 </button>
                                 <button
                                     class="hero__watch-demo button button__outline button__outline--medium d-flex justify-center items-flex-end ff-circular-std btn-text fw-700 lh-120"
                                     title="Watch Demo"
+                                    tabindex="14"
                                 >
                                     <i
                                         class="icon icon-ic_play_circle hero__watch-demo-icon d-block"
@@ -281,7 +385,7 @@
                                 title="The earth with two location markers connecting eachother with a curve dashed line."
                             >
                                 <img
-                                    src="assets/resources/images/services_1.png"
+                                    src="assets/resources/images/services_1.webp"
                                     alt="The earth with two location markers connecting eachother with a curve dashed line."
                                 />
                             </div>
@@ -307,7 +411,7 @@
                                 title="A mobile screen shown and a checked calendar on top of mobile screen on a blue background."
                             >
                                 <img
-                                    src="assets/resources/images/services_2.png"
+                                    src="assets/resources/images/services_2.webp"
                                     alt="A mobile screen shown and a checked calendar on top of mobile screen on a blue background."
                                 />
                             </div>
@@ -333,7 +437,7 @@
                                 title="The sun coming out of cloud on a blue background."
                             >
                                 <img
-                                    src="assets/resources/images/services_3.png"
+                                    src="assets/resources/images/services_3.webp"
                                     alt="The sun coming out of cloud on a blue background."
                                 />
                             </div>
@@ -367,7 +471,7 @@
                         title="Image of a women sitting on suitace with smile on her face with a yellow background. She is holding some documents, with tour bagpack on her back and a text written 'Discounted Price'."
                     >
                         <img
-                            src="assets/resources/images/travel_point.png"
+                            src="assets/resources/images/travel_point.webp"
                             alt="Image of a women sitting on suitace with smile on her face with a yellow background. She is holding some documents, with tour bagpack on her back and a text written 'Discounted Price'."
                         />
                     </div>
@@ -457,7 +561,7 @@
                             aria-hidden="true"
                         >
                             <img
-                                src="assets/resources/images/travel_point_decorative.png"
+                                src="assets/resources/images/travel_point_decorative.webp"
                                 alt=""
                                 aria-hidden="true"
                             />
@@ -477,7 +581,7 @@
                         title="Key features section image"
                     >
                         <img
-                            src="assets/resources/images/key_features.png"
+                            src="assets/resources/images/key_features.webp"
                             alt="Key features section image"
                         />
                     </div>
@@ -603,7 +707,7 @@
                                             title="Testimonials avatar"
                                         >
                                             <img
-                                                src="assets/resources/images/profile_image.png"
+                                                src="assets/resources/images/profile_image.webp"
                                                 alt="Testimonials avatar"
                                             />
                                         </div>
@@ -668,7 +772,7 @@
                                             title="Testimonials avatar"
                                         >
                                             <img
-                                                src="assets/resources/images/profile_image.png"
+                                                src="assets/resources/images/profile_image.webp"
                                                 alt="Testimonials avatar"
                                             />
                                         </div>
@@ -733,7 +837,7 @@
                                             title="Testimonials avatar"
                                         >
                                             <img
-                                                src="assets/resources/images/profile_image.png"
+                                                src="assets/resources/images/profile_image.webp"
                                                 alt="Testimonials avatar"
                                             />
                                         </div>
@@ -794,6 +898,7 @@
                         <ul class="splide__pagination"></ul>
                         <div class="splide__arrows">
                             <button
+                                id="testimonial-arrow-prev"
                                 class="splide__arrow splide__arrow--prev"
                                 title="Previous Slide"
                             >
@@ -802,6 +907,7 @@
                                 ></i>
                             </button>
                             <button
+                                id="testimonial-arrow-next"
                                 class="splide__arrow splide__arrow--next"
                                 title="Next Slide"
                             >
@@ -841,6 +947,7 @@
                                 class="input__text"
                                 id="newsletter__email"
                                 title="Email"
+                                tabindex="0"
                             />
                         </div>
                         <input
@@ -849,6 +956,7 @@
                             class="button button__fill button__fill--primary button__fill--large btn-text__large ff-circular-std fw-700 lh-120"
                             id="newsletter__subscribe-btn"
                             title="Subscribe"
+                            tabindex="0"
                         />
                     </form>
                     <div
@@ -876,36 +984,55 @@
         </main>
         <footer class="footer">
             <div class="container">
-                <nav class="footer__nav">
+                <nav class="footer__nav d-flex flex-column">
                     <div class="footer__top">
-                        <div class="footer__company">
-                            <a href="#" class="footer__logo" title="Travlog">
+                        <div
+                            class="footer__company d-flex gap-1 items-center mb-2"
+                        >
+                            <a
+                                href="#"
+                                class="footer__logo"
+                                title="Travlog"
+                                tabindex="0"
+                            >
                                 <img
-                                    src="assets/resources/ic_logo.svg"
+                                    src="assets/resources/vectors/ic_logo.svg"
                                     alt="Travlog Logo"
                                 />
                             </a>
-                            <h2 class="footer__company-name">Travlog</h2>
+                            <h2
+                                class="footer__company-name ff-circular-std fw-900 lh-120 title__footer"
+                            >
+                                Travlog
+                            </h2>
                         </div>
-                        <p class="footer__description">
+                        <p
+                            class="footer__description mb-2 ff-inter fw-500 lh-160 subtitle__section"
+                        >
                             Contrary to popular belief, Lorem Ipsum is not
                             simply random text. It has roots in a piece of
                             classical Latin literature from 45 BC.
                         </p>
-                        <div class="footer__social-links">
+                        <div class="footer__social-links d-flex gap-2">
                             <a
                                 href="#"
                                 class="footer__social-link"
                                 title="Facebook"
+                                tabindex="0"
                             >
-                                <i class="icon icon__ic-facebook"></i>
+                                <i
+                                    class="icon icon-ic_facebook footer__social-link-icon"
+                                ></i>
                             </a>
                             <a
                                 href="#"
                                 class="footer__social-link"
                                 title="Twitter"
+                                tabindex="0"
                             >
-                                <i class="icon icon__ic-twitter">
+                                <i
+                                    class="icon icon-ic_twitter footer__social-link-icon"
+                                >
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
@@ -914,120 +1041,161 @@
                                 href="#"
                                 class="footer__social-link"
                                 title="Instagram"
+                                tabindex="0"
                             >
-                                <i class="icon icon__ic-instagram">
+                                <i
+                                    class="icon icon-ic_instagram footer__social-link-icon"
+                                >
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
                             </a>
                         </div>
                     </div>
-                    <div class="footer__bottom">
+                    <div class="footer__bottom d-flex flex-column">
                         <div class="footer__nav-container">
-                            <h3 class="footer__nav-title">
+                            <h3
+                                class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
+                                tabindex="0"
+                            >
                                 Company<i
-                                    class="footer__nav-title-icon icon icon__ic-arrow_down_circle"
+                                    class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
                                     aria-hidden="true"
                                 ></i>
                             </h3>
                             <ul class="footer__nav-links" role="list">
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="About"
+                                        tabindex="0"
                                         >About</a
                                     >
                                 </li>
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="Career"
+                                        tabindex="0"
                                         >Career</a
                                     >
                                 </li>
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="Mobile"
+                                        tabindex="0"
                                         >Mobile</a
                                     >
                                 </li>
                             </ul>
                         </div>
                         <div class="footer__nav-container">
-                            <h3 class="footer__nav-title">
+                            <h3
+                                class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
+                                tabindex="0"
+                            >
                                 Contact<i
-                                    class="footer__nav-title-icon icon icon__ic-arrow_down_circle"
+                                    class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
                                     aria-hidden="true"
                                 ></i>
                             </h3>
                             <ul class="footer__nav-links" role="list">
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="Why Travlog?"
+                                        tabindex="0"
                                         >Why Travlog?</a
                                     >
                                 </li>
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="Partner with us"
+                                        tabindex="0"
                                         >Partner with us</a
                                     >
                                 </li>
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="FAQ's"
+                                        tabindex="0"
                                         >FAQ's</a
                                     >
                                 </li>
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="#"
                                         class="footer__nav-link"
                                         title="Blog"
+                                        tabindex="0"
                                         >Blog</a
                                     >
                                 </li>
                             </ul>
                         </div>
                         <div class="footer__nav-container">
-                            <h3 class="footer__nav-title">
+                            <h3
+                                class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
+                                tabindex="0"
+                            >
                                 Meet Us<i
-                                    class="footer__nav-title-icon icon icon__ic-arrow_down_circle"
+                                    class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
                                     aria-hidden="true"
                                 ></i>
                             </h3>
                             <ul class="footer__nav-links" role="list">
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="tel:+0092123456789"
                                         class="footer__nav-link"
                                         title="+00 92 1234 56789"
+                                        tabindex="0"
                                         >+00 92 1234 56789</a
                                     >
                                 </li>
-                                <li class="footer__nav-link">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
                                     <a
                                         href="mailto:info@travlog.com"
                                         class="footer__nav-link"
                                         title="info@travlog.com"
+                                        tabindex="0"
                                         >info@travlog.com</a
                                     >
                                 </li>
                                 <li
-                                    class="footer__nav-link"
-                                    title="205. R Street, New York BD23200"
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
                                 >
-                                    <address>
+                                    <address
+                                        title="205. R Street, New York BD23200"
+                                        tabindex="0"
+                                    >
                                         205. R Street, New York BD23200
                                     </address>
                                 </li>

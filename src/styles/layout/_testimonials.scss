@@ -2,7 +2,7 @@
 @use '../abstracts' as *;
 
 .testimonials {
-    margin-block-end: px-to-rem(76.8);
+    margin-block-end: px-to-rem(67.2);
 
     &__sub-title {
         color: $bg-pink;
@@ -10,6 +10,10 @@
 
     &__title {
         color: $black;
+    }
+
+    &__slide {
+        padding-block-end: px-to-rem(73.6);
     }
 
     &__slide-title {
@@ -44,7 +48,7 @@
 
         &__container {
             position: relative;
-            padding-block: px-to-rem(64);
+            padding-block: px-to-rem(68.4);
         }
 
         &__slide {
