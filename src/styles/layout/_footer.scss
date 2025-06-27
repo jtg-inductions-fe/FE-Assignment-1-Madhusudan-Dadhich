@@ -13,6 +13,7 @@
     &__description {
         color: $link-text-inactive;
         @extend %grayscale-50;
+        @include truncate(5);
     }
 
     &__social-link {

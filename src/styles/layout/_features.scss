@@ -29,6 +29,7 @@
     &__body {
         color: $link-text-inactive;
         @extend %grayscale-50;
+        @include truncate(4);
     }
 
     &__cards {
@@ -37,6 +38,10 @@
 
     &__card {
         gap: px-to-rem(28.8);
+    }
+
+    &__card-text {
+        @include truncate(2);
     }
 
     &__icons {
@@ -91,6 +96,10 @@
 
         &__card {
             gap: px-to-rem(32);
+        }
+
+        &__card-text {
+            @include truncate(1);
         }
 
         &__icons {

@@ -109,14 +109,15 @@ const header = document.getElementById('header-navbar');
 window.addEventListener('scroll', activeNav);
 
 // Validate Email
-const emailWrapper = document.getElementById('newsletter__email-wrapper');
-const subscribeBtn = document.getElementById('newsletter__subscribe-btn');
-const emailInput = document.getElementById('newsletter__email');
-subscribeBtn.addEventListener('click', checkEmail);
+const emailWrapper = document.getElementById('newsletter-email-wrapper');
+const newsletterForm = document.getElementById('newsletter-form');
+const emailInput = document.getElementById('newsletter-email');
+newsletterForm.addEventListener('submit', checkEmail);
 
 // Splide Carousel
 new Splide('.splide').mount();
 
+// Handle Testimonials tabindexing
 const testimonialNavPrev = document.getElementById('testimonial-arrow-prev');
 const testimonialNavNext = document.getElementById('testimonial-arrow-next');
 

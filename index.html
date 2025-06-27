@@ -353,6 +353,7 @@
         </header>
         <main>
             <section
+                id="services"
                 class="services py-2 lg:pb-0"
                 aria-labelledby="services-section"
             >
@@ -375,7 +376,7 @@
                         </h2>
                     </div>
                     <div
-                        class="services__cards d-flex flex-column md:flex-row gap-1"
+                        class="services__cards d-flex flex-column md:flex-row gap-1 flex-wrap lg:flex-nowrap"
                     >
                         <div
                             class="services__item card card__services d-flex items-center text-center flex-column gap-2 md:gap-4 p-2 md:px-4 md:pt-4"
@@ -570,6 +571,7 @@
                 </div>
             </section>
             <section
+                id="features"
                 class="key-features"
                 aria-labelledby="key-features-section"
             >
@@ -622,7 +624,7 @@
                                         We offer best services
                                     </h3>
                                     <p
-                                        class="card__body body__card--features ff-inter fw-400 lh-160"
+                                        class="key-features__card-text card__body body__card--features ff-inter fw-400 lh-160"
                                     >
                                         Lorem Ipsum is not simply random text
                                     </p>
@@ -643,7 +645,7 @@
                                         Schedule your trip
                                     </h3>
                                     <p
-                                        class="card__body body__card--features ff-inter fw-400 lh-160"
+                                        class="key-features__card-text card__body body__card--features ff-inter fw-400 lh-160"
                                     >
                                         It has roots in a piece of classical
                                     </p>
@@ -666,7 +668,7 @@
                                         Get discounted coupons
                                     </h3>
                                     <p
-                                        class="card__body body__card--features ff-inter fw-400 lh-160"
+                                        class="key-features__card-text card__body body__card--features ff-inter fw-400 lh-160"
                                     >
                                         Lorem Ipsum is not simply random text
                                     </p>
@@ -919,9 +921,14 @@
                     </section>
                 </div>
             </section>
-            <section class="newsletter" aria-labelledby="newsletter-section">
+            <section
+                id="newsletter"
+                class="newsletter"
+                aria-labelledby="newsletter-section"
+            >
                 <div class="container newsletter__container px-2">
                     <p
+                        id="newsletter-section"
                         class="newsletter__sub-title subtitle__section ff-circular-std fw-700 lh-120 ls-20 mb-2 text-center"
                     >
                         SUBSCRIBE TO OUR NEWSLETTER
@@ -932,11 +939,12 @@
                         Prepare yourself & let's explore the beauty of the world
                     </h2>
                     <form
+                        id="newsletter-form"
                         action=""
                         class="newsletter__form d-flex flex-column md:flex-row gap-2"
                     >
                         <div
-                            id="newsletter__email-wrapper"
+                            id="newsletter-email-wrapper"
                             class="input input__email input__email--icon"
                         >
                             <i class="icon icon-ic_email input__icon"></i>
@@ -945,7 +953,7 @@
                                 placeholder="Your Email"
                                 aria-placeholder="Your Email"
                                 class="input__text"
-                                id="newsletter__email"
+                                id="newsletter-email"
                                 title="Email"
                                 tabindex="0"
                             />
@@ -954,7 +962,6 @@
                             type="button"
                             value="Subscribe"
                             class="button button__fill button__fill--primary button__fill--large btn-text__large ff-circular-std fw-700 lh-120"
-                            id="newsletter__subscribe-btn"
                             title="Subscribe"
                             tabindex="0"
                         />
@@ -1015,7 +1022,7 @@
                         </p>
                         <div class="footer__social-links d-flex gap-2">
                             <a
-                                href="#"
+                                href="https://www.facebook.com/"
                                 class="footer__social-link"
                                 title="Facebook"
                                 tabindex="0"
@@ -1025,7 +1032,7 @@
                                 ></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://x.com/"
                                 class="footer__social-link"
                                 title="Twitter"
                                 tabindex="0"
@@ -1038,7 +1045,7 @@
                                 </i>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/"
                                 class="footer__social-link"
                                 title="Instagram"
                                 tabindex="0"

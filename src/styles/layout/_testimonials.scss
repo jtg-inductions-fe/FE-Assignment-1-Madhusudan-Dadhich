@@ -33,6 +33,7 @@
     &__body {
         @extend %grayscale-50;
         color: $black-75;
+        @include truncate(3);
     }
 
     &__navigation-arrow {
