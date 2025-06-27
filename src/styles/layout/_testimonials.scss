@@ -1,0 +1,68 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.testimonials {
+    margin-block-end: px-to-rem(69);
+
+    &__sub-title {
+        color: $bg-pink;
+    }
+
+    &__title {
+        color: $black;
+    }
+
+    &__slide-title {
+        color: $bg-orange;
+    }
+
+    &__slide-subtitle {
+        color: $black;
+    }
+
+    &__star {
+        &-icon {
+            font-size: px-to-rem(26);
+        }
+        padding: px-to-rem(4);
+    }
+
+    &__body {
+        @extend %grayscale-50;
+        color: $black-75;
+    }
+
+    &__navigation-arrow {
+        font-size: px-to-rem(8);
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        margin-block-end: 0;
+        background-image: url($testimonial-bg-path);
+        background-position-y: 57%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &__container {
+            position: relative;
+            padding-block: px-to-rem(64);
+        }
+
+        &__slide {
+            padding-block: px-to-rem(56);
+            margin-inline: auto;
+            max-width: px-to-rem(584);
+            gap: px-to-rem(56);
+        }
+
+        &__navigation-arrow {
+            font-size: px-to-rem(12);
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__slide {
+            max-width: 75%;
+        }
+    }
+}
