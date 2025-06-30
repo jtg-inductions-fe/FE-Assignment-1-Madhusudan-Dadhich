@@ -3,6 +3,7 @@
 
 .newsletter {
     position: relative;
+    margin-block-end: px-to-rem(95);
 
     &__container {
         position: relative;
@@ -18,6 +19,8 @@
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        margin-block-end: px-to-rem(67.2);
+
         &__container {
             border: none;
             border-radius: px-to-rem(32);
@@ -26,7 +29,7 @@
         }
 
         &__sub-title {
-            margin-block-end: px-to-rem(38.4);
+            margin-block-end: px-to-rem(32);
         }
 
         &__decorative {
@@ -45,9 +48,11 @@
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
         position: initial; // [Because of overflow issue with relative position of section] Refer to _base.scss for more.
         margin-block-start: px-to-rem(64);
-        margin-block-end: px-to-rem(
-            566
-        ); // This is temporary code need to be cleaned up before merging
+        margin-block-end: px-to-rem(144);
+
+        &__container {
+            padding-block: px-to-rem(120);
+        }
 
         &__sub-title,
         &__title {
@@ -67,6 +72,7 @@
             bottom: px-to-rem(
                 320
             ); // Relative to body and bottom offset from body
+            z-index: -1;
         }
     }
 }

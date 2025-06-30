@@ -20,6 +20,7 @@
 
 :focus-visible {
     outline: 2px solid $focus-outline;
+    outline-offset: 2px;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
 
 html {
     position: relative;
+    scroll-behavior: smooth;
 }
 
 .sticky {
@@ -37,4 +39,16 @@ html {
     &__top {
         top: 0;
     }
+}
+
+.preload {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: $white;
+    z-index: 69;
+}
+
+.loaded {
+    display: none;
 }

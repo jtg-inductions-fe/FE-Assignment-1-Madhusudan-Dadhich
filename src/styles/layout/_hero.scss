@@ -102,6 +102,7 @@
             text-wrap: wrap;
             word-wrap: break-word;
             @extend %grayscale-50;
+            @include truncate(3);
         }
     }
 
