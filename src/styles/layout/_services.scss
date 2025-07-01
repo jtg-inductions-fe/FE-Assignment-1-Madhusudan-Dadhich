@@ -77,6 +77,15 @@
             }
         }
 
+        &__description-text {
+            margin-inline: px-to-rem(8);
+        }
+
+        &__item {
+            width: 100%;
+            min-width: px-to-rem(386);
+        }
+
         &__blur {
             top: px-to-rem(38.37) * -1;
             right: px-to-rem(334.15) * -1;

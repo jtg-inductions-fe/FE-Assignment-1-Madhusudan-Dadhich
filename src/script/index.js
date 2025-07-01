@@ -68,6 +68,24 @@ const activeNav = () => {
     }
 };
 
+const handleHeroTabIndex = () => {
+    if (window.screen.availWidth < 1440) {
+        heroSendMsgBtn.setAttribute('tabindex', 9);
+        heroTopPlaces.setAttribute('tabindex', 10);
+        heroAddUserBtn.setAttribute('tabindex', 11);
+        heroExploreBtn.setAttribute('tabindex', 12);
+        heroGetStartedBtn.setAttribute('tabindex', 13);
+        heroWatchDemoBtn.setAttribute('tabindex', 14);
+    } else {
+        heroExploreBtn.setAttribute('tabindex', 9);
+        heroGetStartedBtn.setAttribute('tabindex', 10);
+        heroWatchDemoBtn.setAttribute('tabindex', 11);
+        heroSendMsgBtn.setAttribute('tabindex', 12);
+        heroTopPlaces.setAttribute('tabindex', 13);
+        heroAddUserBtn.setAttribute('tabindex', 14);
+    }
+};
+
 const handleTestimonialTabIndex = () => {
     if (window.screen.availWidth < 1024) {
         testimonialNavPrev.removeAttribute('tabindex');
@@ -76,13 +94,6 @@ const handleTestimonialTabIndex = () => {
         testimonialNavPrev.setAttribute('tabindex', 15);
         testimonialNavNext.setAttribute('tabindex', 16);
     }
-};
-
-// Page Loader
-const pageLoader = document.getElementById('overlay-loader');
-
-window.onload = () => {
-    pageLoader.classList.add('loaded');
 };
 
 // Navbar Hamburger Toggle
@@ -117,13 +128,21 @@ newsletterForm.addEventListener('submit', checkEmail);
 // Splide Carousel
 new Splide('.splide').mount();
 
-// Handle Testimonials tabindexing
+// Handle tabindexing
+const heroSendMsgBtn = document.getElementById('hero-send-msg-btn');
+const heroAddUserBtn = document.getElementById('hero-add-user-btn');
+const heroTopPlaces = document.getElementById('hero-top-places-btn');
+const heroExploreBtn = document.getElementById('hero-explore-btn');
+const heroGetStartedBtn = document.getElementById('hero-get-started-btn');
+const heroWatchDemoBtn = document.getElementById('hero-watch-demo-btn');
 const testimonialNavPrev = document.getElementById('testimonial-arrow-prev');
 const testimonialNavNext = document.getElementById('testimonial-arrow-next');
 
+handleHeroTabIndex();
 handleTestimonialTabIndex();
 
 window.onresize = () => {
+    handleHeroTabIndex();
     handleTestimonialTabIndex();
 };
 

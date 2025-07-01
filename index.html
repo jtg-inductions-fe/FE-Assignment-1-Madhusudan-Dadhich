@@ -72,6 +72,21 @@
             as="image"
             type="image/webp"
         />
+
+        <!-- Styling for Loader -->
+        <style>
+            .preload {
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                background-color: #fff;
+                z-index: 69;
+            }
+
+            .loaded {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <div
@@ -83,8 +98,8 @@
                 alt="Loading"
             />
         </div>
-        <header class="d-inline">
-            <nav id="header-navbar" class="navbar sticky sticky__top">
+        <header>
+            <nav id="header-navbar" class="navbar fixed fixed__top">
                 <div
                     class="container navbar__container mt-0 d-flex flex-row md:flex-row-reverse lg:flex-row justify-space-between items-center"
                 >
@@ -189,7 +204,7 @@
                     class="container hero__container d-flex flex-column gap-4 lg:gap-0"
                 >
                     <div
-                        class="hero__wrapper lg:d-flex lg:flex-row-reverse lg:justify-space-between"
+                        class="hero__wrapper lg:d-flex lg:justify-space-between"
                     >
                         <div class="hero__image mb-2 md:m-4 lg:mx-0">
                             <div
@@ -202,9 +217,10 @@
                                         aria-hidden="true"
                                     />
                                     <button
+                                        id="hero-send-msg-btn"
                                         class="hero__decoration hero__decoration-send-message button button__icon button__icon--pink"
-                                        tabindex="9"
                                         title="send message"
+                                        tabindex="9"
                                     >
                                         <i
                                             class="icon icon-ic_send_message hero__decoration-icon d-block"
@@ -219,6 +235,7 @@
                                         aria-hidden="true"
                                     />
                                     <button
+                                        id="hero-add-user-btn"
                                         class="hero__decoration hero__decoration-add-user button button__icon button__icon--orange"
                                         title="add user"
                                         tabindex="11"
@@ -236,6 +253,7 @@
                                         aria-hidden="true"
                                     />
                                     <button
+                                        id="hero-top-places-btn"
                                         class="hero__decoration hero__decoration-location-btn button button__fill button__fill--white button__fill--small d-flex items-flex-end ff-circular-std decorative-btn-text lh-120 fw-700"
                                         title="Top places"
                                         tabindex="10"
@@ -250,15 +268,16 @@
                             </div>
                         </div>
                         <div
-                            class="hero__content d-flex flex-column items-center lg:items-flex-start lg:justify-center gap-2"
+                            class="hero__content d-flex flex-column items-center lg:items-flex-start lg:justify-space-between gap-2"
                         >
                             <div
                                 class="hero__description d-flex flex-column justify-center items-center lg:items-flex-start gap-1 md:px-9 lg:px-0"
                             >
                                 <button
+                                    id="hero-explore-btn"
                                     class="hero__description-btn button button__fill button__fill--white d-flex items-flex-end gap-1 ff-circular-std btn-text fw-700 lh-120"
-                                    tabindex="12"
                                     title="Explore the world!"
+                                    tabindex="12"
                                 >
                                     <p>Explore the world!</p>
                                     <i
@@ -288,6 +307,7 @@
                                 class="hero__action d-flex flex-column md:flex-row justify-center lg:justify-flex-start items-center md:gap-1 ff-circular-std btn-text fw-700 lh-120"
                             >
                                 <button
+                                    id="hero-get-started-btn"
                                     class="hero__get-started button button__fill button__fill--primary button__fill--medium"
                                     title="Get Started"
                                     tabindex="13"
@@ -295,6 +315,7 @@
                                     Get Started
                                 </button>
                                 <button
+                                    id="hero-watch-demo-btn"
                                     class="hero__watch-demo button button__outline button__outline--medium d-flex justify-center items-flex-end ff-circular-std btn-text fw-700 lh-120"
                                     title="Watch Demo"
                                     tabindex="14"
@@ -307,38 +328,126 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="hero__partner d-flex flex-wrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
-                    >
-                        <div class="hero__partner-wrapper" title="tripadvisor">
-                            <img
-                                src="assets/resources/vectors/company_1.svg"
-                                alt="tripadvisor"
-                            />
+                    <div class="hero__partner-marquee-wrapper">
+                        <div
+                            class="hero__partner d-flex flex-wrap lg:flex-nowrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
+                        >
+                            <div
+                                class="hero__partner-wrapper"
+                                title="tripadvisor"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_1.svg"
+                                    alt="tripadvisor"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="expedia">
+                                <img
+                                    src="assets/resources/vectors/company_2.svg"
+                                    alt="expedia"
+                                />
+                            </div>
+                            <div
+                                class="hero__partner-wrapper"
+                                title="booking.com"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_3.svg"
+                                    alt="booking.com"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="airbnb">
+                                <img
+                                    src="assets/resources/vectors/company_4.svg"
+                                    alt="airbnb"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="orbitz">
+                                <img
+                                    src="assets/resources/vectors/company_5.svg"
+                                    alt="orbitz"
+                                />
+                            </div>
                         </div>
-                        <div class="hero__partner-wrapper" title="expedia">
-                            <img
-                                src="assets/resources/vectors/company_2.svg"
-                                alt="expedia"
-                            />
+                        <div
+                            class="hero__partner-1 d-flex flex-wrap lg:flex-nowrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
+                        >
+                            <div
+                                class="hero__partner-wrapper"
+                                title="tripadvisor"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_1.svg"
+                                    alt="tripadvisor"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="expedia">
+                                <img
+                                    src="assets/resources/vectors/company_2.svg"
+                                    alt="expedia"
+                                />
+                            </div>
+                            <div
+                                class="hero__partner-wrapper"
+                                title="booking.com"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_3.svg"
+                                    alt="booking.com"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="airbnb">
+                                <img
+                                    src="assets/resources/vectors/company_4.svg"
+                                    alt="airbnb"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="orbitz">
+                                <img
+                                    src="assets/resources/vectors/company_5.svg"
+                                    alt="orbitz"
+                                />
+                            </div>
                         </div>
-                        <div class="hero__partner-wrapper" title="booking.com">
-                            <img
-                                src="assets/resources/vectors/company_3.svg"
-                                alt="booking.com"
-                            />
-                        </div>
-                        <div class="hero__partner-wrapper" title="airbnb">
-                            <img
-                                src="assets/resources/vectors/company_4.svg"
-                                alt="airbnb"
-                            />
-                        </div>
-                        <div class="hero__partner-wrapper" title="orbitz">
-                            <img
-                                src="assets/resources/vectors/company_5.svg"
-                                alt="orbitz"
-                            />
+                        <div
+                            class="hero__partner-2 d-flex flex-wrap lg:flex-nowrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
+                        >
+                            <div
+                                class="hero__partner-wrapper"
+                                title="tripadvisor"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_1.svg"
+                                    alt="tripadvisor"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="expedia">
+                                <img
+                                    src="assets/resources/vectors/company_2.svg"
+                                    alt="expedia"
+                                />
+                            </div>
+                            <div
+                                class="hero__partner-wrapper"
+                                title="booking.com"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_3.svg"
+                                    alt="booking.com"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="airbnb">
+                                <img
+                                    src="assets/resources/vectors/company_4.svg"
+                                    alt="airbnb"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="orbitz">
+                                <img
+                                    src="assets/resources/vectors/company_5.svg"
+                                    alt="orbitz"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -576,7 +685,7 @@
                 aria-labelledby="key-features-section"
             >
                 <div
-                    class="container key-features__container d-flex flex-column gap-6 lg:flex-row-reverse lg:items-flex-start lg:justify-space-between"
+                    class="container key-features__container d-flex flex-column gap-6 lg:flex-row lg:items-flex-start lg:justify-space-between"
                 >
                     <div
                         class="key-features__image"
@@ -941,11 +1050,12 @@
                     <form
                         id="newsletter-form"
                         action=""
-                        class="newsletter__form d-flex flex-column md:flex-row gap-2"
+                        name="newsletter-form"
+                        class="newsletter__form d-flex flex-column md:flex-row gap-2 lg:gap-4"
                     >
                         <div
                             id="newsletter-email-wrapper"
-                            class="input input__email input__email--icon"
+                            class="input input__email input__email--icon newsletter__email-wrapper"
                         >
                             <i class="icon icon-ic_email input__icon"></i>
                             <input
@@ -955,15 +1065,13 @@
                                 class="input__text"
                                 id="newsletter-email"
                                 title="Email"
-                                tabindex="0"
                             />
                         </div>
                         <input
-                            type="button"
+                            type="submit"
                             value="Subscribe"
                             class="button button__fill button__fill--primary button__fill--large btn-text__large ff-circular-std fw-700 lh-120"
                             title="Subscribe"
-                            tabindex="0"
                         />
                     </form>
                     <div
@@ -996,12 +1104,7 @@
                         <div
                             class="footer__company d-flex gap-1 items-center mb-2"
                         >
-                            <a
-                                href="#"
-                                class="footer__logo"
-                                title="Travlog"
-                                tabindex="0"
-                            >
+                            <a href="#" class="footer__logo" title="Travlog">
                                 <img
                                     src="assets/resources/vectors/ic_logo.svg"
                                     alt="Travlog Logo"
@@ -1023,9 +1126,8 @@
                         <div class="footer__social-links d-flex gap-2">
                             <a
                                 href="https://www.facebook.com/"
-                                class="footer__social-link"
+                                class="footer__social-link button"
                                 title="Facebook"
-                                tabindex="0"
                             >
                                 <i
                                     class="icon icon-ic_facebook footer__social-link-icon"
@@ -1033,9 +1135,8 @@
                             </a>
                             <a
                                 href="https://x.com/"
-                                class="footer__social-link"
+                                class="footer__social-link button"
                                 title="Twitter"
-                                tabindex="0"
                             >
                                 <i
                                     class="icon icon-ic_twitter footer__social-link-icon"
@@ -1046,9 +1147,8 @@
                             </a>
                             <a
                                 href="https://www.instagram.com/"
-                                class="footer__social-link"
+                                class="footer__social-link button"
                                 title="Instagram"
-                                tabindex="0"
                             >
                                 <i
                                     class="icon icon-ic_instagram footer__social-link-icon"
@@ -1063,7 +1163,6 @@
                         <div class="footer__nav-container">
                             <h3
                                 class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
-                                tabindex="0"
                             >
                                 Company<i
                                     class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
@@ -1078,7 +1177,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="About"
-                                        tabindex="0"
                                         >About</a
                                     >
                                 </li>
@@ -1089,7 +1187,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="Career"
-                                        tabindex="0"
                                         >Career</a
                                     >
                                 </li>
@@ -1100,7 +1197,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="Mobile"
-                                        tabindex="0"
                                         >Mobile</a
                                     >
                                 </li>
@@ -1109,7 +1205,6 @@
                         <div class="footer__nav-container">
                             <h3
                                 class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
-                                tabindex="0"
                             >
                                 Contact<i
                                     class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
@@ -1124,7 +1219,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="Why Travlog?"
-                                        tabindex="0"
                                         >Why Travlog?</a
                                     >
                                 </li>
@@ -1135,7 +1229,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="Partner with us"
-                                        tabindex="0"
                                         >Partner with us</a
                                     >
                                 </li>
@@ -1146,7 +1239,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="FAQ's"
-                                        tabindex="0"
                                         >FAQ's</a
                                     >
                                 </li>
@@ -1157,7 +1249,6 @@
                                         href="#"
                                         class="footer__nav-link"
                                         title="Blog"
-                                        tabindex="0"
                                         >Blog</a
                                     >
                                 </li>
@@ -1166,7 +1257,6 @@
                         <div class="footer__nav-container">
                             <h3
                                 class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
-                                tabindex="0"
                             >
                                 Meet Us<i
                                     class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
@@ -1181,7 +1271,6 @@
                                         href="tel:+0092123456789"
                                         class="footer__nav-link"
                                         title="+00 92 1234 56789"
-                                        tabindex="0"
                                         >+00 92 1234 56789</a
                                     >
                                 </li>
@@ -1192,7 +1281,6 @@
                                         href="mailto:info@travlog.com"
                                         class="footer__nav-link"
                                         title="info@travlog.com"
-                                        tabindex="0"
                                         >info@travlog.com</a
                                     >
                                 </li>
@@ -1201,7 +1289,6 @@
                                 >
                                     <address
                                         title="205. R Street, New York BD23200"
-                                        tabindex="0"
                                     >
                                         205. R Street, New York BD23200
                                     </address>
@@ -1212,6 +1299,14 @@
                 </nav>
             </div>
         </footer>
+        <script>
+            // Page Loader
+            const pageLoader = document.getElementById('overlay-loader');
+
+            window.onload = () => {
+                pageLoader.classList.add('loaded');
+            };
+        </script>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

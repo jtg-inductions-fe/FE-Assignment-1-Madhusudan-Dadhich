@@ -71,8 +71,14 @@
     }
 
     &__nav-link {
+        color: $link-text-inactive;
         text-decoration: none;
-        color: $black-75;
+
+        &.active,
+        &:hover,
+        &:focus-visible {
+            color: $link-text-active;
+        }
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'medium')) {
@@ -82,12 +88,12 @@
 
         &__bottom {
             flex-direction: row;
-            justify-content: space-between;
+            gap: px-to-rem(32);
             margin-block-end: px-to-rem(64);
         }
 
         &__nav-container {
-            max-width: px-to-rem(277);
+            min-width: px-to-rem(277);
         }
 
         &__nav-container &__nav-title {
@@ -100,6 +106,7 @@
         }
 
         &__nav-links {
+            overflow: visible;
             display: flex;
             flex-direction: column;
             gap: px-to-rem(32);
@@ -116,6 +123,7 @@
         &__nav {
             flex-direction: row;
             padding-block: px-to-rem(64);
+            padding-inline-start: px-to-rem(8);
         }
 
         &__description {

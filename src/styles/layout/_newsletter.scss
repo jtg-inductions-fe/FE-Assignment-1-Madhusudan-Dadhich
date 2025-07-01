@@ -18,6 +18,10 @@
         text-wrap: wrap;
     }
 
+    &__email-wrapper:focus-within {
+        outline: 2px solid $black;
+    }
+
     @include media-up(map.get($map: $screen-size, $key: 'medium')) {
         margin-block-end: px-to-rem(67.2);
 
@@ -47,11 +51,12 @@
 
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
         position: initial; // [Because of overflow issue with relative position of section] Refer to _base.scss for more.
-        margin-block-start: px-to-rem(64);
-        margin-block-end: px-to-rem(144);
+        margin-block-start: px-to-rem(107.2);
+        margin-block-end: px-to-rem(140.8);
 
         &__container {
             padding-block: px-to-rem(120);
+            padding-inline: px-to-rem(72) px-to-rem(56);
         }
 
         &__sub-title,

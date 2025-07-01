@@ -25,6 +25,8 @@
     }
 
     &__star {
+        width: px-to-rem(32);
+        height: px-to-rem(32);
         &-icon {
             font-size: px-to-rem(26);
         }
@@ -68,7 +70,16 @@
         background-position-y: 42%;
 
         &__slide {
-            max-width: 75%;
+            max-width: 70%;
+        }
+
+        &__container {
+            padding-block: px-to-rem(25.6);
+        }
+
+        &__rating {
+            margin-block-start: px-to-rem(3.2);
+            margin-inline-start: px-to-rem(16);
         }
     }
 }

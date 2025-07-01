@@ -15,8 +15,8 @@ $padding-vertical: map.get(
     border-radius: $btn-border-radius;
     cursor: pointer;
     text-decoration: none;
-    transition: transform 0.2s;
-    transition-delay: 100ms;
+    transition: transform 0.3s;
+    transition-delay: 50ms;
 
     &:hover {
         transform: scale(1.05);

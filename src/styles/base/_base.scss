@@ -23,6 +23,11 @@
     outline-offset: 2px;
 }
 
+a:focus-visible {
+    outline-offset: 4px;
+}
+
+html,
 body {
     overflow-x: hidden;
 }
@@ -32,8 +37,8 @@ html {
     scroll-behavior: smooth;
 }
 
-.sticky {
-    position: sticky;
+.fixed {
+    position: fixed;
     width: 100%;
 
     &__top {
