@@ -22,7 +22,7 @@ const checkEmail = (e) => {
     e.preventDefault();
     const email = emailInput.value;
 
-    if (email == '' || !emailRegex.test(email)) {
+    if (!email.trim() || !emailRegex.test(email)) {
         emailWrapper.classList.add('input__text--error');
     } else {
         emailWrapper.classList.remove('input__text--error');
@@ -34,7 +34,7 @@ const checkEmail = (e) => {
  */
 const toggleAccordion = (e) => {
     let element = e.target;
-    if (element != null) {
+    if (element) {
         if (element.parentElement.classList.contains('footer__nav-title')) {
             element = element.parentElement;
         }
