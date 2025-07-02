@@ -15,7 +15,8 @@
 
     &:hover,
     &:focus-visible {
-        @extend %card-shadow;
+        border: 0;
+        box-shadow: $card-box-shadow;
         transform: scale(1.02);
     }
 
@@ -24,9 +25,11 @@
         background-color: $transparent;
 
         &:hover,
-        &:focus-visible {
-            border: 1px solid $card-border;
+        &:focus-visible,
+        &:active {
+            outline: 1px solid $card-border;
             box-shadow: none;
+            transform: none;
         }
     }
 }
@@ -50,10 +53,4 @@
             min-height: px-to-rem($card-min-height-lg);
         }
     }
-}
-
-// Placeholder to provide shadow to card
-%card-shadow {
-    border: 0;
-    box-shadow: $card-box-shadow;
 }

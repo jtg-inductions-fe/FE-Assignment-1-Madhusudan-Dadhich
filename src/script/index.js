@@ -60,12 +60,28 @@ const toggleAccordion = (e) => {
  */
 const activeNav = () => {
     header.classList[window.scrollY > 40 ? 'add' : 'remove']('active');
+
     if (
         navbar.classList.contains('active') &&
         authWrapper.classList.contains('active')
     ) {
         toggleHamburger();
     }
+};
+
+const throttlerWithDebounce = (func, delay) => {
+    let flag = true;
+
+    return function () {
+        if (flag) {
+            func();
+            flag = false;
+            setTimeout(() => {
+                flag = true;
+                func();
+            }, delay);
+        }
+    };
 };
 
 const handleHeroTabIndex = () => {
@@ -96,6 +112,17 @@ const handleTestimonialTabIndex = () => {
     }
 };
 
+const debouncer = (func, delay) => {
+    let timer;
+
+    return function () {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            func();
+        }, delay);
+    };
+};
+
 // Navbar Hamburger Toggle
 const navbar = document.getElementById('header-navlinks');
 const authWrapper = document.getElementById('header-authlinks');
@@ -117,7 +144,10 @@ window.addEventListener('click', (e) => {
 
 // Sticky Header
 const header = document.getElementById('header-navbar');
-window.addEventListener('scroll', activeNav);
+
+const betterScroll = throttlerWithDebounce(activeNav, 300);
+
+window.addEventListener('scroll', betterScroll);
 
 // Validate Email
 const emailWrapper = document.getElementById('newsletter-email-wrapper');
@@ -141,14 +171,14 @@ const testimonialNavNext = document.getElementById('testimonial-arrow-next');
 handleHeroTabIndex();
 handleTestimonialTabIndex();
 
-window.onresize = () => {
+const betterResize = debouncer(() => {
     handleHeroTabIndex();
     handleTestimonialTabIndex();
-};
+}, 500);
+
+window.onresize = betterResize;
 
 // Footer Accordion
-const footerAccordions = document.getElementsByClassName('footer__nav-title');
+const footerAccordions = document.getElementById('footer-bottom');
 
-for (let accordion of footerAccordions) {
-    accordion.addEventListener('click', toggleAccordion);
-}
+footerAccordions.addEventListener('click', toggleAccordion);
