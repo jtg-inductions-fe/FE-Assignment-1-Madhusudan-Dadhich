@@ -10,6 +10,7 @@
     &.active {
         box-shadow: 0px 41px 89px $black-10;
         background-color: $white;
+        padding-block-start: 0;
     }
 
     &__container {
@@ -118,7 +119,7 @@
     }
 
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
-        margin-block-start: px-to-rem(34);
+        padding-block-start: px-to-rem(34);
 
         &__logo {
             position: relative;

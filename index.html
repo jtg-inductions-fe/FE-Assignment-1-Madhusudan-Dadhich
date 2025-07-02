@@ -4,14 +4,123 @@
         <title>Travlog</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+            name="description"
+            content="This is a travel package booking site which provides packages for travelling across different places in the world."
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="shortcut icon"
+            href="assets/favicon.ico"
+            type="image/x-icon"
+        />
+
+        <!-- Preload images -->
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_1.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_2.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_3.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/hero_section_1.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/key_features.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/profile_image.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/services_1.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/services_2.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/services_3.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/travel_point_decorative.webp"
+            as="image"
+            type="image/webp"
+        />
+        <link
+            rel="preload"
+            href="assets/resources/images/travel_point.webp"
+            as="image"
+            type="image/webp"
+        />
+
+        <!-- Styling for Loader -->
+        <style>
+            .preload {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                background-color: #fff;
+                z-index: 69;
+            }
+
+            .loaded {
+                display: none;
+            }
+        </style>
     </head>
     <body>
-        <header class="d-inline">
-            <nav id="header-navbar" class="navbar sticky sticky__top">
+        <div id="overlay-loader" class="preload">
+            <img
+                src="assets/resources/gifs/loading-animation.gif"
+                alt="Loading"
+            />
+        </div>
+        <header>
+            <nav id="header-navbar" class="navbar fixed fixed__top">
                 <div
                     class="container navbar__container mt-0 d-flex flex-row md:flex-row-reverse lg:flex-row justify-space-between items-center"
                 >
-                    <a href="#" class="navbar__logo" title="Travlog">
+                    <a
+                        href="#"
+                        class="navbar__logo"
+                        title="Travlog"
+                        tabindex="1"
+                    >
                         <img
                             src="/assets/resources/vectors/ic_logo.svg"
                             alt="Travlog Logo"
@@ -25,14 +134,22 @@
                         <li
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
-                            <a href="#" class="navbar__link active" title="Home"
+                            <a
+                                href="#"
+                                class="navbar__link active"
+                                title="Home"
+                                tabindex="2"
                                 >Home</a
                             >
                         </li>
                         <li
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
-                            <a href="#" class="navbar__link" title="Discover"
+                            <a
+                                href="#services"
+                                class="navbar__link"
+                                title="Discover"
+                                tabindex="3"
                                 >Discover</a
                             >
                         </li>
@@ -40,16 +157,21 @@
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
                             <a
-                                href="#"
+                                href="#features"
                                 class="navbar__link"
                                 title="Special Deals"
+                                tabindex="4"
                                 >Special Deals</a
                             >
                         </li>
                         <li
                             class="navbar__link ff-circular-std fw-700 btn-text lh-120"
                         >
-                            <a href="#" class="navbar__link" title="Contact"
+                            <a
+                                href="#newsletter"
+                                class="navbar__link"
+                                title="Contact"
+                                tabindex="5"
                                 >Contact</a
                             >
                         </li>
@@ -64,6 +186,7 @@
                                 href="#"
                                 class="navbar__login-button button button__text ff-circular-std fw-700 lh-120 btn-text"
                                 title="Log In"
+                                tabindex="6"
                                 >Log In</a
                             >
                         </li>
@@ -72,6 +195,7 @@
                                 href="#"
                                 class="navbar__signup-button button button__fill button__fill--primary ff-circular-std fw-700 lh-120 btn-text"
                                 title="Sign Up"
+                                tabindex="7"
                                 >Sign Up</a
                             >
                         </li>
@@ -81,6 +205,7 @@
                         class="navbar__hamburger button d-block lg:d-none"
                         aria-label="toggler navbar"
                         title="Nav Menu"
+                        tabindex="8"
                     >
                         <i class="icon icon-ic_hamburger"></i>
                     </button>
@@ -91,7 +216,7 @@
                     class="container hero__container d-flex flex-column gap-4 lg:gap-0"
                 >
                     <div
-                        class="hero__wrapper lg:d-flex lg:flex-row-reverse lg:justify-space-between"
+                        class="hero__wrapper lg:d-flex lg:justify-space-between"
                     >
                         <div class="hero__image mb-2 md:m-4 lg:mx-0">
                             <div
@@ -99,13 +224,15 @@
                             >
                                 <div class="hero__item">
                                     <img
-                                        src="assets/resources/images/hero_section_1.png"
+                                        src="assets/resources/images/hero_section_1.webp"
                                         alt=""
                                         aria-hidden="true"
                                     />
                                     <button
+                                        id="hero-send-msg-btn"
                                         class="hero__decoration hero__decoration-send-message button button__icon button__icon--pink"
-                                        aria-hidden="true"
+                                        title="send message"
+                                        tabindex="9"
                                     >
                                         <i
                                             class="icon icon-ic_send_message hero__decoration-icon d-block"
@@ -115,13 +242,15 @@
                                 </div>
                                 <div class="hero__item">
                                     <img
-                                        src="assets/resources/images/hero_section_2.png"
+                                        src="assets/resources/images/hero_section_2.webp"
                                         alt=""
                                         aria-hidden="true"
                                     />
                                     <button
+                                        id="hero-add-user-btn"
                                         class="hero__decoration hero__decoration-add-user button button__icon button__icon--orange"
-                                        aria-hidden="true"
+                                        title="add user"
+                                        tabindex="11"
                                     >
                                         <i
                                             class="icon icon-ic_add_user hero__decoration-icon d-block"
@@ -131,13 +260,15 @@
                                 </div>
                                 <div class="hero__item">
                                     <img
-                                        src="assets/resources/images/hero_section_3.png"
+                                        src="assets/resources/images/hero_section_3.webp"
                                         alt=""
                                         aria-hidden="true"
                                     />
                                     <button
+                                        id="hero-top-places-btn"
                                         class="hero__decoration hero__decoration-location-btn button button__fill button__fill--white button__fill--small d-flex items-flex-end ff-circular-std decorative-btn-text lh-120 fw-700"
-                                        aria-hidden="true"
+                                        title="Top places"
+                                        tabindex="10"
                                     >
                                         <i
                                             class="icon icon-ic_location_yellow hero__decoration-icon hero__decoration-location-icon d-block"
@@ -149,14 +280,16 @@
                             </div>
                         </div>
                         <div
-                            class="hero__content d-flex flex-column items-center lg:items-flex-start lg:justify-center gap-2"
+                            class="hero__content d-flex flex-column items-center lg:items-flex-start lg:justify-space-between gap-2"
                         >
                             <div
                                 class="hero__description d-flex flex-column justify-center items-center lg:items-flex-start gap-1 md:px-9 lg:px-0"
                             >
                                 <button
+                                    id="hero-explore-btn"
                                     class="hero__description-btn button button__fill button__fill--white d-flex items-flex-end gap-1 ff-circular-std btn-text fw-700 lh-120"
                                     title="Explore the world!"
+                                    tabindex="12"
                                 >
                                     <p>Explore the world!</p>
                                     <i
@@ -186,14 +319,18 @@
                                 class="hero__action d-flex flex-column md:flex-row justify-center lg:justify-flex-start items-center md:gap-1 ff-circular-std btn-text fw-700 lh-120"
                             >
                                 <button
+                                    id="hero-get-started-btn"
                                     class="hero__get-started button button__fill button__fill--primary button__fill--medium"
                                     title="Get Started"
+                                    tabindex="13"
                                 >
                                     Get Started
                                 </button>
                                 <button
+                                    id="hero-watch-demo-btn"
                                     class="hero__watch-demo button button__outline button__outline--medium d-flex justify-center items-flex-end ff-circular-std btn-text fw-700 lh-120"
                                     title="Watch Demo"
+                                    tabindex="14"
                                 >
                                     <i
                                         class="icon icon-ic_play_circle hero__watch-demo-icon d-block"
@@ -203,38 +340,126 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="hero__partner d-flex flex-wrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
-                    >
-                        <div class="hero__partner-wrapper" title="tripadvisor">
-                            <img
-                                src="assets/resources/vectors/company_1.svg"
-                                alt="tripadvisor"
-                            />
+                    <div class="hero__partner-marquee-wrapper">
+                        <div
+                            class="hero__partner d-flex flex-wrap lg:flex-nowrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
+                        >
+                            <div
+                                class="hero__partner-wrapper"
+                                title="tripadvisor"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_1.svg"
+                                    alt="tripadvisor"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="expedia">
+                                <img
+                                    src="assets/resources/vectors/company_2.svg"
+                                    alt="expedia"
+                                />
+                            </div>
+                            <div
+                                class="hero__partner-wrapper"
+                                title="booking.com"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_3.svg"
+                                    alt="booking.com"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="airbnb">
+                                <img
+                                    src="assets/resources/vectors/company_4.svg"
+                                    alt="airbnb"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="orbitz">
+                                <img
+                                    src="assets/resources/vectors/company_5.svg"
+                                    alt="orbitz"
+                                />
+                            </div>
                         </div>
-                        <div class="hero__partner-wrapper" title="expedia">
-                            <img
-                                src="assets/resources/vectors/company_2.svg"
-                                alt="expedia"
-                            />
+                        <div
+                            class="hero__partner-1 d-flex flex-wrap lg:flex-nowrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
+                        >
+                            <div
+                                class="hero__partner-wrapper"
+                                title="tripadvisor"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_1.svg"
+                                    alt="tripadvisor"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="expedia">
+                                <img
+                                    src="assets/resources/vectors/company_2.svg"
+                                    alt="expedia"
+                                />
+                            </div>
+                            <div
+                                class="hero__partner-wrapper"
+                                title="booking.com"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_3.svg"
+                                    alt="booking.com"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="airbnb">
+                                <img
+                                    src="assets/resources/vectors/company_4.svg"
+                                    alt="airbnb"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="orbitz">
+                                <img
+                                    src="assets/resources/vectors/company_5.svg"
+                                    alt="orbitz"
+                                />
+                            </div>
                         </div>
-                        <div class="hero__partner-wrapper" title="booking.com">
-                            <img
-                                src="assets/resources/vectors/company_3.svg"
-                                alt="booking.com"
-                            />
-                        </div>
-                        <div class="hero__partner-wrapper" title="airbnb">
-                            <img
-                                src="assets/resources/vectors/company_4.svg"
-                                alt="airbnb"
-                            />
-                        </div>
-                        <div class="hero__partner-wrapper" title="orbitz">
-                            <img
-                                src="assets/resources/vectors/company_5.svg"
-                                alt="orbitz"
-                            />
+                        <div
+                            class="hero__partner-2 d-flex flex-wrap lg:flex-nowrap justify-center items-center md:mt-2 lg:m-0 md:py-4 md:px-10 lg:px-0 lg:py-3"
+                        >
+                            <div
+                                class="hero__partner-wrapper"
+                                title="tripadvisor"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_1.svg"
+                                    alt="tripadvisor"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="expedia">
+                                <img
+                                    src="assets/resources/vectors/company_2.svg"
+                                    alt="expedia"
+                                />
+                            </div>
+                            <div
+                                class="hero__partner-wrapper"
+                                title="booking.com"
+                            >
+                                <img
+                                    src="assets/resources/vectors/company_3.svg"
+                                    alt="booking.com"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="airbnb">
+                                <img
+                                    src="assets/resources/vectors/company_4.svg"
+                                    alt="airbnb"
+                                />
+                            </div>
+                            <div class="hero__partner-wrapper" title="orbitz">
+                                <img
+                                    src="assets/resources/vectors/company_5.svg"
+                                    alt="orbitz"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -249,6 +474,7 @@
         </header>
         <main>
             <section
+                id="services"
                 class="services py-2 lg:pb-0"
                 aria-labelledby="services-section"
             >
@@ -271,7 +497,7 @@
                         </h2>
                     </div>
                     <div
-                        class="services__cards d-flex flex-column md:flex-row gap-1"
+                        class="services__cards d-flex flex-column md:flex-row gap-1 flex-wrap lg:flex-nowrap"
                     >
                         <div
                             class="services__item card card__services d-flex items-center text-center flex-column gap-2 md:gap-4 p-2 md:px-4 md:pt-4"
@@ -281,7 +507,7 @@
                                 title="The earth with two location markers connecting eachother with a curve dashed line."
                             >
                                 <img
-                                    src="assets/resources/images/services_1.png"
+                                    src="assets/resources/images/services_1.webp"
                                     alt="The earth with two location markers connecting eachother with a curve dashed line."
                                 />
                             </div>
@@ -307,7 +533,7 @@
                                 title="A mobile screen shown and a checked calendar on top of mobile screen on a blue background."
                             >
                                 <img
-                                    src="assets/resources/images/services_2.png"
+                                    src="assets/resources/images/services_2.webp"
                                     alt="A mobile screen shown and a checked calendar on top of mobile screen on a blue background."
                                 />
                             </div>
@@ -333,7 +559,7 @@
                                 title="The sun coming out of cloud on a blue background."
                             >
                                 <img
-                                    src="assets/resources/images/services_3.png"
+                                    src="assets/resources/images/services_3.webp"
                                     alt="The sun coming out of cloud on a blue background."
                                 />
                             </div>
@@ -367,7 +593,7 @@
                         title="Image of a women sitting on suitace with smile on her face with a yellow background. She is holding some documents, with tour bagpack on her back and a text written 'Discounted Price'."
                     >
                         <img
-                            src="assets/resources/images/travel_point.png"
+                            src="assets/resources/images/travel_point.webp"
                             alt="Image of a women sitting on suitace with smile on her face with a yellow background. She is holding some documents, with tour bagpack on her back and a text written 'Discounted Price'."
                         />
                     </div>
@@ -457,7 +683,7 @@
                             aria-hidden="true"
                         >
                             <img
-                                src="assets/resources/images/travel_point_decorative.png"
+                                src="assets/resources/images/travel_point_decorative.webp"
                                 alt=""
                                 aria-hidden="true"
                             />
@@ -466,18 +692,19 @@
                 </div>
             </section>
             <section
+                id="features"
                 class="key-features"
                 aria-labelledby="key-features-section"
             >
                 <div
-                    class="container key-features__container d-flex flex-column gap-6 lg:flex-row-reverse lg:items-flex-start lg:justify-space-between"
+                    class="container key-features__container d-flex flex-column gap-6 lg:flex-row lg:items-flex-start lg:justify-space-between"
                 >
                     <div
                         class="key-features__image"
                         title="Key features section image"
                     >
                         <img
-                            src="assets/resources/images/key_features.png"
+                            src="assets/resources/images/key_features.webp"
                             alt="Key features section image"
                         />
                     </div>
@@ -518,7 +745,7 @@
                                         We offer best services
                                     </h3>
                                     <p
-                                        class="card__body body__card--features ff-inter fw-400 lh-160"
+                                        class="key-features__card-text card__body body__card--features ff-inter fw-400 lh-160"
                                     >
                                         Lorem Ipsum is not simply random text
                                     </p>
@@ -539,7 +766,7 @@
                                         Schedule your trip
                                     </h3>
                                     <p
-                                        class="card__body body__card--features ff-inter fw-400 lh-160"
+                                        class="key-features__card-text card__body body__card--features ff-inter fw-400 lh-160"
                                     >
                                         It has roots in a piece of classical
                                     </p>
@@ -562,7 +789,7 @@
                                         Get discounted coupons
                                     </h3>
                                     <p
-                                        class="card__body body__card--features ff-inter fw-400 lh-160"
+                                        class="key-features__card-text card__body body__card--features ff-inter fw-400 lh-160"
                                     >
                                         Lorem Ipsum is not simply random text
                                     </p>
@@ -603,7 +830,7 @@
                                             title="Testimonials avatar"
                                         >
                                             <img
-                                                src="assets/resources/images/profile_image.png"
+                                                src="assets/resources/images/profile_image.webp"
                                                 alt="Testimonials avatar"
                                             />
                                         </div>
@@ -668,7 +895,7 @@
                                             title="Testimonials avatar"
                                         >
                                             <img
-                                                src="assets/resources/images/profile_image.png"
+                                                src="assets/resources/images/profile_image.webp"
                                                 alt="Testimonials avatar"
                                             />
                                         </div>
@@ -733,7 +960,7 @@
                                             title="Testimonials avatar"
                                         >
                                             <img
-                                                src="assets/resources/images/profile_image.png"
+                                                src="assets/resources/images/profile_image.webp"
                                                 alt="Testimonials avatar"
                                             />
                                         </div>
@@ -794,6 +1021,7 @@
                         <ul class="splide__pagination"></ul>
                         <div class="splide__arrows">
                             <button
+                                id="testimonial-arrow-prev"
                                 class="splide__arrow splide__arrow--prev"
                                 title="Previous Slide"
                             >
@@ -802,6 +1030,7 @@
                                 ></i>
                             </button>
                             <button
+                                id="testimonial-arrow-next"
                                 class="splide__arrow splide__arrow--next"
                                 title="Next Slide"
                             >
@@ -813,9 +1042,14 @@
                     </section>
                 </div>
             </section>
-            <section class="newsletter" aria-labelledby="newsletter-section">
+            <section
+                id="newsletter"
+                class="newsletter"
+                aria-labelledby="newsletter-section"
+            >
                 <div class="container newsletter__container px-2">
                     <p
+                        id="newsletter-section"
                         class="newsletter__sub-title subtitle__section ff-circular-std fw-700 lh-120 ls-20 mb-2 text-center"
                     >
                         SUBSCRIBE TO OUR NEWSLETTER
@@ -826,12 +1060,14 @@
                         Prepare yourself & let's explore the beauty of the world
                     </h2>
                     <form
+                        id="newsletter-form"
                         action=""
-                        class="newsletter__form d-flex flex-column md:flex-row gap-2"
+                        name="newsletter-form"
+                        class="newsletter__form d-flex flex-column md:flex-row gap-2 lg:gap-4"
                     >
                         <div
-                            id="newsletter__email-wrapper"
-                            class="input input__email input__email--icon"
+                            id="newsletter-email-wrapper"
+                            class="input input__email input__email--icon newsletter__email-wrapper"
                         >
                             <i class="icon icon-ic_email input__icon"></i>
                             <input
@@ -839,15 +1075,14 @@
                                 placeholder="Your Email"
                                 aria-placeholder="Your Email"
                                 class="input__text"
-                                id="newsletter__email"
+                                id="newsletter-email"
                                 title="Email"
                             />
                         </div>
                         <input
-                            type="button"
+                            type="submit"
                             value="Subscribe"
                             class="button button__fill button__fill--primary button__fill--large btn-text__large ff-circular-std fw-700 lh-120"
-                            id="newsletter__subscribe-btn"
                             title="Subscribe"
                         />
                     </form>
@@ -874,6 +1109,219 @@
                 </div>
             </section>
         </main>
+        <footer class="footer">
+            <div class="container">
+                <nav class="footer__nav d-flex flex-column">
+                    <div class="footer__top">
+                        <div
+                            class="footer__company d-flex gap-1 items-center mb-2"
+                        >
+                            <a href="#" class="footer__logo" title="Travlog">
+                                <img
+                                    src="assets/resources/vectors/ic_logo.svg"
+                                    alt="Travlog Logo"
+                                />
+                            </a>
+                            <h2
+                                class="footer__company-name ff-circular-std fw-900 lh-120 title__footer"
+                            >
+                                Travlog
+                            </h2>
+                        </div>
+                        <p
+                            class="footer__description mb-2 ff-inter fw-500 lh-160 subtitle__section"
+                        >
+                            Contrary to popular belief, Lorem Ipsum is not
+                            simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC.
+                        </p>
+                        <div class="footer__social-links d-flex gap-2">
+                            <a
+                                href="https://www.facebook.com/"
+                                class="footer__social-link button"
+                                title="Facebook"
+                            >
+                                <i
+                                    class="icon icon-ic_facebook footer__social-link-icon"
+                                ></i>
+                            </a>
+                            <a
+                                href="https://x.com/"
+                                class="footer__social-link button"
+                                title="Twitter"
+                            >
+                                <i
+                                    class="icon icon-ic_twitter footer__social-link-icon"
+                                >
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </a>
+                            <a
+                                href="https://www.instagram.com/"
+                                class="footer__social-link button"
+                                title="Instagram"
+                            >
+                                <i
+                                    class="icon icon-ic_instagram footer__social-link-icon"
+                                >
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        id="footer-bottom"
+                        class="footer__bottom d-flex flex-column"
+                    >
+                        <div class="footer__nav-container">
+                            <h3
+                                class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
+                            >
+                                Company<i
+                                    class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
+                                    aria-hidden="true"
+                                ></i>
+                            </h3>
+                            <ul class="footer__nav-links" role="list">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="About"
+                                        >About</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="Career"
+                                        >Career</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="Mobile"
+                                        >Mobile</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-container">
+                            <h3
+                                class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
+                            >
+                                Contact<i
+                                    class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
+                                    aria-hidden="true"
+                                ></i>
+                            </h3>
+                            <ul class="footer__nav-links" role="list">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="Why Travlog?"
+                                        >Why Travlog?</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="Partner with us"
+                                        >Partner with us</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="FAQ's"
+                                        >FAQ's</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="#"
+                                        class="footer__nav-link"
+                                        title="Blog"
+                                        >Blog</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-container">
+                            <h3
+                                class="footer__nav-title d-flex justify-space-between items-center ff-circular-std fw-700 lh-120 title__footer-nav"
+                            >
+                                Meet Us<i
+                                    class="footer__nav-title-icon icon icon-ic_arrow_down_circle"
+                                    aria-hidden="true"
+                                ></i>
+                            </h3>
+                            <ul class="footer__nav-links" role="list">
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="tel:+0092123456789"
+                                        class="footer__nav-link"
+                                        title="+00 92 1234 56789"
+                                        >+00 92 1234 56789</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <a
+                                        href="mailto:info@travlog.com"
+                                        class="footer__nav-link"
+                                        title="info@travlog.com"
+                                        >info@travlog.com</a
+                                    >
+                                </li>
+                                <li
+                                    class="footer__nav-link ff-inter fw-400 lh-160 body__section"
+                                >
+                                    <address
+                                        title="205. R Street, New York BD23200"
+                                    >
+                                        205. R Street, New York BD23200
+                                    </address>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+        <script>
+            // Page Loader
+            const pageLoader = document.getElementById('overlay-loader');
+
+            window.onload = () => {
+                pageLoader.classList.add('loaded');
+            };
+        </script>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
 .splide {
     &__pagination {
         position: relative;
-        margin-block-end: px-to-rem(41.6);
+        margin-block-end: px-to-rem(36.8);
         gap: px-to-rem(24);
     }
 
@@ -55,6 +55,7 @@
 
         &:disabled {
             box-shadow: none;
+            cursor: not-allowed;
         }
     }
 
@@ -70,6 +71,18 @@
             padding: px-to-rem(44);
             width: px-to-rem(100);
             height: px-to-rem(100);
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__arrows {
+            top: 40%;
+            left: 0.5%;
+        }
+
+        &__pagination {
+            margin-block-start: px-to-rem(3.2);
+            margin-inline-start: px-to-rem(16);
         }
     }
 }

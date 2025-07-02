@@ -2,7 +2,7 @@
 @use '../abstracts' as *;
 
 .testimonials {
-    margin-block-end: px-to-rem(76.8);
+    margin-block-end: px-to-rem(67.2);
 
     &__sub-title {
         color: $bg-pink;
@@ -10,6 +10,10 @@
 
     &__title {
         color: $black;
+    }
+
+    &__slide {
+        padding-block-end: px-to-rem(73.6);
     }
 
     &__slide-title {
@@ -21,6 +25,8 @@
     }
 
     &__star {
+        width: px-to-rem(32);
+        height: px-to-rem(32);
         &-icon {
             font-size: px-to-rem(26);
         }
@@ -29,6 +35,7 @@
     &__body {
         @extend %grayscale-50;
         color: $black-75;
+        @include truncate(3);
     }
 
     &__navigation-arrow {
@@ -44,7 +51,7 @@
 
         &__container {
             position: relative;
-            padding-block: px-to-rem(64);
+            padding-block: px-to-rem(68.4);
         }
 
         &__slide {
@@ -63,7 +70,16 @@
         background-position-y: 42%;
 
         &__slide {
-            max-width: 75%;
+            max-width: 70%;
+        }
+
+        &__container {
+            padding-block: px-to-rem(25.6);
+        }
+
+        &__rating {
+            margin-block-start: px-to-rem(3.2);
+            margin-inline-start: px-to-rem(16);
         }
     }
 }

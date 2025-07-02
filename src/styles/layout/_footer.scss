@@ -1,0 +1,143 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.footer {
+    &__nav {
+        gap: px-to-rem(94);
+    }
+
+    &__company-name {
+        color: $black;
+    }
+
+    &__description {
+        color: $link-text-inactive;
+        @extend %grayscale-50;
+        @include truncate(5);
+    }
+
+    &__social-link {
+        position: relative;
+        text-decoration: none;
+        line-height: px-to-rem(16);
+    }
+
+    &__social-link-icon {
+        font-size: px-to-rem(32);
+
+        & .path2 {
+            position: absolute;
+        }
+    }
+
+    &__bottom {
+        gap: px-to-rem(35.2);
+        margin-block-end: px-to-rem(35);
+    }
+
+    &__nav-container.open &__nav-title-icon {
+        transform: rotate(-180deg);
+    }
+
+    &__nav-title {
+        list-style-type: none;
+        cursor: pointer;
+    }
+
+    &__nav-title-icon {
+        font-size: px-to-rem(32);
+        transform: rotate(0);
+        transition: transform 0.5s;
+
+        &.active {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+        overflow: hidden;
+        max-height: 0;
+        margin-block-start: px-to-rem(32);
+        padding-inline: px-to-rem(8);
+        max-height: 0;
+        transition: all 0.3s ease-in;
+
+        &.open {
+            max-height: px-to-rem(200);
+        }
+    }
+
+    &__nav-link {
+        color: $link-text-inactive;
+        text-decoration: none;
+
+        &.active,
+        &:hover,
+        &:focus-visible {
+            color: $link-text-active;
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        &__nav {
+            gap: px-to-rem(64);
+        }
+
+        &__bottom {
+            flex-direction: row;
+            gap: px-to-rem(32);
+            margin-block-end: px-to-rem(64);
+        }
+
+        &__nav-container {
+            min-width: px-to-rem(277);
+        }
+
+        &__nav-container &__nav-title {
+            pointer-events: none; // prevents click events [which helps to disable details tag collapse property]
+            user-select: none; // prevents text selection
+        }
+
+        &__nav-title-icon {
+            display: none;
+        }
+
+        &__nav-links {
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            gap: px-to-rem(32);
+            padding-inline: 0;
+            max-height: fit-content;
+        }
+    }
+
+    @include media-up(map.get($map: $screen-size, $key: 'large')) {
+        &__bottom {
+            margin-block-end: 0;
+        }
+
+        &__nav {
+            flex-direction: row;
+            padding-block: px-to-rem(64);
+            padding-inline-start: px-to-rem(8);
+        }
+
+        &__description {
+            margin-block-end: px-to-rem(64);
+        }
+
+        &__nav-container {
+            min-width: px-to-rem(166);
+            gap: px-to-rem(16);
+            margin-block-end: 0;
+        }
+
+        &__nav-links {
+            margin-block-start: px-to-rem(35.2);
+        }
+    }
+}

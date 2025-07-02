@@ -2,6 +2,8 @@
 @use '../abstracts' as *;
 
 .hero {
+    margin-block-start: px-to-rem(144);
+
     &__blur {
         position: absolute;
         top: px-to-rem(36) * -1;
@@ -102,6 +104,7 @@
             text-wrap: wrap;
             word-wrap: break-word;
             @extend %grayscale-50;
+            @include truncate(3);
         }
     }
 
@@ -135,8 +138,15 @@
         }
     }
 
+    &__partner-1,
+    &__partner-2 {
+        display: none;
+    }
+
     // Styling for medium screen
     @include media-up(map.get($map: $screen-size, $key: 'medium')) {
+        margin-block-start: px-to-rem(112);
+
         &__blur {
             top: px-to-rem(174) * -1;
             left: px-to-rem(163) * -1;
@@ -222,7 +232,7 @@
 
     // Styling for large screen
     @include media-up(map.get($map: $screen-size, $key: 'large')) {
-        overflow-x: hidden;
+        margin-block-start: px-to-rem(147.2);
 
         &__blur {
             top: px-to-rem(42.91);
@@ -257,20 +267,66 @@
             }
         }
 
+        &__image {
+            order: 2;
+        }
+
+        &__description {
+            margin-block-start: px-to-rem(129.6);
+        }
+
+        &__description-btn {
+            gap: px-to-rem(24);
+        }
+
         &__content {
-            gap: px-to-rem(80);
             min-width: px-to-rem(420);
             width: min-content;
+            order: 1;
+        }
+
+        &__partner-marquee-wrapper {
+            position: relative;
         }
 
         &__partner {
             gap: px-to-rem(100);
-            animation: marquee 10s linear infinite;
+            padding-inline-start: -100%;
+            animation: marquee 30s linear infinite;
+        }
+
+        &__partner-1 {
+            position: absolute;
+            top: 0;
+            display: flex;
+            visibility: hidden;
+            gap: px-to-rem(100);
+            animation: marquee 30s linear infinite;
+            animation-delay: 10s;
+        }
+
+        &__partner-2 {
+            position: absolute;
+            top: 0;
+            display: flex;
+            visibility: hidden;
+            gap: px-to-rem(100);
+            animation: marquee 30s linear infinite;
+            animation-delay: 20s;
         }
 
         &__decorative {
             top: px-to-rem(867.47);
             left: px-to-rem(39.34);
+        }
+
+        &__action {
+            margin-block-end: px-to-rem(145.6);
+            gap: px-to-rem(17.6);
+        }
+
+        &__get-started {
+            margin-inline-start: px-to-rem(6);
         }
     }
 }
@@ -278,9 +334,10 @@
 @keyframes marquee {
     0% {
         transform: translateX(130%);
+        visibility: visible;
     }
 
     100% {
-        transform: translateX(-130%);
+        transform: translateX(-200%);
     }
 }

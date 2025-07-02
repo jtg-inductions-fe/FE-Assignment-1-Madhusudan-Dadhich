@@ -29,6 +29,7 @@
     &__body {
         color: $link-text-inactive;
         @extend %grayscale-50;
+        @include truncate(4);
     }
 
     &__cards {
@@ -36,7 +37,13 @@
     }
 
     &__card {
-        gap: px-to-rem(27.2);
+        gap: px-to-rem(28.8);
+    }
+
+    &__card-text {
+        color: $link-text-inactive;
+        @extend %grayscale-50;
+        @include truncate(2);
     }
 
     &__icons {
@@ -93,6 +100,10 @@
             gap: px-to-rem(32);
         }
 
+        &__card-text {
+            @include truncate(1);
+        }
+
         &__icons {
             &--orange {
                 background-color: $bg-orange;
@@ -118,6 +129,9 @@
 
         &__image {
             padding-inline-end: 0;
+            margin-block-start: px-to-rem(4.8);
+            margin-inline-end: px-to-rem(32) * -1;
+            order: 2;
         }
 
         &__content {
@@ -126,6 +140,7 @@
             width: 100%;
             max-width: 560px;
             margin-inline-start: px-to-rem(16);
+            order: 1;
         }
 
         &__cards {

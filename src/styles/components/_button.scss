@@ -16,7 +16,7 @@ $padding-vertical: map.get(
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.3s;
-    transition-delay: 100ms;
+    transition-delay: 50ms;
 
     &:hover {
         transform: scale(1.05);
@@ -41,6 +41,7 @@ $padding-vertical: map.get(
         &:hover,
         &:focus-visible {
             background-color: $fb-bg-active;
+            box-shadow: $button-hover-shadow;
         }
 
         &--primary {
@@ -54,13 +55,6 @@ $padding-vertical: map.get(
             &:hover,
             &:focus-visible {
                 background-color: $white;
-            }
-        }
-
-        &--hover-shadow {
-            &:hover,
-            &:focus-visible {
-                box-shadow: $button-hover-shadow;
             }
         }
 
@@ -87,6 +81,7 @@ $padding-vertical: map.get(
         &:hover,
         &:focus-visible {
             background-color: $white;
+            box-shadow: $button-hover-shadow;
         }
 
         &--medium {
